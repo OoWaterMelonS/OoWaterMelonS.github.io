@@ -4,24 +4,11 @@
   
   
   <entry>
-    <title>life-first-post</title>
-    <link href="/OoWaterMelonS/2022/09/23/life-first-post/"/>
-    <url>/OoWaterMelonS/2022/09/23/life-first-post/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>dl-gpuk20-capacity</title>
     <link href="/OoWaterMelonS/2022/09/23/dl-gpuk20-capacity/"/>
     <url>/OoWaterMelonS/2022/09/23/dl-gpuk20-capacity/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>计划使用实验室淘汰的Tesla K20显卡跑代码，但训练报错CUDA error: no kernel image is available for execution on the device</p><p>查找资料（<a href="https://developer.nvidia.com/cuda-gpus#collapseOne%EF%BC%89">https://developer.nvidia.com/cuda-gpus#collapseOne）</a> 显示是因为K20算力不够。</p><p><img src="/OoWaterMelonS/dl-gpuk20-capacity/gpu.png" alt="Nvidia显卡算力图"></p><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>一：降低pytorch,测试后发现1.4及以上版本最低算力已经不支持3.5的K20</p><p>二：更换显卡更强硬件</p><p>三：重新编译pytorch参照链接 <a href="https://blog.csdn.net/qq_43051923/article/details/108393510">https://blog.csdn.net/qq_43051923/article/details/108393510</a>  但建议优选方法一，实在不行才选择这个方案。（把精力花在调试代码为先，能pytorch1.2运行，就刚好节省时间）</p>]]></content>
     
     
     
