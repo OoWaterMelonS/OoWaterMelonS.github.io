@@ -24,7 +24,7 @@
 <meta property="og:description" content="Mysql连接分类分类 内连接(inner join)：表a和表b之间的每一行基于对应id列连接后，只取出连接表中匹配的数据，匹配不到的不保留。 外连接：表a和表b之间的每一行基于对应id列连接后，匹配不到的也会保留，值为NULL。 外连接可以再被划分为左连接和右连接。  实例A表 1select * from A;  12345id | name 1 |  A1 2 |  A2 3 |  A3">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-28T04:43:39.000Z">
-<meta property="article:modified_time" content="2022-09-28T04:44:11.718Z">
+<meta property="article:modified_time" content="2022-09-28T04:50:00.272Z">
 <meta property="article:author" content="OoWaterMelonS Shao">
 <meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary_large_image">
@@ -225,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          952 字
+          953 字
         
       </span>
     
@@ -321,7 +321,7 @@
 <p>右连接</p>
 <hr>
 <p>selcct * from A as a <strong>right join</strong> B as b <strong>on</strong> a.id&#x3D; b.a_id;</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">selcct * from A as a left join B as b on a.id= b.a_id;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">selcct * from A as a right join B as b on a.id= b.a_id;<br></code></pre></td></tr></table></figure>
 <hr>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">id |  name | id | age | a_id |  <br> 1 |  A1   |  1 |  11 |  1   |      <br> 3 |  A2   |  2 |  33 |  3   |                 <br> 2 |  A3   |  3 |  22 |  2   |  <br> NULL| NULL |  6 | 66 |  6   |<br></code></pre></td></tr></table></figure>
 
