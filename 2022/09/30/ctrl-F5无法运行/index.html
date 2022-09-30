@@ -16,24 +16,27 @@
   <meta name="author" content="OoWaterMelonS Shao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Mysql连接分类分类 内连接(inner join)：表a和表b之间的每一行基于对应id列连接后，只取出连接表中匹配的数据，匹配不到的不保留。 外连接：表a和表b之间的每一行基于对应id列连接后，匹配不到的也会保留，值为NULL。 外连接可以再被划分为左连接和右连接。  实例A表 1select * from A;  12345id | name 1 |  A1 2 |  A2 3 |  A3">
+    <meta name="description" content="问题背景接上文使用采用实验室K20做深度学习(https:&#x2F;&#x2F;oowatermelons.github.io&#x2F;2022&#x2F;09&#x2F;23&#x2F;dl-gpuk20-capacity&#x2F;)由于算力限制只能安装  pytorch1.2+python3.6的版本 但后续出现问题  Ctrl + F5 或者 F5 都无法运行VScode 的python代码，本地尝试了两种方法   同个项目内新建python文件，测试快">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mysql-join">
-<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2022/09/28/mysql-join/index.html">
+<meta property="og:title" content="ctrl+F5无法运行">
+<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2022/09/30/ctrl-F5%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Mysql连接分类分类 内连接(inner join)：表a和表b之间的每一行基于对应id列连接后，只取出连接表中匹配的数据，匹配不到的不保留。 外连接：表a和表b之间的每一行基于对应id列连接后，匹配不到的也会保留，值为NULL。 外连接可以再被划分为左连接和右连接。  实例A表 1select * from A;  12345id | name 1 |  A1 2 |  A2 3 |  A3">
+<meta property="og:description" content="问题背景接上文使用采用实验室K20做深度学习(https:&#x2F;&#x2F;oowatermelons.github.io&#x2F;2022&#x2F;09&#x2F;23&#x2F;dl-gpuk20-capacity&#x2F;)由于算力限制只能安装  pytorch1.2+python3.6的版本 但后续出现问题  Ctrl + F5 或者 F5 都无法运行VScode 的python代码，本地尝试了两种方法   同个项目内新建python文件，测试快">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-09-28T04:43:39.000Z">
-<meta property="article:modified_time" content="2022-09-28T06:09:29.069Z">
+<meta property="og:image" content="http://oowatermelon.github.io/img/ctrlf5/ctrl+f5%E4%B8%8D%E8%BF%90%E8%A1%8C.png">
+<meta property="og:image" content="http://oowatermelon.github.io/img/ctrlf5/ctrl+f5%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C.png">
+<meta property="article:published_time" content="2022-09-30T07:12:10.000Z">
+<meta property="article:modified_time" content="2022-09-30T07:36:00.000Z">
 <meta property="article:author" content="OoWaterMelonS Shao">
-<meta property="article:tag" content="mysql">
+<meta property="article:tag" content="VScode">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://oowatermelon.github.io/img/ctrlf5/ctrl+f5%E4%B8%8D%E8%BF%90%E8%A1%8C.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Mysql-join - Hexo</title>
+  <title>ctrl+F5无法运行 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +205,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">Mysql-join</span>
+            <span id="subtitle">ctrl+F5无法运行</span>
           
         </div>
 
@@ -213,8 +216,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-09-28 12:43" pubdate>
-          2022年9月28日 下午
+        <time datetime="2022-09-30 15:12" pubdate>
+          2022年9月30日 下午
         </time>
       </span>
     
@@ -225,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          953 字
+          707 字
         
       </span>
     
@@ -236,7 +239,7 @@
         
         
         
-          8 分钟
+          6 分钟
         
       </span>
     
@@ -274,57 +277,24 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Mysql-join</h1>
+            <h1 style="display: none">ctrl+F5无法运行</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="Mysql连接分类"><a href="#Mysql连接分类" class="headerlink" title="Mysql连接分类"></a>Mysql连接分类</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ol>
-<li>内连接(inner join)：表a和表b之间的每一行基于对应id列连接后，只取出连接表中匹配的数据，匹配不到的不保留。</li>
-<li>外连接：表a和表b之间的每一行基于对应id列连接后，匹配不到的也会保留，值为NULL。 外连接可以再被划分为左连接和右连接。</li>
+                <h3 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h3><p>接上文使用采用实验室K20做深度学习(<a target="_blank" rel="noopener" href="https://oowatermelons.github.io/2022/09/23/dl-gpuk20-capacity/">https://oowatermelons.github.io/2022/09/23/dl-gpuk20-capacity/</a>)<br>由于算力限制只能安装  pytorch1.2+python3.6的版本<br><img src="/../img/ctrlf5/ctrl+f5%E4%B8%8D%E8%BF%90%E8%A1%8C.png" srcset="/img/loading.gif" lazyload alt="环境依赖包"></p>
+<p>但后续出现问题  Ctrl + F5 或者 F5 都无法运行VScode 的python代码，本地尝试了两种方法 </p>
+<ol>
+<li>同个项目内新建python文件，测试快捷键  &#x3D;&gt; 失效</li>
+<li>不同的项目内新建python文件，测试快捷键 &#x3D;&gt; 正常</li>
 </ol>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>A表</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">select * from A;<br></code></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">id | name<br> 1 |  A1<br> 2 |  A2<br> 3 |  A3<br> 4 |  A4<br></code></pre></td></tr></table></figure>
-
-<p>B表</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">select * from B; // 缺少a_id=4<br></code></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">id | age | a_id <br> 1 |  11 |  1<br> 2 |  22 |  3<br> 3 |  33 |  2<br> 6 |  66 |  6<br></code></pre></td></tr></table></figure>
-
-<p><strong>内连接（inner join）</strong><br>selcct * from A as a <strong>inner join</strong> B as b <strong>on</strong> a.id&#x3D; b.a_id;</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">selcct * from A as a inner join B as b on a.id= b.a_id;<br></code></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">id | name | id | age | a_id <br> 1 |  A1  |  1 |  11 |  1<br> 2 |  A2  |  3 |  33 |  2                <br> 3 |  A3  |  2 |  22 |  3<br></code></pre></td></tr></table></figure>
-<p>只会保留有对应匹配的连接表中的行</p>
-<p><strong>外连接（outer join）</strong></p>
-<ul>
-<li>左连接（left outer join）：以左边的表为主表</li>
-<li>右连接（right outer join）：以右边的表为主表</li>
-</ul>
-<p>左连接<br>A表</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">select * from A;<br></code></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">id | name<br> 1 |  A1<br> 2 |  A2<br> 3 |  A3<br> 4 |  A4<br></code></pre></td></tr></table></figure>
-
-<p>B表</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">select * from B; // 缺少a_id=4 故意错位a_id和b.id 的2 和 3<br></code></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">id | age | a_id <br> 1 |  11 |  1<br> 2 |  22 |  3<br> 3 |  33 |  2<br> 6 |  66 |  6<br></code></pre></td></tr></table></figure>
-<hr>
-<p>selcct * from A as a <strong>left join</strong> B as b <strong>on</strong> a.id&#x3D; b.a_id;</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">selcct * from A as a left join B as b on a.id= b.a_id;<br></code></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">id | name | id | age | a_id <br> 1 |  A1  |  1 |  11 |  1<br> 2 |  A2  |  3 |  33 |  2                <br> 3 |  A3  |  2 |  22 |  3<br> 4 |  A4  |  NULL | NULL | NULL <br></code></pre></td></tr></table></figure>
-
-<p>右连接</p>
-<hr>
-<p>selcct * from A as a <strong>right join</strong> B as b <strong>on</strong> a.id&#x3D; b.a_id;</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">selcct * from A as a right join B as b on a.id= b.a_id;<br></code></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">id |  name | id | age | a_id |  <br> 1 |  A1   |  1 |  11 |  1   |      <br> 3 |  A2   |  2 |  33 |  3   |                 <br> 2 |  A3   |  3 |  22 |  2   |  <br> NULL| NULL |  6 | 66 |  6   |<br></code></pre></td></tr></table></figure>
-
+<p>因此判断不是代码问题，是代码依赖包版本问题</p>
+<h3 id="查找原因"><a href="#查找原因" class="headerlink" title="查找原因"></a>查找原因</h3><p>按照上面的思路，排除网上很多说修改编辑器的解决办法，集中问题在代码依赖包版本上，查阅官方文档<br>A Visual Studio Code extension with rich support for the Python language (for all actively supported versions of the language:&gt;&#x3D;3.7),including features such as IntelliSense (Pylance),linting,debugging,code navigation,code formatting,refactoring,variable explorer,test explorer,and more!<br>找到原因在于python版本过低，VScode的新Python插件不再支持导致。</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>由于Pytorch1.2的限制Python版本最高只能是3.6，所以必须降低Python插件的版本至v2020.8.1<br>具体如图所示：<br><img src="/../img/ctrlf5/ctrl+f5%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C.png" srcset="/img/loading.gif" lazyload alt="更换python插件方法"></p>
+<h3 id="学习总结"><a href="#学习总结" class="headerlink" title="学习总结"></a>学习总结</h3><ol>
+<li>对比分析，抓住问题重点</li>
+<li>不怕看英语，多看官方文档</li>
+</ol>
 
                 
               </div>
@@ -337,7 +307,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/mysql/">#mysql</a>
+        <a href="/tags/VScode/">#VScode</a>
       
     </div>
   
@@ -349,8 +319,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Mysql-join</div>
-      <div>http://oowatermelon.github.io/OoWaterMelonS/2022/09/28/mysql-join/</div>
+      <div>ctrl+F5无法运行</div>
+      <div>http://oowatermelon.github.io/OoWaterMelonS/2022/09/30/ctrl-F5无法运行/</div>
     </div>
     <div class="license-meta">
       
@@ -362,7 +332,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年9月28日</div>
+          <div>2022年9月30日</div>
         </div>
       
       
@@ -394,18 +364,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/09/30/ctrl-F5%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C/" title="ctrl+F5无法运行">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">ctrl+F5无法运行</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/23/dl-gpuk20-capacity/" title="DL-gpu-k20-capacity">
-                        <span class="hidden-mobile">DL-gpu-k20-capacity</span>
+                      <a href="/2022/09/28/mysql-join/" title="Mysql-join">
+                        <span class="hidden-mobile">Mysql-join</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
