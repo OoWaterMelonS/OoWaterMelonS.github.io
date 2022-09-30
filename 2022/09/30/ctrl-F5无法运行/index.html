@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://oowatermelon.github.io/img/ctrlf5/ctrl+f5%E4%B8%8D%E8%BF%90%E8%A1%8C.png">
 <meta property="og:image" content="http://oowatermelon.github.io/img/ctrlf5/ctrl+f5%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C.png">
 <meta property="article:published_time" content="2022-09-30T07:12:10.000Z">
-<meta property="article:modified_time" content="2022-09-30T07:59:02.901Z">
+<meta property="article:modified_time" content="2022-09-30T08:02:22.292Z">
 <meta property="article:author" content="OoWaterMelonS Shao">
 <meta property="article:tag" content="VScode">
 <meta name="twitter:card" content="summary_large_image">
@@ -228,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          707 字
+          711 字
         
       </span>
     
@@ -288,7 +288,7 @@
 <li>同个项目内新建python文件，测试快捷键  &#x3D;&gt; 失效</li>
 <li>不同的项目内新建python文件，测试快捷键 &#x3D;&gt; 正常</li>
 </ol>
-<p>因此判断不是代码问题，是代码依赖包版本问题</p>
+<p>初步判断不是编辑器问题，可能是代码依赖包版本的问题</p>
 <h3 id="查找原因"><a href="#查找原因" class="headerlink" title="查找原因"></a>查找原因</h3><p>按照上面的思路，排除网上很多说修改编辑器的解决办法，集中问题在代码依赖包版本上，查阅官方文档<br>A Visual Studio Code extension with rich support for the Python language (for all actively supported versions of the language:&gt;&#x3D;3.7),including features such as IntelliSense (Pylance),linting,debugging,code navigation,code formatting,refactoring,variable explorer,test explorer,and more!<br>找到原因在于python版本过低，VScode的新Python插件不再支持导致。</p>
 <h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>由于Pytorch1.2的限制Python版本最高只能是3.6，所以必须降低Python插件的版本至v2020.8.1<br>具体如图所示：<br><img src="/../img/ctrlf5/ctrl+f5%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C.png" srcset="/img/loading.gif" lazyload alt="更换python插件方法"></p>
 <h3 id="学习收获"><a href="#学习收获" class="headerlink" title="学习收获"></a>学习收获</h3><ol>
@@ -389,8 +389,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/28/mysql-join/" title="Mysql+Join">
-                        <span class="hidden-mobile">Mysql+Join</span>
+                      <a href="/2022/09/28/mysql-join/" title="Mysql-Join">
+                        <span class="hidden-mobile">Mysql-Join</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
