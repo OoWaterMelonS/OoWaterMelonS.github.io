@@ -4,9 +4,9 @@
   
   
   <entry>
-    <title>ctrl+F5无法运行</title>
-    <link href="/2022/09/30/ctrl-F5%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C/"/>
-    <url>/2022/09/30/ctrl-F5%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C/</url>
+    <title>Ctrl+F5无法运行</title>
+    <link href="/2022/09/30/Ctrl-F5%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C/"/>
+    <url>/2022/09/30/Ctrl-F5%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C/</url>
     
     <content type="html"><![CDATA[<h3 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h3><p>接上文使用采用实验室K20做深度学习(<a href="https://oowatermelons.github.io/2022/09/23/dl-gpuk20-capacity/">https://oowatermelons.github.io/2022/09/23/dl-gpuk20-capacity/</a>)<br>由于算力限制只能安装  pytorch1.2+python3.6的版本<br><img src="/../img/ctrlf5/ctrl+f5%E4%B8%8D%E8%BF%90%E8%A1%8C.png" alt="环境依赖包"></p><p>但后续出现问题  Ctrl + F5 或者 F5 都无法运行VScode 的python代码，本地尝试了两种方法 </p><ol><li>同个项目内新建python文件，测试快捷键  &#x3D;&gt; 失效</li><li>不同的项目内新建python文件，测试快捷键 &#x3D;&gt; 正常</li></ol><p>因此判断不是代码问题，是代码依赖包版本问题</p><h3 id="查找原因"><a href="#查找原因" class="headerlink" title="查找原因"></a>查找原因</h3><p>按照上面的思路，排除网上很多说修改编辑器的解决办法，集中问题在代码依赖包版本上，查阅官方文档<br>A Visual Studio Code extension with rich support for the Python language (for all actively supported versions of the language:&gt;&#x3D;3.7),including features such as IntelliSense (Pylance),linting,debugging,code navigation,code formatting,refactoring,variable explorer,test explorer,and more!<br>找到原因在于python版本过低，VScode的新Python插件不再支持导致。</p><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>由于Pytorch1.2的限制Python版本最高只能是3.6，所以必须降低Python插件的版本至v2020.8.1<br>具体如图所示：<br><img src="/../img/ctrlf5/ctrl+f5%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C.png" alt="更换python插件方法"></p><h3 id="学习收获"><a href="#学习收获" class="headerlink" title="学习收获"></a>学习收获</h3><ol><li>对比分析，抓住问题重点</li><li>不怕看英语，多看官方文档</li></ol>]]></content>
     
@@ -29,7 +29,7 @@
   
   
   <entry>
-    <title>Mysql-join</title>
+    <title>Mysql+Join</title>
     <link href="/2022/09/28/mysql-join/"/>
     <url>/2022/09/28/mysql-join/</url>
     
@@ -45,7 +45,7 @@
     
     <tags>
       
-      <tag>mysql</tag>
+      <tag>Mysql</tag>
       
     </tags>
     
