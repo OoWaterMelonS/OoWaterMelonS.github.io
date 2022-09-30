@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Hexo本地和github文件都更新，但主页却没更新问题</title>
+    <link href="/2022/09/30/Hexo%E6%9C%AC%E5%9C%B0%E5%92%8Cgithub%E6%96%87%E4%BB%B6%E9%83%BD%E6%9B%B4%E6%96%B0%EF%BC%8C%E4%BD%86%E4%B8%BB%E9%A1%B5%E5%8D%B4%E6%B2%A1%E6%9B%B4%E6%96%B0%E9%97%AE%E9%A2%98/"/>
+    <url>/2022/09/30/Hexo%E6%9C%AC%E5%9C%B0%E5%92%8Cgithub%E6%96%87%E4%BB%B6%E9%83%BD%E6%9B%B4%E6%96%B0%EF%BC%8C%E4%BD%86%E4%B8%BB%E9%A1%B5%E5%8D%B4%E6%B2%A1%E6%9B%B4%E6%96%B0%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<h3 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h3><p>基于Hexo,今天打算更新一篇解决Python调试博客，但部署在github的个人主页不更新页面。<br>逐步一步一步查阅问题：</p><ol><li>hexo s 本地显示正常</li><li>hexo clean | hexo g 正常</li><li>hexo d 上传github显示正常，文件是已经更新了的版本</li><li>浏览器没显示正常</li></ol><p>从上可以发现是3和4步之间出现问题，对应查阅Github将上传的静态文件是否自动部署成功。<br>解决办法是可能只有干等</p><h3 id="定位问题思路"><a href="#定位问题思路" class="headerlink" title="定位问题思路"></a>定位问题思路</h3><p>查看需要部署的仓库<br><img src="/../img/%E6%96%B0%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%9B%B4%E6%96%B0/%E9%83%A8%E7%BD%B2%E5%A4%B1%E8%B4%A52.png" alt="进入仓库"></p><p><img src="/../img/%E6%96%B0%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%9B%B4%E6%96%B0/%E9%83%A8%E7%BD%B2%E5%A4%B1%E8%B4%A51.png" alt="进入github-pages"></p><p><img src="/../img/%E6%96%B0%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%9B%B4%E6%96%B0/%E9%83%A8%E7%BD%B2%E5%A4%B1%E8%B4%A5.png" alt="查看报错"></p><p>对比阅读 官方文档  <a href="https://docs.github.com/en/rest/deployments/statuses">https://docs.github.com/en/rest/deployments/statuses</a></p><p>state  string  Required<br>The state of the status. When you set a transient deployment to inactive, the deployment will be shown as destroyed in GitHub.</p><p>Can be one of: error, failure, inactive, in_progress, queued, pending, success</p><p>错误在于 due to in progress  上次的部署还没完成，要么取消上次的部署，要么等github挨个处理完</p><h3 id="学习收获"><a href="#学习收获" class="headerlink" title="学习收获"></a>学习收获</h3><ol><li>查阅问题一步一步确定思路，定位出错点 </li><li>多看官方文档，一针见血</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>github</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>github</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Ctrl+F5无法运行</title>
     <link href="/2022/09/30/Ctrl-F5%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C/"/>
     <url>/2022/09/30/Ctrl-F5%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C/</url>

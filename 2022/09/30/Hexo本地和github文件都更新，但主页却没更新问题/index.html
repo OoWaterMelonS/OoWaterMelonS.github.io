@@ -16,27 +16,28 @@
   <meta name="author" content="OoWaterMelonS Shao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="问题背景接上文使用采用实验室K20做深度学习(https:&#x2F;&#x2F;oowatermelons.github.io&#x2F;2022&#x2F;09&#x2F;23&#x2F;dl-gpuk20-capacity&#x2F;)由于算力限制只能安装  pytorch1.2+python3.6的版本 但后续出现问题  Ctrl + F5 或者 F5 都无法运行VScode 的python代码，本地尝试了两种方法   同个项目内新建python文件，测试快">
+    <meta name="description" content="问题背景基于Hexo,今天打算更新一篇解决Python调试博客，但部署在github的个人主页不更新页面。逐步一步一步查阅问题：  hexo s 本地显示正常 hexo clean | hexo g 正常 hexo d 上传github显示正常，文件是已经更新了的版本 浏览器没显示正常  从上可以发现是3和4步之间出现问题，对应查阅Github将上传的静态文件是否自动部署成功。解决办法是可能只有干">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ctrl+F5无法运行">
-<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2022/09/30/Ctrl-F5%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C/index.html">
+<meta property="og:title" content="Hexo本地和github文件都更新，但主页却没更新问题">
+<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2022/09/30/Hexo%E6%9C%AC%E5%9C%B0%E5%92%8Cgithub%E6%96%87%E4%BB%B6%E9%83%BD%E6%9B%B4%E6%96%B0%EF%BC%8C%E4%BD%86%E4%B8%BB%E9%A1%B5%E5%8D%B4%E6%B2%A1%E6%9B%B4%E6%96%B0%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="问题背景接上文使用采用实验室K20做深度学习(https:&#x2F;&#x2F;oowatermelons.github.io&#x2F;2022&#x2F;09&#x2F;23&#x2F;dl-gpuk20-capacity&#x2F;)由于算力限制只能安装  pytorch1.2+python3.6的版本 但后续出现问题  Ctrl + F5 或者 F5 都无法运行VScode 的python代码，本地尝试了两种方法   同个项目内新建python文件，测试快">
+<meta property="og:description" content="问题背景基于Hexo,今天打算更新一篇解决Python调试博客，但部署在github的个人主页不更新页面。逐步一步一步查阅问题：  hexo s 本地显示正常 hexo clean | hexo g 正常 hexo d 上传github显示正常，文件是已经更新了的版本 浏览器没显示正常  从上可以发现是3和4步之间出现问题，对应查阅Github将上传的静态文件是否自动部署成功。解决办法是可能只有干">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://oowatermelon.github.io/img/ctrlf5/ctrl+f5%E4%B8%8D%E8%BF%90%E8%A1%8C.png">
-<meta property="og:image" content="http://oowatermelon.github.io/img/ctrlf5/ctrl+f5%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C.png">
-<meta property="article:published_time" content="2022-09-30T07:12:10.000Z">
-<meta property="article:modified_time" content="2022-09-30T08:02:22.292Z">
+<meta property="og:image" content="http://oowatermelon.github.io/img/%E6%96%B0%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%9B%B4%E6%96%B0/%E9%83%A8%E7%BD%B2%E5%A4%B1%E8%B4%A52.png">
+<meta property="og:image" content="http://oowatermelon.github.io/img/%E6%96%B0%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%9B%B4%E6%96%B0/%E9%83%A8%E7%BD%B2%E5%A4%B1%E8%B4%A51.png">
+<meta property="og:image" content="http://oowatermelon.github.io/img/%E6%96%B0%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%9B%B4%E6%96%B0/%E9%83%A8%E7%BD%B2%E5%A4%B1%E8%B4%A5.png">
+<meta property="article:published_time" content="2022-09-30T08:48:48.000Z">
+<meta property="article:modified_time" content="2022-09-30T09:29:55.584Z">
 <meta property="article:author" content="OoWaterMelonS Shao">
-<meta property="article:tag" content="VScode">
+<meta property="article:tag" content="github">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://oowatermelon.github.io/img/ctrlf5/ctrl+f5%E4%B8%8D%E8%BF%90%E8%A1%8C.png">
+<meta name="twitter:image" content="http://oowatermelon.github.io/img/%E6%96%B0%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%9B%B4%E6%96%B0/%E9%83%A8%E7%BD%B2%E5%A4%B1%E8%B4%A52.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Ctrl+F5无法运行 - Hexo</title>
+  <title>Hexo本地和github文件都更新，但主页却没更新问题 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -205,7 +206,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">Ctrl+F5无法运行</span>
+            <span id="subtitle">Hexo本地和github文件都更新，但主页却没更新问题</span>
           
         </div>
 
@@ -216,7 +217,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-09-30 15:12" pubdate>
+        <time datetime="2022-09-30 16:48" pubdate>
           2022年9月30日 下午
         </time>
       </span>
@@ -228,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          711 字
+          538 字
         
       </span>
     
@@ -239,7 +240,7 @@
         
         
         
-          6 分钟
+          5 分钟
         
       </span>
     
@@ -277,23 +278,29 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Ctrl+F5无法运行</h1>
+            <h1 style="display: none">Hexo本地和github文件都更新，但主页却没更新问题</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h3><p>接上文使用采用实验室K20做深度学习(<a target="_blank" rel="noopener" href="https://oowatermelons.github.io/2022/09/23/dl-gpuk20-capacity/">https://oowatermelons.github.io/2022/09/23/dl-gpuk20-capacity/</a>)<br>由于算力限制只能安装  pytorch1.2+python3.6的版本<br><img src="/../img/ctrlf5/ctrl+f5%E4%B8%8D%E8%BF%90%E8%A1%8C.png" srcset="/img/loading.gif" lazyload alt="环境依赖包"></p>
-<p>但后续出现问题  Ctrl + F5 或者 F5 都无法运行VScode 的python代码，本地尝试了两种方法 </p>
+                <h3 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h3><p>基于Hexo,今天打算更新一篇解决Python调试博客，但部署在github的个人主页不更新页面。<br>逐步一步一步查阅问题：</p>
 <ol>
-<li>同个项目内新建python文件，测试快捷键  &#x3D;&gt; 失效</li>
-<li>不同的项目内新建python文件，测试快捷键 &#x3D;&gt; 正常</li>
+<li>hexo s 本地显示正常</li>
+<li>hexo clean | hexo g 正常</li>
+<li>hexo d 上传github显示正常，文件是已经更新了的版本</li>
+<li>浏览器没显示正常</li>
 </ol>
-<p>初步判断不是编辑器问题，可能是代码依赖包版本的问题</p>
-<h3 id="查找原因"><a href="#查找原因" class="headerlink" title="查找原因"></a>查找原因</h3><p>按照上面的思路，排除网上很多说修改编辑器的解决办法，集中问题在代码依赖包版本上，查阅官方文档<br>A Visual Studio Code extension with rich support for the Python language (for all actively supported versions of the language:&gt;&#x3D;3.7),including features such as IntelliSense (Pylance),linting,debugging,code navigation,code formatting,refactoring,variable explorer,test explorer,and more!<br>找到原因在于python版本过低，VScode的新Python插件不再支持导致。</p>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>由于Pytorch1.2的限制Python版本最高只能是3.6，所以必须降低Python插件的版本至v2020.8.1<br>具体如图所示：<br><img src="/../img/ctrlf5/ctrl+f5%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C.png" srcset="/img/loading.gif" lazyload alt="更换python插件方法"></p>
+<p>从上可以发现是3和4步之间出现问题，对应查阅Github将上传的静态文件是否自动部署成功。<br>解决办法是可能只有干等</p>
+<h3 id="定位问题思路"><a href="#定位问题思路" class="headerlink" title="定位问题思路"></a>定位问题思路</h3><p>查看需要部署的仓库<br><img src="/../img/%E6%96%B0%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%9B%B4%E6%96%B0/%E9%83%A8%E7%BD%B2%E5%A4%B1%E8%B4%A52.png" srcset="/img/loading.gif" lazyload alt="进入仓库"></p>
+<p><img src="/../img/%E6%96%B0%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%9B%B4%E6%96%B0/%E9%83%A8%E7%BD%B2%E5%A4%B1%E8%B4%A51.png" srcset="/img/loading.gif" lazyload alt="进入github-pages"></p>
+<p><img src="/../img/%E6%96%B0%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%9B%B4%E6%96%B0/%E9%83%A8%E7%BD%B2%E5%A4%B1%E8%B4%A5.png" srcset="/img/loading.gif" lazyload alt="查看报错"></p>
+<p>对比阅读 官方文档  <a target="_blank" rel="noopener" href="https://docs.github.com/en/rest/deployments/statuses">https://docs.github.com/en/rest/deployments/statuses</a></p>
+<p>state  string  Required<br>The state of the status. When you set a transient deployment to inactive, the deployment will be shown as destroyed in GitHub.</p>
+<p>Can be one of: error, failure, inactive, in_progress, queued, pending, success</p>
+<p>错误在于 due to in progress  上次的部署还没完成，要么取消上次的部署，要么等github挨个处理完</p>
 <h3 id="学习收获"><a href="#学习收获" class="headerlink" title="学习收获"></a>学习收获</h3><ol>
-<li>对比分析，抓住问题重点</li>
-<li>不怕看英语，多看官方文档</li>
+<li>查阅问题一步一步确定思路，定位出错点 </li>
+<li>多看官方文档，一针见血</li>
 </ol>
 
                 
@@ -313,7 +320,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E7%BC%96%E8%BE%91%E5%99%A8/" class="category-chain-item">编辑器</a>
+  <a href="/categories/github/" class="category-chain-item">github</a>
   
   
 
@@ -328,7 +335,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/VScode/">#VScode</a>
+        <a href="/tags/github/">#github</a>
       
     </div>
   
@@ -340,8 +347,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Ctrl+F5无法运行</div>
-      <div>http://oowatermelon.github.io/OoWaterMelonS/2022/09/30/Ctrl-F5无法运行/</div>
+      <div>Hexo本地和github文件都更新，但主页却没更新问题</div>
+      <div>http://oowatermelon.github.io/OoWaterMelonS/2022/09/30/Hexo本地和github文件都更新，但主页却没更新问题/</div>
     </div>
     <div class="license-meta">
       
@@ -385,18 +392,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/09/30/Hexo%E6%9C%AC%E5%9C%B0%E5%92%8Cgithub%E6%96%87%E4%BB%B6%E9%83%BD%E6%9B%B4%E6%96%B0%EF%BC%8C%E4%BD%86%E4%B8%BB%E9%A1%B5%E5%8D%B4%E6%B2%A1%E6%9B%B4%E6%96%B0%E9%97%AE%E9%A2%98/" title="Hexo本地和github文件都更新，但主页却没更新问题">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hexo本地和github文件都更新，但主页却没更新问题</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/28/mysql-join/" title="Mysql-Join">
-                        <span class="hidden-mobile">Mysql-Join</span>
+                      <a href="/2022/09/30/Ctrl-F5%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C/" title="Ctrl+F5无法运行">
+                        <span class="hidden-mobile">Ctrl+F5无法运行</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
