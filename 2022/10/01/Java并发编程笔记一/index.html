@@ -16,28 +16,28 @@
   <meta name="author" content="OoWaterMelonS Shao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="问题背景基于Hexo,今天打算更新一篇解决Python调试博客，但部署在github的个人主页不更新页面。逐步一步一步查阅问题：  hexo s 本地显示正常 hexo clean | hexo g 正常 hexo d 上传github显示正常，文件是已经更新了的版本 浏览器没显示正常  从上可以发现是3和4步之间出现问题，对应查阅Github将上传的静态文件是否自动部署成功。解决办法是可能只有干">
+    <meta name="description" content="Java个人学习笔记 背景甲方项目提出前端页面增加一个功能，需要将数据库的100万（百万两级）条数据，在限定8秒之内（用户体验）导出到指定数量的Excel表.采用方案一：C++或者golang或者C等等，但是后端技术栈是SpringClound微服务，这样胶水式操作不易维护。采用方案二：Java操作，采用单线程一行一行的读取后写入Excel，那大概率会超时。采用方案三：使用Java多线程。 分析项">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo本地和github文件都更新，但主页却没更新问题">
-<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2022/09/30/Hexo%E6%9C%AC%E5%9C%B0%E5%92%8Cgithub%E6%96%87%E4%BB%B6%E9%83%BD%E6%9B%B4%E6%96%B0%EF%BC%8C%E4%BD%86%E4%B8%BB%E9%A1%B5%E5%8D%B4%E6%B2%A1%E6%9B%B4%E6%96%B0%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="Java并发编程笔记一">
+<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2022/10/01/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0%E4%B8%80/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="问题背景基于Hexo,今天打算更新一篇解决Python调试博客，但部署在github的个人主页不更新页面。逐步一步一步查阅问题：  hexo s 本地显示正常 hexo clean | hexo g 正常 hexo d 上传github显示正常，文件是已经更新了的版本 浏览器没显示正常  从上可以发现是3和4步之间出现问题，对应查阅Github将上传的静态文件是否自动部署成功。解决办法是可能只有干">
+<meta property="og:description" content="Java个人学习笔记 背景甲方项目提出前端页面增加一个功能，需要将数据库的100万（百万两级）条数据，在限定8秒之内（用户体验）导出到指定数量的Excel表.采用方案一：C++或者golang或者C等等，但是后端技术栈是SpringClound微服务，这样胶水式操作不易维护。采用方案二：Java操作，采用单线程一行一行的读取后写入Excel，那大概率会超时。采用方案三：使用Java多线程。 分析项">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://oowatermelon.github.io/img/%E6%96%B0%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%9B%B4%E6%96%B0/%E9%83%A8%E7%BD%B2%E5%A4%B1%E8%B4%A52.png">
-<meta property="og:image" content="http://oowatermelon.github.io/img/%E6%96%B0%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%9B%B4%E6%96%B0/%E9%83%A8%E7%BD%B2%E5%A4%B1%E8%B4%A51.png">
-<meta property="og:image" content="http://oowatermelon.github.io/img/%E6%96%B0%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%9B%B4%E6%96%B0/%E9%83%A8%E7%BD%B2%E5%A4%B1%E8%B4%A5.png">
-<meta property="article:published_time" content="2022-09-30T08:48:48.000Z">
-<meta property="article:modified_time" content="2022-09-30T09:29:55.584Z">
+<meta property="og:image" content="http://oowatermelon.github.io/img/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E8%BF%9B%E7%A8%8B.png">
+<meta property="og:image" content="http://oowatermelon.github.io/img/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B.jpg">
+<meta property="og:image" content="http://oowatermelon.github.io/img/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/JMM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.png">
+<meta property="article:published_time" content="2022-10-01T02:44:49.000Z">
+<meta property="article:modified_time" content="2022-10-02T02:21:23.154Z">
 <meta property="article:author" content="OoWaterMelonS Shao">
-<meta property="article:tag" content="github">
+<meta property="article:tag" content="并发编程">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://oowatermelon.github.io/img/%E6%96%B0%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%9B%B4%E6%96%B0/%E9%83%A8%E7%BD%B2%E5%A4%B1%E8%B4%A52.png">
+<meta name="twitter:image" content="http://oowatermelon.github.io/img/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E8%BF%9B%E7%A8%8B.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Hexo本地和github文件都更新，但主页却没更新问题 - Hexo</title>
+  <title>Java并发编程笔记一 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -206,7 +206,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">Hexo本地和github文件都更新，但主页却没更新问题</span>
+            <span id="subtitle">Java并发编程笔记一</span>
           
         </div>
 
@@ -217,8 +217,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-09-30 16:48" pubdate>
-          2022年9月30日 下午
+        <time datetime="2022-10-01 10:44" pubdate>
+          2022年10月1日 上午
         </time>
       </span>
     
@@ -229,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          538 字
+          1.6k 字
         
       </span>
     
@@ -240,7 +240,7 @@
         
         
         
-          5 分钟
+          14 分钟
         
       </span>
     
@@ -278,30 +278,52 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hexo本地和github文件都更新，但主页却没更新问题</h1>
+            <h1 style="display: none">Java并发编程笔记一</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h3><p>基于Hexo,今天打算更新一篇解决Python调试博客，但部署在github的个人主页不更新页面。<br>逐步一步一步查阅问题：</p>
+                <p>Java个人学习笔记</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>甲方项目提出前端页面增加一个功能，需要将数据库的100万（百万两级）条数据，在限定8秒之内（用户体验）导出到指定数量的Excel表.<br>采用方案一：C++或者golang或者C等等，但是后端技术栈是SpringClound微服务，这样胶水式操作不易维护。<br>采用方案二：Java操作，采用单线程一行一行的读取后写入Excel，那大概率会超时。<br>采用方案三：使用Java多线程。</p>
+<p>分析项目需求 Java多线程不仅是实际项目需要的，还是面试笔试重点。</p>
+<h2 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h2><h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><p><a target="_blank" rel="noopener" href="https://blog.51cto.com/u_15773567/5722534#:~:text=%E7%BA%BF%E7%A8%8B%E6%98%AF%20%E2%80%8B%20%E2%80%8B%20CPU%20%E2%80%8B%20%E2%80%8B%20%E2%80%8B%20%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8D%95%E5%85%83,%EF%BC%8C%E7%94%B1%E7%BA%BF%E7%A8%8B%E2%80%8B%20%E2%80%8BID%E2%80%8B%20%E2%80%8B%E3%80%81%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A8%E3%80%81%E5%AF%84%E5%AD%98%E5%99%A8%E9%9B%86%E5%90%88%E5%92%8C%E6%A0%88%E7%BB%84%E6%88%90%E3%80%82%20%E8%BF%9B%E7%A8%8B%E7%94%B1%E4%B8%80%E4%B8%AA%E6%88%96%E5%A4%9A%E4%B8%AA%E7%BA%BF%E7%A8%8B%E7%BB%84%E6%88%90%EF%BC%9A%20%E2%80%8B%20%E2%80%8BLinux%E2%80%8B%20%E2%80%8B%20%E4%B8%AD%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%BF%9B%E7%A8%8B%E8%87%AA%E7%84%B6%E4%BC%9A%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BA%BF%E7%A8%8B%EF%BC%8C%E4%B9%9F%E5%B0%B1%E6%98%AF%E4%B8%BB%E7%BA%BF%E7%A8%8B%E3%80%82">进程</a>可以理解为运行的一个程序（QQ,微信,网易音乐,Word,运行中的SpringBoot jar包），由<strong>PCB（进程控制块）、程序段、数据段</strong>组成。可以查看任务管理器重的进程如下<br><img src="/../img/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E8%BF%9B%E7%A8%8B.png" srcset="/img/loading.gif" lazyload alt="进程示意图"><br>一个进程在OS中的资源，包含了CPU、内存、磁盘、网络、I&#x2F;O等等。<br>OS支持多任务模型，会有类似上图 可以同时运行多个程序，对比<a target="_blank" rel="noopener" href="https://www.zditect.com/main/os/multiprogramming-vs-multitasking.html">多道程序概念</a>。</p>
+<p>每个进程生命周期都会有就绪态，运行态，阻塞态，新建态PCB，终止态五种状态，但前三种为基本态，时间占比较长。</p>
+<p>一个进程至少包含一个线程（主线程）。</p>
+<h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><p>一个进程的运行开销重，为了更好的使多道程序并发执行。</p>
 <ol>
-<li>hexo s 本地显示正常</li>
-<li>hexo clean | hexo g 正常</li>
-<li>hexo d 上传github显示正常，文件是已经更新了的版本</li>
-<li>浏览器没显示正常</li>
+<li><p>线程是CPU使用的基本单元，<strong>由线程ID、程序计数器、寄存器集合和栈组成</strong>。</p>
+</li>
+<li><p>进程由一个或多个线程组成：创建一个进程会伴随着创建一个线程（主线程）</p>
+</li>
+<li><p>调度切换：<a target="_blank" rel="noopener" href="https://blog.51cto.com/u_15773567/5722534#:~:text=%E7%BA%BF%E7%A8%8B%E6%98%AF%20%E2%80%8B%20%E2%80%8B%20CPU%20%E2%80%8B%20%E2%80%8B%20%E2%80%8B%20%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8D%95%E5%85%83,%EF%BC%8C%E7%94%B1%E7%BA%BF%E7%A8%8B%E2%80%8B%20%E2%80%8BID%E2%80%8B%20%E2%80%8B%E3%80%81%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A8%E3%80%81%E5%AF%84%E5%AD%98%E5%99%A8%E9%9B%86%E5%90%88%E5%92%8C%E6%A0%88%E7%BB%84%E6%88%90%E3%80%82%20%E8%BF%9B%E7%A8%8B%E7%94%B1%E4%B8%80%E4%B8%AA%E6%88%96%E5%A4%9A%E4%B8%AA%E7%BA%BF%E7%A8%8B%E7%BB%84%E6%88%90%EF%BC%9A%20%E2%80%8B%20%E2%80%8BLinux%E2%80%8B%20%E2%80%8B%20%E4%B8%AD%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%BF%9B%E7%A8%8B%E8%87%AA%E7%84%B6%E4%BC%9A%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BA%BF%E7%A8%8B%EF%BC%8C%E4%B9%9F%E5%B0%B1%E6%98%AF%E4%B8%BB%E7%BA%BF%E7%A8%8B%E3%80%82">线程上下问切换比进程上下文切换快</a></p>
+</li>
 </ol>
-<p>从上可以发现是3和4步之间出现问题，对应查阅Github将上传的静态文件是否自动部署成功。<br>解决办法是可能只有干等</p>
-<h3 id="定位问题思路"><a href="#定位问题思路" class="headerlink" title="定位问题思路"></a>定位问题思路</h3><p>查看需要部署的仓库<br><img src="/../img/%E6%96%B0%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%9B%B4%E6%96%B0/%E9%83%A8%E7%BD%B2%E5%A4%B1%E8%B4%A52.png" srcset="/img/loading.gif" lazyload alt="进入仓库"></p>
-<p><img src="/../img/%E6%96%B0%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%9B%B4%E6%96%B0/%E9%83%A8%E7%BD%B2%E5%A4%B1%E8%B4%A51.png" srcset="/img/loading.gif" lazyload alt="进入github-pages"></p>
-<p><img src="/../img/%E6%96%B0%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%9B%B4%E6%96%B0/%E9%83%A8%E7%BD%B2%E5%A4%B1%E8%B4%A5.png" srcset="/img/loading.gif" lazyload alt="查看报错"></p>
-<p>对比阅读 官方文档  <a target="_blank" rel="noopener" href="https://docs.github.com/en/rest/deployments/statuses">https://docs.github.com/en/rest/deployments/statuses</a></p>
-<p>state  string  Required<br>The state of the status. When you set a transient deployment to inactive, the deployment will be shown as destroyed in GitHub.</p>
-<p>Can be one of: error, failure, inactive, in_progress, queued, pending, success</p>
-<p>错误在于 due to in progress  上次的部署还没完成，要么取消上次的部署，要么等github挨个处理完</p>
-<h3 id="学习收获"><a href="#学习收获" class="headerlink" title="学习收获"></a>学习收获</h3><ol>
-<li>查阅问题一步一步确定思路，定位出错点 </li>
-<li>多看官方文档，一针见血</li>
+<p>创建进程：需要为进程划分一整块完整内存，需要大量初始化操作，比如要把内存分段（堆栈、正文区等）。</p>
+<p>创建线程：只需要确定PC指针和寄存器的值，并且给线程分配一个栈用于执行程序，同一个进程的多个线程间可以复用堆栈。</p>
+<p><img src="/../img/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B.jpg" srcset="/img/loading.gif" lazyload alt="多线程进程"></p>
+<p>一个进程可以划分为多线程（并发）的重要前提：通过线程之间的通信，保证数据<strong>原子性、可见性、有序性</strong></p>
+<h4 id="原子性（atom）"><a href="#原子性（atom）" class="headerlink" title="原子性（atom）"></a>原子性（atom）</h4><p>一个或多个操作，要么全部执行且在执行过程中不被任何因素打断，要么全部不执行。在 Java 中，对基本数据类型的变量的读取和赋值操作是原子性操作。</p>
+<p><strong>保证原子性</strong></p>
+<ol>
+<li>synchronized 关键字定义同步块或者同步方法保障原子性</li>
+<li>Lock接口保证原子性</li>
+<li>Atomic类型保障原子性</li>
 </ol>
+<h4 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h4><p>当一个线程修改了共享变量的值，其他线程能够看到修改的值<br>JMM通过共享内存实现线程通信</p>
+<p>volatile变量和普通变量<br>volatile变量强行保证了被一个线程修改的变量的数据变量，被刷入内存。代码是一样的，所以其他线程也有volatile变量，但此时他们的volatile变量不生效</p>
+<p><strong>保证可见性</strong></p>
+<ol>
+<li>volatile 关键字标记内存屏障保证可见性</li>
+<li>synchronized 关键字定义同步代码块或者同步方法保障可见性</li>
+<li>Lock接口保障可见性</li>
+<li>Atomic类型保障可见性</li>
+<li>final关键字保障可见性</li>
+</ol>
+<h4 id="有序性"><a href="#有序性" class="headerlink" title="有序性"></a>有序性</h4><p>程序执行的顺序按照代码的先后顺序执行<br>JVM存在指令重排，无关系的数据之间的初始，是没有顺序的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">myClass</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        ......<br>    &#125;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-type">boolean</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">A</span><span class="hljs-params">()</span>&#123;<br>        a = a+<span class="hljs-number">2</span>;<br>        b = <span class="hljs-literal">true</span>;<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">B</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-keyword">if</span>(b)&#123;<br>            a = a+<span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>如果上述有多个线程在执行，因为a和b之间在A中执行是无关联的，不同于B。 那么在A中经过指令重排序，可能先执行b &#x3D; true;当还没执行a&#x3D;a+2;时。另一个线程读取到b的true状态,拿着还是a&#x3D;0;的情况就开始做a&#x3D;a+1;<br>解决办法：使用volitile关键字 <code>public int volitile a;</code></p>
+<h3 id="JMM-Java-Memory-Model，Java内存模型"><a href="#JMM-Java-Memory-Model，Java内存模型" class="headerlink" title="JMM(Java Memory Model，Java内存模型)"></a>JMM(Java Memory Model，Java内存模型)</h3><p><img src="/../img/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/JMM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.png" srcset="/img/loading.gif" lazyload alt="JMM内存模型"></p>
+<p>还有部分笔记后续补上，先赶项目去了。。。</p>
 
                 
               </div>
@@ -320,7 +342,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/github/" class="category-chain-item">github</a>
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
   
   
 
@@ -335,7 +357,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/github/">#github</a>
+        <a href="/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">#并发编程</a>
       
     </div>
   
@@ -347,8 +369,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hexo本地和github文件都更新，但主页却没更新问题</div>
-      <div>http://oowatermelon.github.io/OoWaterMelonS/2022/09/30/Hexo本地和github文件都更新，但主页却没更新问题/</div>
+      <div>Java并发编程笔记一</div>
+      <div>http://oowatermelon.github.io/OoWaterMelonS/2022/10/01/Java并发编程笔记一/</div>
     </div>
     <div class="license-meta">
       
@@ -360,7 +382,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年9月30日</div>
+          <div>2022年10月1日</div>
         </div>
       
       
@@ -392,18 +414,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/01/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0%E4%B8%80/" title="Java并发编程笔记一">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Java并发编程笔记一</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/30/Ctrl-F5%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C/" title="Ctrl+F5无法运行">
-                        <span class="hidden-mobile">Ctrl+F5无法运行</span>
+                      <a href="/2022/09/30/Hexo%E6%9C%AC%E5%9C%B0%E5%92%8Cgithub%E6%96%87%E4%BB%B6%E9%83%BD%E6%9B%B4%E6%96%B0%EF%BC%8C%E4%BD%86%E4%B8%BB%E9%A1%B5%E5%8D%B4%E6%B2%A1%E6%9B%B4%E6%96%B0%E9%97%AE%E9%A2%98/" title="Hexo本地和github文件都更新，但主页却没更新问题">
+                        <span class="hidden-mobile">Hexo本地和github文件都更新，但主页却没更新问题</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
