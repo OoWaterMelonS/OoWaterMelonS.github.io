@@ -16,26 +16,26 @@
   <meta name="author" content="OoWaterMelonS Shao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="问题计划使用实验室淘汰的Tesla K20显卡跑代码，但训练报错CUDA error: no kernel image is available for execution on the device 查找资料（https:&#x2F;&#x2F;developer.nvidia.com&#x2F;cuda-gpus#collapseOne） 显示是因为K20算力不够。   解决办法一：降低pytorch,测试后发现1.4及以">
+    <meta name="description" content="问题背景假如分页存储系统页大小为4KB,字节编址，系统给进程P分配两个固定页框，并采用改进型Clock置换算法，进程P的页表的部分内容如下：    页号 页框号 存在位（1：存在 0：不存在） 访问位（1：访问 0：为访问） 修改位 （1：修改，0：未修改）    … … … … …   2 20H 0 0 0   3 60H 1 1 0   4 80H 1 1 1   若P访问虚拟地址为02A0">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DL-gpu-k20-capacity">
-<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2022/09/23/dl-gpuk20-capacity/index.html">
+<meta property="og:title" content="改进型Clock置换算法">
+<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2022/10/03/%E6%94%B9%E8%BF%9B%E5%9E%8BClock%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="问题计划使用实验室淘汰的Tesla K20显卡跑代码，但训练报错CUDA error: no kernel image is available for execution on the device 查找资料（https:&#x2F;&#x2F;developer.nvidia.com&#x2F;cuda-gpus#collapseOne） 显示是因为K20算力不够。   解决办法一：降低pytorch,测试后发现1.4及以">
+<meta property="og:description" content="问题背景假如分页存储系统页大小为4KB,字节编址，系统给进程P分配两个固定页框，并采用改进型Clock置换算法，进程P的页表的部分内容如下：    页号 页框号 存在位（1：存在 0：不存在） 访问位（1：访问 0：为访问） 修改位 （1：修改，0：未修改）    … … … … …   2 20H 0 0 0   3 60H 1 1 0   4 80H 1 1 1   若P访问虚拟地址为02A0">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://oowatermelon.github.io/img/gpu.png">
-<meta property="article:published_time" content="2022-09-23T09:32:09.000Z">
-<meta property="article:modified_time" content="2022-09-30T07:58:08.270Z">
+<meta property="og:image" content="http://oowatermelon.github.io/img/OS/Clock%20replacement%20algorithm/%E6%94%B9%E8%BF%9B%E5%9E%8BCLock%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95.drawio.png">
+<meta property="article:published_time" content="2022-10-03T14:24:44.000Z">
+<meta property="article:modified_time" content="2022-10-04T02:23:20.883Z">
 <meta property="article:author" content="OoWaterMelonS Shao">
-<meta property="article:tag" content="GPU">
+<meta property="article:tag" content="OS">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://oowatermelon.github.io/img/gpu.png">
+<meta name="twitter:image" content="http://oowatermelon.github.io/img/OS/Clock%20replacement%20algorithm/%E6%94%B9%E8%BF%9B%E5%9E%8BCLock%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95.drawio.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>DL-gpu-k20-capacity - Hexo</title>
+  <title>改进型Clock置换算法 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -204,7 +204,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">DL-gpu-k20-capacity</span>
+            <span id="subtitle">改进型Clock置换算法</span>
           
         </div>
 
@@ -215,8 +215,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-09-23 17:32" pubdate>
-          2022年9月23日 下午
+        <time datetime="2022-10-03 22:24" pubdate>
+          2022年10月3日 晚上
         </time>
       </span>
     
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          344 字
+          869 字
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
         
-          3 分钟
+          8 分钟
         
       </span>
     
@@ -276,18 +276,77 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">DL-gpu-k20-capacity</h1>
+            <h1 style="display: none">改进型Clock置换算法</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>计划使用实验室淘汰的Tesla K20显卡跑代码，但训练报错CUDA error: no kernel image is available for execution on the device</p>
-<p>查找资料（<a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-gpus#collapseOne%EF%BC%89">https://developer.nvidia.com/cuda-gpus#collapseOne）</a> 显示是因为K20算力不够。</p>
-<!-- ![Nvidia显卡算力图](/img/gpu.png) -->
-<p><img src="/../img/gpu.png" srcset="/img/loading.gif" lazyload alt="Nvidia显卡算力图"></p>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>一：降低pytorch,测试后发现1.4及以上版本最低算力已经不支持3.5的K20</p>
-<p>二：更换显卡更强硬件</p>
-<p>三：重新编译pytorch参照链接 <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43051923/article/details/108393510">https://blog.csdn.net/qq_43051923/article/details/108393510</a>  但建议优选方法一，实在不行才选择这个方案。（把精力花在调试代码为先，能pytorch1.2运行，就刚好节省时间）</p>
+                <h3 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h3><p>假如分页存储系统页大小为4KB,字节编址，系统给进程P分配两个固定页框，并采用改进型Clock置换算法，进程P的页表的部分内容如下：</p>
+<table>
+<thead>
+<tr>
+<th>页号</th>
+<th>页框号</th>
+<th>存在位（1：存在 0：不存在）</th>
+<th>访问位（1：访问 0：为访问）</th>
+<th>修改位 （1：修改，0：未修改）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr>
+<td>2</td>
+<td>20H</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>60H</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>80H</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p>若P访问虚拟地址为02A01H的存储单位，则经地址变换为得到的物理地址是( C )。<br>A. 00A01H  B. 20A01H  C. 60A01H  D. 80A01H</p>
+<h3 id="涉及知识"><a href="#涉及知识" class="headerlink" title="涉及知识"></a>涉及知识</h3><p>进制转换<br>内存管理的地址转换<br>页面置换算法</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h4 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h4><p><strong>虚拟地址（逻辑地址）</strong><br>虚拟地址02A01H &#x3D; 页号+页内偏移量（和内存页大小统一）。<br>页面大小为4KB&#x3D;$2^{12}$B，对应虚拟地址为02A01H。<br>因为页面大小和业内偏移量相同大小,所以02H为页号。</p>
+<p><img src="/../img/OS/Clock%20replacement%20algorithm/%E6%94%B9%E8%BF%9B%E5%9E%8BCLock%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95.drawio.png" srcset="/img/loading.gif" lazyload alt="映射关系举例"></p>
+<p>结合背景中的图标可知，02H对应的页框（内存中的一格）号为20H。</p>
+<h4 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h4><p>因为题干给出要求，内存中固定分配给进程两个页框，同时页号00H，01H已经暂用内存两个页框，所以需要执行页从内存的换入换出。</p>
+<p><strong>页面置换算法（6种）</strong><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wingsless/p/12295246.html">参照链接一</a></p>
+<ul>
+<li>最佳（Optimal,OPT）置换算法</li>
+<li>先进先出(FIFO)页面置换算法</li>
+<li>最近最久未使用（LRU）置换算法</li>
+<li>随机置换</li>
+<li>时钟置换算法 </li>
+<li>改进时钟置换算法</li>
+</ul>
+<p><strong>时钟置换算法</strong><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/hzxscyq/p/5373760.html">参考链接二</a><br>存在位(resident bit): 对于一个页面是否有物理页与其对应，如果有就为1。<br>修改位(dirty bit)：判断页面 是否被修改过。<br>引用位(clock&#x2F;reference bit)：页面是否有过对它的引用。</p>
+<ol>
+<li>由于20H存在位是0，60H和80H两个页框连续且存在,所以符合题目要求</li>
+<li>根据改进时钟置换算法 60H(1,0)的优先级 &gt; 80H(1,1),所以虚拟地址02A01H转为位实际内存物理地址位60A01H。</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
+<li>H&#x3D;&gt;16进制   B&#x3D;&gt;2进制   D&#x3D;&gt;10进制  O&#x3D;&gt;8进制</li>
+<li>逻辑地址和物理地址的地址转换 ，基于页表作为中间映射。</li>
+<li>基本分页存储管理的页面置换算法。</li>
+<li>时钟置换算法的处理流程。</li>
+</ol>
 
                 
               </div>
@@ -306,7 +365,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="category-chain-item">深度学习</a>
+  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
   
   
 
@@ -321,7 +380,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/GPU/">#GPU</a>
+        <a href="/tags/OS/">#OS</a>
       
     </div>
   
@@ -333,8 +392,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>DL-gpu-k20-capacity</div>
-      <div>http://oowatermelon.github.io/OoWaterMelonS/2022/09/23/dl-gpuk20-capacity/</div>
+      <div>改进型Clock置换算法</div>
+      <div>http://oowatermelon.github.io/OoWaterMelonS/2022/10/03/改进型Clock置换算法/</div>
     </div>
     <div class="license-meta">
       
@@ -346,7 +405,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年9月23日</div>
+          <div>2022年10月3日</div>
         </div>
       
       
@@ -378,15 +437,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/09/28/mysql-join/" title="MySQL-Join">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">MySQL-Join</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2022/10/03/github%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" title="github使用总结">
+                        <span class="hidden-mobile">github使用总结</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
