@@ -16,26 +16,24 @@
   <meta name="author" content="OoWaterMelonS Shao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="问题背景假如分页存储系统页大小为4KB,字节编址，系统给进程P分配两个固定页框，并采用改进型Clock置换算法，进程P的页表的部分内容如下：    页号 页框号 存在位（1：存在 0：不存在） 访问位（1：访问 0：为访问） 修改位 （1：修改，0：未修改）    … … … … …   2 20H 0 0 0   3 60H 1 1 0   4 80H 1 1 1   若P访问虚拟地址为02A0">
+    <meta name="description" content="Java记录笔试常见的Java笔试的输入代码模板 1234567891011121314151617181920212223242526272829303132333435363738394041424344import java.util.*;import java.io.*;public class JavaSystemIn&amp;#123;    public static void main(S">
 <meta property="og:type" content="article">
-<meta property="og:title" content="改进型Clock置换算法">
-<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2022/10/03/%E6%94%B9%E8%BF%9B%E5%9E%8BClock%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="笔试输入模板">
+<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2022/10/05/Java&Python%E8%BE%93%E5%85%A5%E6%A8%A1%E6%9D%BF/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="问题背景假如分页存储系统页大小为4KB,字节编址，系统给进程P分配两个固定页框，并采用改进型Clock置换算法，进程P的页表的部分内容如下：    页号 页框号 存在位（1：存在 0：不存在） 访问位（1：访问 0：为访问） 修改位 （1：修改，0：未修改）    … … … … …   2 20H 0 0 0   3 60H 1 1 0   4 80H 1 1 1   若P访问虚拟地址为02A0">
+<meta property="og:description" content="Java记录笔试常见的Java笔试的输入代码模板 1234567891011121314151617181920212223242526272829303132333435363738394041424344import java.util.*;import java.io.*;public class JavaSystemIn&amp;#123;    public static void main(S">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://oowatermelon.github.io/img/OS/Clock%20replacement%20algorithm/%E6%94%B9%E8%BF%9B%E5%9E%8BCLock%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95.drawio.png">
-<meta property="article:published_time" content="2022-10-03T14:24:44.000Z">
-<meta property="article:modified_time" content="2022-10-04T02:25:47.773Z">
+<meta property="article:published_time" content="2022-10-05T07:04:12.000Z">
+<meta property="article:modified_time" content="2022-10-05T08:28:40.247Z">
 <meta property="article:author" content="OoWaterMelonS Shao">
-<meta property="article:tag" content="分页存储置换算法">
+<meta property="article:tag" content="笔试">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://oowatermelon.github.io/img/OS/Clock%20replacement%20algorithm/%E6%94%B9%E8%BF%9B%E5%9E%8BCLock%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95.drawio.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>改进型Clock置换算法 - Hexo</title>
+  <title>笔试输入模板 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -204,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">改进型Clock置换算法</span>
+            <span id="subtitle">笔试输入模板</span>
           
         </div>
 
@@ -215,8 +213,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-03 22:24" pubdate>
-          2022年10月3日 晚上
+        <time datetime="2022-10-05 15:04" pubdate>
+          2022年10月5日 下午
         </time>
       </span>
     
@@ -227,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          869 字
+          1.8k 字
         
       </span>
     
@@ -238,7 +236,7 @@
         
         
         
-          8 分钟
+          15 分钟
         
       </span>
     
@@ -276,77 +274,19 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">改进型Clock置换算法</h1>
+            <h1 style="display: none">笔试输入模板</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h3><p>假如分页存储系统页大小为4KB,字节编址，系统给进程P分配两个固定页框，并采用改进型Clock置换算法，进程P的页表的部分内容如下：</p>
-<table>
-<thead>
-<tr>
-<th>页号</th>
-<th>页框号</th>
-<th>存在位（1：存在 0：不存在）</th>
-<th>访问位（1：访问 0：为访问）</th>
-<th>修改位 （1：修改，0：未修改）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-</tr>
-<tr>
-<td>2</td>
-<td>20H</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td>3</td>
-<td>60H</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr>
-<td>4</td>
-<td>80H</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-</tbody></table>
-<p>若P访问虚拟地址为02A01H的存储单位，则经地址变换为得到的物理地址是( C )。<br>A. 00A01H  B. 20A01H  C. 60A01H  D. 80A01H</p>
-<h3 id="涉及知识"><a href="#涉及知识" class="headerlink" title="涉及知识"></a>涉及知识</h3><p>进制转换<br>内存管理的地址转换<br>页面置换算法</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h4 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h4><p><strong>虚拟地址（逻辑地址）</strong><br>虚拟地址02A01H &#x3D; 页号+页内偏移量（和内存页大小统一）。<br>页面大小为4KB&#x3D;$2^{12}$B，对应虚拟地址为02A01H。<br>因为页面大小和业内偏移量相同大小,所以02H为页号。</p>
-<p><img src="/../img/OS/Clock%20replacement%20algorithm/%E6%94%B9%E8%BF%9B%E5%9E%8BCLock%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95.drawio.png" srcset="/img/loading.gif" lazyload alt="映射关系举例"></p>
-<p>结合背景中的图标可知，02H对应的页框（内存中的一格）号为20H。</p>
-<h4 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h4><p>因为题干给出要求，内存中固定分配给进程两个页框，同时页号00H，01H已经暂用内存两个页框，所以需要执行页从内存的换入换出。</p>
-<p><strong>页面置换算法（6种）</strong><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wingsless/p/12295246.html">参照链接一</a></p>
-<ul>
-<li>最佳（Optimal,OPT）置换算法</li>
-<li>先进先出(FIFO)页面置换算法</li>
-<li>最近最久未使用（LRU）置换算法</li>
-<li>随机置换</li>
-<li>时钟置换算法 </li>
-<li>改进时钟置换算法</li>
-</ul>
-<p><strong>时钟置换算法</strong><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/hzxscyq/p/5373760.html">参考链接二</a><br>存在位(resident bit): 对于一个页面是否有物理页与其对应，如果有就为1。<br>修改位(dirty bit)：判断页面 是否被修改过。<br>引用位(clock&#x2F;reference bit)：页面是否有过对它的引用。</p>
-<ol>
-<li>由于20H存在位是0，60H和80H两个页框连续且存在,所以符合题目要求</li>
-<li>根据改进时钟置换算法 60H(1,0)的优先级 &gt; 80H(1,1),所以虚拟地址02A01H转为位实际内存物理地址位60A01H。</li>
-</ol>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
-<li>H&#x3D;&gt;16进制   B&#x3D;&gt;2进制   D&#x3D;&gt;10进制  O&#x3D;&gt;8进制</li>
-<li>逻辑地址和物理地址的地址转换 ，基于页表作为中间映射。</li>
-<li>基本分页存储管理的页面置换算法。</li>
-<li>时钟置换算法的处理流程。</li>
-</ol>
+                <h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><p>记录笔试常见的Java笔试的输入代码模板</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.*;<br><span class="hljs-keyword">import</span> java.io.*;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">JavaSystemIn</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * 实例一：基于Scanner</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">sc1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        System.out.println(sc1.nextInt());<br>        System.out.println(sc1.nextDouble());<br>        System.out.println(sc1.nextFloat());<br>        <span class="hljs-comment">// 读取下一行</span><br>        System.out.println(sc1.nextLine());<br>        sc1.close();<br><br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * 实例二：</span><br><span class="hljs-comment">         * 利用new BufferedInputStream加快速度</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">sc2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">BufferedInputStream</span>(System.in));<br>        System.out.println(sc2.nextInt());<br>        System.out.println(sc2.nextDouble());<br>        System.out.println(sc2.nextFloat());<br>        <span class="hljs-comment">// 读取下一行</span><br>        System.out.println(sc2.nextLine());<br>        <br>        sc2.close();<br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * 示例三：</span><br><span class="hljs-comment">         * 利用字符输入流</span><br><span class="hljs-comment">         * PS 需要抛出异常</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-type">BufferedReader</span> <span class="hljs-variable">br</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BufferedReader</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">InputStreamReader</span>(System.in));<br>        System.out.println(br.readLine());<br><br>        <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> Integer.parseInt(br.readLine());<br>        System.out.println(a);<br>        <br>        <span class="hljs-type">float</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> Float.parseFloat(br.readLine());<br>        System.out.println(b);<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+
+<h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><p>记录笔试常见的Python笔试的输入代码模板</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs python"><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">data</span>):<br>    <span class="hljs-keyword">return</span> data<br><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    <br>    <span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">    实例一：</span><br><span class="hljs-string">    </span><br><span class="hljs-string">    题目需要单行输入一串数字  例如接受 1 2 3</span><br><span class="hljs-string">    input()将查询用户的输入，并读取一行用户输入</span><br><span class="hljs-string">    .split()会将输入拆分为“单词”列表</span><br><span class="hljs-string">    map(int, ...)会在每个单词上调用int ，它会懒惰地调用int （尽管这在这里并不重要）； </span><br><span class="hljs-string">    a, b, c = ...将把表达式分解成两个元素，并将第一个分配给a ，第二个分配给b, 第三个分配给c</span><br><span class="hljs-string">    &#x27;&#x27;&#x27;</span><br>    a,b,c = <span class="hljs-built_in">map</span>(<span class="hljs-built_in">int</span>, <span class="hljs-built_in">input</span>().split())<br>    <br>    <br>    <span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">    实例二：</span><br><span class="hljs-string">    直接将单行输入的数字一次转换后放入链表</span><br><span class="hljs-string">    input()将查询用户的输入，并读取一行用户输入</span><br><span class="hljs-string">    .split()会将输入拆分为“单词”列表</span><br><span class="hljs-string">    int(i) for i in list 将单词链表转换为整型链表</span><br><span class="hljs-string">    &#x27;&#x27;&#x27;</span><br>    lists1 = [<span class="hljs-built_in">int</span>(i) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">input</span>().split()]<br>    <br>    <br>    <span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">    实例三：</span><br><span class="hljs-string">    题目需要单行输入一串数字  例如接受 1 2 3</span><br><span class="hljs-string">    input()将查询用户的输入，并读取一行用户输入</span><br><span class="hljs-string">    .split()会将输入拆分为“单词”列表</span><br><span class="hljs-string">    map(int, ...)会在每个单词上调用int ，它会懒惰地调用int （尽管这在这里并不重要）； </span><br><span class="hljs-string">    list(..)部分强制转换map对象结果为list</span><br><span class="hljs-string">    &#x27;&#x27;&#x27;</span><br>    lists2 = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">map</span>(<span class="hljs-built_in">int</span>, <span class="hljs-built_in">input</span>().split()))<br><br>    <span class="hljs-built_in">print</span>(solution(lists2))<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -365,7 +305,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
+  <a href="/categories/%E7%AC%94%E8%AF%95/" class="category-chain-item">笔试</a>
   
   
 
@@ -380,7 +320,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%88%86%E9%A1%B5%E5%AD%98%E5%82%A8%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95/">#分页存储置换算法</a>
+        <a href="/tags/%E7%AC%94%E8%AF%95/">#笔试</a>
       
     </div>
   
@@ -392,8 +332,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>改进型Clock置换算法</div>
-      <div>http://oowatermelon.github.io/OoWaterMelonS/2022/10/03/改进型Clock置换算法/</div>
+      <div>笔试输入模板</div>
+      <div>http://oowatermelon.github.io/OoWaterMelonS/2022/10/05/Java&amp;Python输入模板/</div>
     </div>
     <div class="license-meta">
       
@@ -405,7 +345,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年10月3日</div>
+          <div>2022年10月5日</div>
         </div>
       
       
@@ -437,18 +377,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/05/Java&amp;Python%E8%BE%93%E5%85%A5%E6%A8%A1%E6%9D%BF/" title="笔试输入模板">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">笔试输入模板</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/03/github%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" title="github使用总结">
-                        <span class="hidden-mobile">github使用总结</span>
+                      <a href="/2022/10/03/%E6%94%B9%E8%BF%9B%E5%9E%8BClock%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95/" title="改进型Clock置换算法">
+                        <span class="hidden-mobile">改进型Clock置换算法</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
