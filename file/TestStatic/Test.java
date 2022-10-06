@@ -5,17 +5,26 @@ public class Test{
 
     Test(){
         System.out.println("construct code block");
-        // j =2;
+        // j = 3;
     }
     
+    // 输出结果为j = 1
+    // {
+    //     System.out.println("unflagged code block");
+    //     j = 3;
+    // }
+    // int j = 1;
+
+    // 输出结果为 j= 2
+    int j = 1;
     {
         System.out.println("unflagged code block");
-        j = 3;
+        j = 2;
     }
-    int j = 1;
+    
 
 
-    // 输出结果为20
+    // 输出结果为i = 20
     // static{
     //     System.out.println("static code block");
     //     i = 30;
@@ -23,7 +32,7 @@ public class Test{
     // static int i = 20;
 
 
-    // 输出结果为30
+    // 输出结果为i = 30
     static int i = 20;
     static{
         System.out.println("static code block");
