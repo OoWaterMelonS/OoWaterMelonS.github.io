@@ -16,26 +16,26 @@
   <meta name="author" content="OoWaterMelonS Shao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="概念堆排序是选择排序的一种，堆通常是一个可以被看做一棵完全二叉树的数组对象。堆是一种不稳定的内部排序算法，时间复杂度无论最好，最差，平均都是$log(n)$,此处n表示待排序元素个数。  大顶堆：每个节点的值都大于或等于其子节点的值，在堆排序算法中用于升序排列； 小顶堆：每个节点的值都小于或等于其子节点的值，在堆排序算法中用于降序排列；  补充不稳定排序：数组中相同的元素，在经过排序，前后顺序会发">
+    <meta name="description" content="概念直接插入排序顾名思义就是不停的将元素插入到一个有序的元素中。可以把整体的元素，划分为有序序列和无序序列  取出无序序列的一个元素 在有序中找到合适的位置 将此元素放到有序元素中重复上方过程，直到没有无序的元素  步骤举例有一组数据 6 5 4 3 2 1，利用直接插入排序算法，排序为升序。有序的元素 【6】（有序序列只有一个元素时必定有序，所以初始就用第一个元素作为有序序列），无序序列【5，4">
 <meta property="og:type" content="article">
-<meta property="og:title" content="堆排序">
-<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2022/10/07/%E5%A0%86%E6%8E%92%E5%BA%8F/index.html">
+<meta property="og:title" content="直接插入排序">
+<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2022/10/07/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="概念堆排序是选择排序的一种，堆通常是一个可以被看做一棵完全二叉树的数组对象。堆是一种不稳定的内部排序算法，时间复杂度无论最好，最差，平均都是$log(n)$,此处n表示待排序元素个数。  大顶堆：每个节点的值都大于或等于其子节点的值，在堆排序算法中用于升序排列； 小顶堆：每个节点的值都小于或等于其子节点的值，在堆排序算法中用于降序排列；  补充不稳定排序：数组中相同的元素，在经过排序，前后顺序会发">
+<meta property="og:description" content="概念直接插入排序顾名思义就是不停的将元素插入到一个有序的元素中。可以把整体的元素，划分为有序序列和无序序列  取出无序序列的一个元素 在有序中找到合适的位置 将此元素放到有序元素中重复上方过程，直到没有无序的元素  步骤举例有一组数据 6 5 4 3 2 1，利用直接插入排序算法，排序为升序。有序的元素 【6】（有序序列只有一个元素时必定有序，所以初始就用第一个元素作为有序序列），无序序列【5，4">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://oowatermelon.github.io/img/sort/HeapSort.png">
-<meta property="article:published_time" content="2022-10-07T08:40:54.000Z">
-<meta property="article:modified_time" content="2022-10-07T09:51:37.662Z">
+<meta property="og:image" content="http://oowatermelon.github.io/img/sort/InsertSort.png">
+<meta property="article:published_time" content="2022-10-07T12:18:13.000Z">
+<meta property="article:modified_time" content="2022-10-07T12:54:37.869Z">
 <meta property="article:author" content="OoWaterMelonS Shao">
 <meta property="article:tag" content="排序">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://oowatermelon.github.io/img/sort/HeapSort.png">
+<meta name="twitter:image" content="http://oowatermelon.github.io/img/sort/InsertSort.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>堆排序 - Hexo</title>
+  <title>直接插入排序 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -204,7 +204,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">堆排序</span>
+            <span id="subtitle">直接插入排序</span>
           
         </div>
 
@@ -215,8 +215,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-07 16:40" pubdate>
-          2022年10月7日 下午
+        <time datetime="2022-10-07 20:18" pubdate>
+          2022年10月7日 晚上
         </time>
       </span>
     
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.6k 字
+          1.9k 字
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
         
-          22 分钟
+          17 分钟
         
       </span>
     
@@ -276,38 +276,26 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">堆排序</h1>
+            <h1 style="display: none">直接插入排序</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>堆排序是选择排序的一种，堆通常是一个可以被看做一棵<strong>完全二叉树</strong>的数组对象。<br>堆是一种不稳定的内部排序算法，时间复杂度无论最好，最差，平均都是$log(n)$,此处n表示待排序元素个数。</p>
+                <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>直接插入排序顾名思义就是不停的将元素插入到一个有序的元素中。<br>可以把整体的元素，划分为有序序列和无序序列</p>
 <ul>
-<li>大顶堆：每个节点的值都大于或等于其子节点的值，在堆排序算法中用于升序排列；</li>
-<li>小顶堆：每个节点的值都小于或等于其子节点的值，在堆排序算法中用于降序排列；</li>
+<li>取出无序序列的一个元素</li>
+<li>在有序中找到合适的位置</li>
+<li>将此元素放到有序元素中<br>重复上方过程，直到没有无序的元素</li>
 </ul>
-<h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><p>不稳定排序：数组中相同的元素，在经过排序，前后顺序会发生变化，即不稳定。细节可参照数据结构严蔚敏版。<br>内部排序：只在内存中进行的排序，不会有数据和磁盘进行交换。</p>
-<h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><p>以下假设构造大根堆，则堆必须满足以下要求：</p>
-<ul>
-<li>堆是一个完全二叉树，<strong>这样才能保证根节点i能直接2*i的方式映射到孩子节点</strong></li>
-<li>根节点必须大于左右孩子节点</li>
-</ul>
-<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>提供一组数据，这组数据为堆对应完全二叉树的层次遍历结果，使用堆排序完成升序排序（构造大根堆）</p>
-<ol>
-<li>构建大根堆</li>
-<li>交换堆顶和堆最后一个元素（把此轮最大值放到数组后方，后续只对剩下的无序堆排序，每次排序少一个需要排序的元素）</li>
-<li>调整剩下的无序堆为有序大根堆：从最后一个<strong>非叶子节点，从下往上，从左往右</strong>（利用性质一），之后2，3不交替进行，直至需要带排序元素个数为0.</li>
-</ol>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>举例有一组数据 6 5 4 3 2 1，利用直接插入排序算法，排序为升序。<br>有序的元素 【6】（有序序列只有一个元素时必定有序，所以初始就用第一个元素作为有序序列），无序序列【5，4，3，2，1】，</p>
+<p>第一轮：<br>    选出无序序列第一个元素5<br>    从有序序列第一个元素（也可以最后一个元素）开始寻找合适的位置，因为5&lt;6,所以索引0是合适的位置<br>    将6后移，5放入位置0，得到有序序列【5，6】，无序序列【4，3，2，1】</p>
+<p>第二轮：<br>    选出无序序列第一个元素4<br>    从有序序列第一个元素（也可以最后一个元素）开始寻找合适的位置，因为4&lt;5,所以索引0是合适的位置<br>    将5,6后移，4放入位置0，得到有序序列【4，5，6】，无序序列【3，2，1】</p>
+<p>第三轮：<br>    选出无序序列第一个元素3<br>    从有序序列第一个元素（也可以最后一个元素）开始寻找合适的位置，因为3&lt;4,所以索引0是合适的位置<br>    将4，5，6后移，3放入位置0，得到有序序列【4，5，6】，无序序列【2，1】</p>
+<p>第四轮：<br>    选出无序序列第一个元素2<br>    从有序序列第一个元素（也可以最后一个元素）开始寻找合适的位置，因为3&lt;4,所以索引0是合适的位置<br>    将3，4，5，6后移，2放入位置0，得到有序序列【2，3，4，5，6】，无序序列【1】</p>
+<p>第五轮：<br>    选出无序序列第一个元素1<br>    从有序序列第一个元素（也可以最后一个元素）开始寻找合适的位置，因为3&lt;4,所以索引0是合适的位置<br>    将2，3，4，5，6后移，1放入位置0，得到有序序列【1，2，3，4，5，6】，无序序列【】</p>
 <p><a target="_blank" rel="noopener" href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html">点此链接，可以查看在线效果图</a></p>
-<p><img src="/../img/sort/HeapSort.png" srcset="/img/loading.gif" lazyload alt="堆排序"></p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>Java版本</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><code class="hljs java"><br><span class="hljs-keyword">package</span> sort.exchange;<br><br><span class="hljs-keyword">import</span> java.io.IOException;<br><span class="hljs-keyword">import</span> java.util.ArrayList;<br><span class="hljs-keyword">import</span> java.util.Arrays;<br><span class="hljs-keyword">import</span> java.util.Scanner;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@author</span> ShaoYJ</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@date</span> 2022/10/7 周五</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@desc</span> 选择排序的一种，主要分为三步，</span><br><span class="hljs-comment"> * 1. 构建一个堆</span><br><span class="hljs-comment"> * 2. 将堆顶元素与末尾元素交换</span><br><span class="hljs-comment"> * 3. 重新调整结构，2和3交替执行</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HeapSort</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br><span class="hljs-comment">//       输入测试参数</span><br><span class="hljs-comment">//        Scanner sc = new Scanner(System.in);</span><br><span class="hljs-comment">//        ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();</span><br><span class="hljs-comment">//        System.out.print(&quot;输入一串数字，空格分开，以#结束:&quot;);</span><br><span class="hljs-comment">//        while (!sc.hasNext(&quot;#&quot;)) &#123;</span><br><span class="hljs-comment">//            int a = sc.nextInt();</span><br><span class="hljs-comment">//            list.add(a);</span><br><span class="hljs-comment">//        &#125;</span><br><span class="hljs-comment">//        Integer[] arr = new Integer[list.size()];</span><br><span class="hljs-comment">//        list.toArray(arr);</span><br><br><span class="hljs-comment">//        Integer[] arr = &#123;6, 5, 4, 3, 2, 1&#125;;</span><br>        Integer[] arr = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>&#125;;<br>        System.out.println(<span class="hljs-string">&quot;排序前：&quot;</span> + Arrays.toString(arr));<br>        sort(arr);<br>        System.out.println(<span class="hljs-string">&quot;排序前：&quot;</span> + Arrays.toString(arr));<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">sort</span><span class="hljs-params">(Integer[] arr)</span> &#123;<br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * 第一步 ：构建大顶堆</span><br><span class="hljs-comment">         *  1. 堆可以看为完全二叉树，</span><br><span class="hljs-comment">         *  2. 从最后一个非叶子节点开始从下往上， 从右向左构建</span><br><span class="hljs-comment">         *  3. 因此 索引i的初始值为最后一个非叶子节点的索引</span><br><span class="hljs-comment">         *  4. 从arr的后面往前移动一个一个大调整堆</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> arr.length / <span class="hljs-number">2</span> - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;<br>            <span class="hljs-comment">//从第一个非叶子结点从下至上，从右至左调整结构</span><br>            adjustHeap(arr, i, arr.length);<br>        &#125;<br><br>        <span class="hljs-comment">//2,3步 =&gt; 调整堆结构+交换堆顶元素与末尾元素</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> arr.length - <span class="hljs-number">1</span>; j &gt; <span class="hljs-number">0</span>; j--) &#123;<br>            <span class="hljs-comment">//第二步 ： 将堆顶元素与末尾元素进行交换</span><br>            <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> arr[<span class="hljs-number">0</span>];<br>            arr[<span class="hljs-number">0</span>] = arr[j];<br>            arr[j] = temp;<br>            <span class="hljs-comment">// 第三步 ：只需要对剩余的元素重新进行调整</span><br>            adjustHeap(arr, <span class="hljs-number">0</span>, j-<span class="hljs-number">1</span>);<br>        &#125;<br><br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> arr</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> i</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> length</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">adjustHeap</span><span class="hljs-params">(Integer[] arr, <span class="hljs-type">int</span> i, <span class="hljs-type">int</span> length)</span> &#123;<br><span class="hljs-comment">//        把根节点的值保存下来。</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> arr[i];<br>        <span class="hljs-comment">/*</span><br><span class="hljs-comment">         * 从i结点的左子结点开始，也就是2i+1处开始,</span><br><span class="hljs-comment">         * 存在一层调整后，下一层不满足的情况，需要把整棵子树都调整</span><br><span class="hljs-comment">         * 例如 子树为 1 5 3 2 -》 1和 5交换之后，5 1 3 2 ，还要继续 交换2*i+1 【数值1】和 2*(2*i+1)+1 【数值2】</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> i * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>; j &lt; length; j = j * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>) &#123;<br>            <span class="hljs-comment">// 如果存在右孩子节点， 指针需要指向大的子节点</span><br>            <span class="hljs-keyword">if</span>(j+<span class="hljs-number">1</span>&lt;length)&#123;<br>                j = arr[j] &gt; arr[j + <span class="hljs-number">1</span>] ? j : j + <span class="hljs-number">1</span>;<br>            &#125;<br><span class="hljs-comment">//           如果子节点的值大于根节点，交换值</span><br>            <span class="hljs-keyword">if</span> (arr[j] &gt; temp) &#123;<br><span class="hljs-comment">//                父节点的值修改为子节点值</span><br>                arr[i] = arr[j];<br><span class="hljs-comment">//                子节点值设置为原本父节点的值</span><br>                arr[j] = temp;<br><span class="hljs-comment">//                及时同步原本父节点的指针为子节点指针，并开始下一轮调整</span><br>                i = j;<br>            &#125;<br><span class="hljs-comment">//           根节点&gt;大的那个子节点  即 根节点大于所有节点</span><br>            <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br><br>        &#125;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
-
-<h3 id="学习收获"><a href="#学习收获" class="headerlink" title="学习收获"></a>学习收获</h3><ul>
-<li>堆排序不稳定。</li>
-<li>堆排序可以视作完全二叉树。</li>
-<li>注意Java代码难点部分，<code>for (int j = i * 2 + 1; j &lt; length; j = j * 2 + 1)</code> 可以先画图理解后，对应索引变化编写代码。</li>
-</ul>
+<p><img src="/../img/sort/InsertSort.png" srcset="/img/loading.gif" lazyload alt="直接插入排序"></p>
+<h3 id="Java代码"><a href="#Java代码" class="headerlink" title="Java代码"></a>Java代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><code class="hljs java"><br><span class="hljs-keyword">package</span> sort.insert;<br><br><span class="hljs-keyword">import</span> java.util.ArrayList;<br><span class="hljs-keyword">import</span> java.util.Arrays;<br><span class="hljs-keyword">import</span> java.util.Scanner;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@author</span> ShaoYJ</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@date</span> 2022/10/7 周五</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@desc</span>  得到升序的排序结果</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">InsertSort</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br><br>          Integer[] arr = scanNum();<br><span class="hljs-comment">//        Integer[] arr = &#123;3,2,1&#125;;</span><br><br><br>        System.out.println(<span class="hljs-string">&quot;排序前:&quot;</span> + Arrays.toString(arr));<br>        sort(arr);<br>        System.out.print(<span class="hljs-string">&quot;排序后:&quot;</span> + Arrays.toString(arr));<br><br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Integer[] scanNum()&#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">sc</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        ArrayList&lt;Integer&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        System.out.print(<span class="hljs-string">&quot;输入一串数字，空格分开，以#结束:&quot;</span>);<br>        <span class="hljs-keyword">while</span> (!sc.hasNext(<span class="hljs-string">&quot;#&quot;</span>)) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> sc.nextInt();<br>            list.add(a);<br>        &#125;<br><span class="hljs-comment">//       list 转 Integer : 提供首地址即可</span><br>        Integer[] arr = list.toArray(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Integer</span>[<span class="hljs-number">0</span>]);<br>        <span class="hljs-keyword">return</span> arr;<br>    &#125;<br><br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">sort</span><span class="hljs-params">(Integer[] arr)</span>&#123;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; arr.length; i++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; i; j++) &#123;<br>                <span class="hljs-comment">//  将j到i-1的都后移一个位置</span><br>                <span class="hljs-keyword">if</span>(arr[i] &lt; arr[j])&#123;<br>                    <span class="hljs-type">Integer</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> arr[i];<br>                    moveArr(arr,j,i);<br>                    arr[j] = temp;<br>                    <span class="hljs-keyword">break</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">moveArr</span><span class="hljs-params">(Integer[] arr, <span class="hljs-type">int</span> pre,<span class="hljs-type">int</span> post)</span>&#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> post-<span class="hljs-number">1</span>; j &gt;=pre; j--) &#123;<br>            arr[j+<span class="hljs-number">1</span>] = arr[j];<br>        &#125;<br>    &#125;<br>&#125;<br><br><br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -353,8 +341,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>堆排序</div>
-      <div>http://oowatermelon.github.io/OoWaterMelonS/2022/10/07/堆排序/</div>
+      <div>直接插入排序</div>
+      <div>http://oowatermelon.github.io/OoWaterMelonS/2022/10/07/插入排序/</div>
     </div>
     <div class="license-meta">
       
@@ -398,18 +386,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/07/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" title="直接插入排序">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">直接插入排序</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/06/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" title="冒泡排序">
-                        <span class="hidden-mobile">冒泡排序</span>
+                      <a href="/2022/10/07/%E5%A0%86%E6%8E%92%E5%BA%8F/" title="堆排序">
+                        <span class="hidden-mobile">堆排序</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
