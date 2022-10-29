@@ -16,27 +16,27 @@
   <meta name="author" content="OoWaterMelonS Shao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="选择排序选择排序是一种经典的排序算法，排序的步骤为  首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置。 再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。 重复第二步，直到所有元素均排序完毕。   实例代码1234567891011121314151617181920212223242526272829303132333435363738394041424344">
+    <meta name="description" content="快速排序快速排序是交换排序（冒泡排序也是交换排序）的一种。时间复杂度可达到$(nlog_2n)$ 思路在于分治的策略，该方法的基本思想是： 1．先从数列中取出一个数作为基准数。 找2．分区过程，将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边。  分3．再对左右区间重复第二步，直到各区间只有一个数。  重复  Java代码1234567891011121314151617181920">
 <meta property="og:type" content="article">
-<meta property="og:title" content="简单选择排序">
-<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2022/10/26/%E7%AE%80%E5%8D%95%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/index.html">
+<meta property="og:title" content="快速排序">
+<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2022/10/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="OoWaterMelon">
-<meta property="og:description" content="选择排序选择排序是一种经典的排序算法，排序的步骤为  首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置。 再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。 重复第二步，直到所有元素均排序完毕。   实例代码1234567891011121314151617181920212223242526272829303132333435363738394041424344">
+<meta property="og:description" content="快速排序快速排序是交换排序（冒泡排序也是交换排序）的一种。时间复杂度可达到$(nlog_2n)$ 思路在于分治的策略，该方法的基本思想是： 1．先从数列中取出一个数作为基准数。 找2．分区过程，将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边。  分3．再对左右区间重复第二步，直到各区间只有一个数。  重复  Java代码1234567891011121314151617181920">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://oowatermelon.github.io/img/sort/selectionSort.gif">
-<meta property="og:image" content="http://oowatermelon.github.io/img/sort/SelectSort.png">
-<meta property="article:published_time" content="2022-10-26T08:15:28.000Z">
-<meta property="article:modified_time" content="2022-10-26T08:25:53.097Z">
+<meta property="og:image" content="http://oowatermelon.github.io/img/sort/quickSort.gif">
+<meta property="og:image" content="http://oowatermelon.github.io/img/sort/QuickSort.png">
+<meta property="article:published_time" content="2022-10-29T09:12:45.000Z">
+<meta property="article:modified_time" content="2022-10-29T09:23:29.999Z">
 <meta property="article:author" content="OoWaterMelonS Shao">
 <meta property="article:tag" content="排序">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://oowatermelon.github.io/img/sort/selectionSort.gif">
+<meta name="twitter:image" content="http://oowatermelon.github.io/img/sort/quickSort.gif">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>简单选择排序 - OoWaterMelon</title>
+  <title>快速排序 - OoWaterMelon</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -206,7 +206,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">简单选择排序</span>
+            <span id="subtitle">快速排序</span>
           
         </div>
 
@@ -217,8 +217,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-26 16:15" pubdate>
-          2022年10月26日 下午
+        <time datetime="2022-10-29 17:12" pubdate>
+          2022年10月29日 下午
         </time>
       </span>
     
@@ -229,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          1.6k 字
         
       </span>
     
@@ -240,7 +240,7 @@
         
         
         
-          10 分钟
+          14 分钟
         
       </span>
     
@@ -280,21 +280,18 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">简单选择排序</h1>
+            <h1 style="display: none">快速排序</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>选择排序是一种经典的排序算法，排序的步骤为</p>
-<ol>
-<li>首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置。</li>
-<li>再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。</li>
-<li>重复第二步，直到所有元素均排序完毕。</li>
-</ol>
-<p><img src="/../img/sort/selectionSort.gif" srcset="/img/loading.gif" lazyload alt="实例图片（引自菜鸟教程）"></p>
-<h3 id="实例代码"><a href="#实例代码" class="headerlink" title="实例代码"></a>实例代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">package</span> sort.select;<br><br><span class="hljs-keyword">import</span> java.util.ArrayList;<br><span class="hljs-keyword">import</span> java.util.Scanner;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@author</span> ShaoYJ</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@date</span> 2022/10/26 周三</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@desc</span> 得到升序结果</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SelectSort</span> &#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br><span class="hljs-comment">//        Integer[] arr = scanNum();</span><br>        Integer[] arr = &#123;<span class="hljs-number">8</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>&#125;;<br>        sort(arr);<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span>  <span class="hljs-keyword">void</span>  <span class="hljs-title function_">sort</span><span class="hljs-params">(Integer[] arr)</span>&#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">len</span> <span class="hljs-operator">=</span> arr.length;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; len; i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">min</span> <span class="hljs-operator">=</span> i;<br><span class="hljs-comment">//            让min始终跟踪绑定最小值的索引</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> i+<span class="hljs-number">1</span>; j &lt; len; j++) &#123;<br>                <span class="hljs-keyword">if</span>(arr[min]&gt;arr[j]) &#123;<br>                    min = j;<br>                &#125;<br>            &#125;<br><span class="hljs-comment">//            交换当前位和最小位置上的值</span><br>            <span class="hljs-keyword">if</span>(min!=i) &#123;<br>                <span class="hljs-type">Integer</span> <span class="hljs-variable">tmp</span> <span class="hljs-operator">=</span> arr[i];<br>                arr[i] = arr[min];<br>                arr[min] = tmp;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (Integer i:arr ) &#123;<br>            System.out.println(i);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Integer[] scanNum() &#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">sc</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        ArrayList&lt;Integer&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        System.out.print(<span class="hljs-string">&quot;输入一串数字，空格分开，以#结束:&quot;</span>);<br>        <span class="hljs-keyword">while</span> (!sc.hasNext(<span class="hljs-string">&quot;#&quot;</span>)) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> sc.nextInt();<br>            list.add(a);<br>        &#125;<br><span class="hljs-comment">//       list 转 Integer : 提供首地址即可</span><br>        <span class="hljs-keyword">return</span> list.toArray(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Integer</span>[<span class="hljs-number">0</span>]);<br>    &#125;<br>&#125;<br><br><br></code></pre></td></tr></table></figure>
-
-<p><img src="/../img/sort/SelectSort.png" srcset="/img/loading.gif" lazyload alt="选择排序结果"></p>
+                <h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p>快速排序是交换排序（冒泡排序也是交换排序）的一种。<br>时间复杂度可达到$(nlog_2n)$</p>
+<p>思路在于<strong>分治</strong>的策略，该方法的基本思想是：</p>
+<p>1．先从数列中取出一个数作为<strong>基准数</strong>。 找<br>2．分区过程，<strong>将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边</strong>。  分<br>3．再对<strong>左右区间</strong>重复第二步，直到各区间只有一个数。  重复</p>
+<p><img src="/../img/sort/quickSort.gif" srcset="/img/loading.gif" lazyload alt="快速排序"></p>
+<h3 id="Java代码"><a href="#Java代码" class="headerlink" title="Java代码"></a>Java代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> sort.exchange;<br><br><span class="hljs-keyword">import</span> java.util.ArrayList;<br><span class="hljs-keyword">import</span> java.util.Arrays;<br><span class="hljs-keyword">import</span> java.util.Scanner;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@author</span> ShaoYJ</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@date</span> 2022/10/27 周四</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@desc</span> 得到升序结果</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">QuickSort</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// Integer[] arr = scanNum();</span><br>        Integer[] arr = &#123;<span class="hljs-number">6</span>, <span class="hljs-number">54</span>, <span class="hljs-number">32</span>, <span class="hljs-number">21</span>, <span class="hljs-number">9</span>, <span class="hljs-number">100</span>&#125;;<br>        <span class="hljs-comment">// Integer[] arr = &#123;5,4,3,2,1&#125;;</span><br>        System.out.println(<span class="hljs-string">&quot;排序前:&quot;</span> + Arrays.toString(arr));<br>        System.out.println(<span class="hljs-string">&quot;排序后:&quot;</span> + Arrays.toString(quickSort(arr, <span class="hljs-number">0</span>, arr.length-<span class="hljs-number">1</span>)));<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Integer[] quickSort(Integer[] arr, <span class="hljs-type">int</span> low, <span class="hljs-type">int</span> high) &#123;<br>        <span class="hljs-keyword">if</span> (low &gt; high) &#123;<br>            <span class="hljs-keyword">return</span> arr;<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> low;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> high;<br>        Integer t;<br>        <span class="hljs-comment">//  基址对应元素值</span><br>        <span class="hljs-type">Integer</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> arr[low];<br>        <span class="hljs-comment">//  来回进行交换</span><br>        <span class="hljs-keyword">while</span> (i &lt; j) &#123;<br><span class="hljs-comment">//            先从后向前遍历找到符合条件的值</span><br>            <span class="hljs-keyword">while</span> (temp &lt;= arr[j] &amp;&amp; i &lt; j) &#123;<br>                j--;<br>            &#125;<br><span class="hljs-comment">//           从前往后遍历找到符合条件的值</span><br>            <span class="hljs-keyword">while</span> (temp &gt;= arr[i] &amp;&amp; i &lt; j) &#123;<br>                i++;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (i &lt; j) &#123;<br>                t = arr[i];<br>                arr[i] = arr[j];<br>                arr[j] = t;<br>            &#125;<br>        &#125;<br><br>        arr[low] = arr[i];<br>        arr[i] = temp;<br>        quickSort(arr,low,j-<span class="hljs-number">1</span>);<br>        quickSort(arr,j+<span class="hljs-number">1</span>,high);<br><br>        <span class="hljs-keyword">return</span> arr;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Integer[] scanNum() &#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">sc</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        ArrayList&lt;Integer&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        System.out.print(<span class="hljs-string">&quot;输入一串数字，空格分开，以#结束:&quot;</span>);<br>        <span class="hljs-keyword">while</span> (!sc.hasNext(<span class="hljs-string">&quot;#&quot;</span>)) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> sc.nextInt();<br>            list.add(a);<br>        &#125;<br><span class="hljs-comment">//       list 转 Integer : 提供首地址即可</span><br>        <span class="hljs-keyword">return</span> list.toArray(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Integer</span>[<span class="hljs-number">0</span>]);<br>    &#125;<br><br>&#125;<br><br></code></pre></td></tr></table></figure>
+<h4 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h4><p><img src="/../img/sort/QuickSort.png" srcset="/img/loading.gif" lazyload alt="运行结果"></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>核心思想 <strong>分治</strong>, 以基准为中心，两头交换，左侧的统一大于（或小于）基准，右侧相反同理。</p>
 
                 
               </div>
@@ -340,8 +337,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>简单选择排序</div>
-      <div>http://oowatermelon.github.io/OoWaterMelonS/2022/10/26/简单选择排序/</div>
+      <div>快速排序</div>
+      <div>http://oowatermelon.github.io/OoWaterMelonS/2022/10/29/快速排序/</div>
     </div>
     <div class="license-meta">
       
@@ -353,7 +350,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年10月26日</div>
+          <div>2022年10月29日</div>
         </div>
       
       
@@ -385,18 +382,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" title="快速排序">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">快速排序</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/17/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/" title="希尔排序">
-                        <span class="hidden-mobile">希尔排序</span>
+                      <a href="/2022/10/26/%E7%AE%80%E5%8D%95%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" title="简单选择排序">
+                        <span class="hidden-mobile">简单选择排序</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
