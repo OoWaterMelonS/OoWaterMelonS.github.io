@@ -16,17 +16,17 @@
   <meta name="author" content="OoWaterMelonS Shao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="快速排序快速排序是交换排序（冒泡排序也是交换排序）的一种。时间复杂度可达到$(nlog_2n)$ 思路在于分治的策略，该方法的基本思想是： 1．先从数列中取出一个数作为基准数。 找2．分区过程，将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边。  分3．再对左右区间重复第二步，直到各区间只有一个数。  重复  Java代码1234567891011121314151617181920">
+    <meta name="description" content="快速排序快速排序是交换排序（冒泡排序也是交换排序）的一种,时间复杂度可达到$(nlog_2n)$。快速排序的最坏运行情况是 O(n²)，比如说顺序数列的快排。但它的平摊期望时间是 O(nlogn)，且 O(nlogn) 记号中隐含的常数因子很小，比复杂度稳定等于 O(nlogn) 的归并排序要小很多。所以，对绝大多数顺序性较弱的随机数列而言，快速排序总是优于归并排序。 思路在于分治的策略，该方法的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="快速排序">
 <meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2022/10/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="OoWaterMelon">
-<meta property="og:description" content="快速排序快速排序是交换排序（冒泡排序也是交换排序）的一种。时间复杂度可达到$(nlog_2n)$ 思路在于分治的策略，该方法的基本思想是： 1．先从数列中取出一个数作为基准数。 找2．分区过程，将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边。  分3．再对左右区间重复第二步，直到各区间只有一个数。  重复  Java代码1234567891011121314151617181920">
+<meta property="og:description" content="快速排序快速排序是交换排序（冒泡排序也是交换排序）的一种,时间复杂度可达到$(nlog_2n)$。快速排序的最坏运行情况是 O(n²)，比如说顺序数列的快排。但它的平摊期望时间是 O(nlogn)，且 O(nlogn) 记号中隐含的常数因子很小，比复杂度稳定等于 O(nlogn) 的归并排序要小很多。所以，对绝大多数顺序性较弱的随机数列而言，快速排序总是优于归并排序。 思路在于分治的策略，该方法的">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://oowatermelon.github.io/img/sort/quickSort.gif">
 <meta property="og:image" content="http://oowatermelon.github.io/img/sort/QuickSort.png">
 <meta property="article:published_time" content="2022-10-29T09:12:45.000Z">
-<meta property="article:modified_time" content="2022-10-29T09:23:29.999Z">
+<meta property="article:modified_time" content="2022-10-29T09:28:38.138Z">
 <meta property="article:author" content="OoWaterMelonS Shao">
 <meta property="article:tag" content="排序">
 <meta name="twitter:card" content="summary_large_image">
@@ -229,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k 字
+          1.7k 字
         
       </span>
     
@@ -240,7 +240,7 @@
         
         
         
-          14 分钟
+          15 分钟
         
       </span>
     
@@ -285,7 +285,7 @@
             
               <div class="markdown-body">
                 
-                <h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p>快速排序是交换排序（冒泡排序也是交换排序）的一种。<br>时间复杂度可达到$(nlog_2n)$</p>
+                <h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p>快速排序是交换排序（冒泡排序也是交换排序）的一种,时间复杂度可达到$(nlog_2n)$。快速排序的最坏运行情况是 O(n²)，比如说顺序数列的快排。但它的平摊期望时间是 O(nlogn)，且 O(nlogn) 记号中隐含的常数因子很小，比复杂度稳定等于 O(nlogn) 的归并排序要小很多。所以，对绝大多数顺序性较弱的随机数列而言，快速排序总是优于归并排序。</p>
 <p>思路在于<strong>分治</strong>的策略，该方法的基本思想是：</p>
 <p>1．先从数列中取出一个数作为<strong>基准数</strong>。 找<br>2．分区过程，<strong>将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边</strong>。  分<br>3．再对<strong>左右区间</strong>重复第二步，直到各区间只有一个数。  重复</p>
 <p><img src="/../img/sort/quickSort.gif" srcset="/img/loading.gif" lazyload alt="快速排序"></p>
