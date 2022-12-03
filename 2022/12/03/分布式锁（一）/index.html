@@ -16,26 +16,24 @@
   <meta name="author" content="OoWaterMelonS Shao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="二叉树二叉树的简单操作函数主要包括二叉树初始化 二叉排序树插入  前中后序遍历 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848">
+    <meta name="description" content="为什么我们需要一把分布式锁？ 为了效率(efficiency)，协调各个客户端避免做重复的工作。即使锁偶尔失效了，只是可能把某些操作多做一遍而已，不会产生其它的不良后果。比如重复发送了一封同样的 email（当然这取决于业务应用的容忍度）。 为了正确性(correctness)。在任何情况下都不允许锁失效的情况发生，因为一旦发生，就可能意味着数据不一致(inconsistency)，数据丢失，文件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二叉树">
-<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2022/11/17/%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
+<meta property="og:title" content="分布式锁（一）">
+<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2022/12/03/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="OoWaterMelon">
-<meta property="og:description" content="二叉树二叉树的简单操作函数主要包括二叉树初始化 二叉排序树插入  前中后序遍历 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848">
+<meta property="og:description" content="为什么我们需要一把分布式锁？ 为了效率(efficiency)，协调各个客户端避免做重复的工作。即使锁偶尔失效了，只是可能把某些操作多做一遍而已，不会产生其它的不良后果。比如重复发送了一封同样的 email（当然这取决于业务应用的容忍度）。 为了正确性(correctness)。在任何情况下都不允许锁失效的情况发生，因为一旦发生，就可能意味着数据不一致(inconsistency)，数据丢失，文件">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://oowatermelon.github.io/img/tree/BiTree.jpg">
-<meta property="article:published_time" content="2022-11-17T03:54:10.000Z">
-<meta property="article:modified_time" content="2022-11-30T02:49:59.237Z">
+<meta property="article:published_time" content="2022-12-03T08:51:10.000Z">
+<meta property="article:modified_time" content="2022-12-03T08:56:21.526Z">
 <meta property="article:author" content="OoWaterMelonS Shao">
-<meta property="article:tag" content="二叉树">
+<meta property="article:tag" content="分布式锁">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://oowatermelon.github.io/img/tree/BiTree.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>二叉树 - OoWaterMelon</title>
+  <title>分布式锁（一） - OoWaterMelon</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -205,7 +203,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">二叉树</span>
+            <span id="subtitle">分布式锁（一）</span>
           
         </div>
 
@@ -216,8 +214,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-11-17 11:54" pubdate>
-          2022年11月17日 中午
+        <time datetime="2022-12-03 16:51" pubdate>
+          2022年12月3日 下午
         </time>
       </span>
     
@@ -228,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          657 字
         
       </span>
     
@@ -239,7 +237,7 @@
         
         
         
-          15 分钟
+          6 分钟
         
       </span>
     
@@ -279,16 +277,31 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">二叉树</h1>
+            <h1 style="display: none">分布式锁（一）</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>二叉树的简单操作函数<br>主要包括二叉树初始化 二叉排序树插入  前中后序遍历</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;malloc.h&gt;</span></span><br><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BTNode</span> &#123;</span><br>    <span class="hljs-type">int</span> data;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BTNode</span>* <span class="hljs-title">left</span>;</span><br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BTNode</span>* <span class="hljs-title">right</span>;</span><br>&#125;BTNode;<br><br><br><br>BTNode* <span class="hljs-title function_">init</span><span class="hljs-params">()</span> &#123;<br>    BTNode* root = (BTNode*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(BTNode));<br>    root-&gt;data = <span class="hljs-number">5</span>;<br>    root-&gt;left = <span class="hljs-literal">NULL</span>;<br>    root-&gt;right = <span class="hljs-literal">NULL</span>;<br>    <span class="hljs-keyword">return</span> root;<br>&#125;<br><br><br><span class="hljs-comment">// 按照二叉排序树 插入树</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">insert</span><span class="hljs-params">(BTNode* root, <span class="hljs-type">int</span> value)</span> &#123;<br>    <span class="hljs-keyword">if</span> (value &lt; root-&gt;data) &#123;<br>        <span class="hljs-keyword">if</span> (root-&gt;left == <span class="hljs-literal">NULL</span>) &#123;<br>            BTNode* node;<br>            node = (BTNode*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(BTNode));<br>            node-&gt;data = value;<br>            node-&gt;left = <span class="hljs-literal">NULL</span>;<br>            node-&gt;right = <span class="hljs-literal">NULL</span>;<br>            root-&gt;left = node;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        insert(root-&gt;left, value);<br>    &#125;<br>    <span class="hljs-keyword">else</span><br>    &#123;<br>        <span class="hljs-keyword">if</span> (root-&gt;right == <span class="hljs-literal">NULL</span>) &#123;<br><br>            BTNode* node;<br>            node = (BTNode*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(BTNode));<br>            node-&gt;data = value;<br>            node-&gt;left = <span class="hljs-literal">NULL</span>;<br>            node-&gt;right = <span class="hljs-literal">NULL</span>;<br>            root-&gt;right = node;<br>            <span class="hljs-keyword">return</span>;<br><br>        &#125;<br>        insert(root-&gt;right, value);<br>    &#125;<br>&#125;;<br><br><br><span class="hljs-comment">// 中序打印 </span><br><span class="hljs-type">void</span> <span class="hljs-title function_">midPrint</span><span class="hljs-params">(BTNode* root)</span> &#123;<br>    <span class="hljs-keyword">if</span> (root != <span class="hljs-literal">NULL</span>) &#123;<br>        midPrint(root-&gt;left);<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, root-&gt;data);<br>        midPrint(root-&gt;right);<br>    &#125;<br>&#125;<br><br><br><span class="hljs-comment">// 先序打印 </span><br><span class="hljs-type">void</span> <span class="hljs-title function_">prePrint</span><span class="hljs-params">(BTNode* root)</span> &#123;<br>    <span class="hljs-keyword">if</span> (root != <span class="hljs-literal">NULL</span>) &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, root-&gt;data);<br>        prePrint(root-&gt;left);<br>        prePrint(root-&gt;right);<br>    &#125;<br>&#125;<br><span class="hljs-comment">// 后序打印 </span><br><span class="hljs-type">void</span> <span class="hljs-title function_">postPrint</span><span class="hljs-params">(BTNode* root)</span> &#123;<br>    <span class="hljs-keyword">if</span> (root != <span class="hljs-literal">NULL</span>) &#123;<br>        postPrint(root-&gt;left);<br>        postPrint(root-&gt;right);<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, root-&gt;data);<br>    &#125;<br>&#125;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">int</span> a = <span class="hljs-number">1</span>;<br>    BTNode* root = init();<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>,root-&gt;data);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">8</span>; i++)<br>    &#123;<br>         insert(root, i);<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;中序遍历\n&quot;</span>);<br>    midPrint(root);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n先序遍历\n&quot;</span>);<br>    prePrint(root);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n后序遍历\n&quot;</span>);<br>    prePrint(root);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><br></code></pre></td></tr></table></figure>
-
-<h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><p><img src="/../img/tree/BiTree.jpg" srcset="/img/loading.gif" lazyload alt="插入和遍历效果图"></p>
-<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>以上代码能解决增改查，后续补上关于层次遍历和删除函数</p>
+                <h3 id="为什么我们需要一把分布式锁？"><a href="#为什么我们需要一把分布式锁？" class="headerlink" title="为什么我们需要一把分布式锁？"></a>为什么我们需要一把分布式锁？</h3><ul>
+<li>为了效率(efficiency)，协调各个客户端避免做重复的工作。即使锁偶尔失效了，只是可能把某些操作多做一遍而已，不会产生其它的不良后果。比如重复发送了一封同样的 email（当然这取决于业务应用的容忍度）。</li>
+<li>为了正确性(correctness)。在任何情况下都不允许锁失效的情况发生，因为一旦发生，就可能意味着数据不一致(inconsistency)，数据丢失，文件损坏，订单重复，超卖或者其它严重的问题。</li>
+</ul>
+<p>###分布式锁的三个属性</p>
+<ul>
+<li><p>互斥（Mutual Exclusion），这是锁最基本的功能，同一时刻只能有一个客户端持有锁；</p>
+</li>
+<li><p>避免死锁（Dead lock free），如果某个客户端获得锁之后花了太长时间处理，或者客户端发生了故障，锁无法释放会导致整个处理流程无法进行下去，所以要避免死锁。最常见的是通过设置一个 TTL(Time To Live，存活时间) 来避免死锁。</p>
+</li>
+<li><p>容错（Fault tolerance），为避免单点故障，锁服务需要具有一定容错性。<br>  大体有两种容错方式，一种是<strong>锁服务本身是一个集群</strong>，能够自动故障切换(ZooKeeper、etcd)；</p>
+<p>  <strong>另一种是客户端向多个独立的锁服务发起请求，其中某个锁服务故障时仍然可以从其他锁服务读取到锁信息(Redlock)，代价是一个客户端要获取多把锁</strong>，并且要求每台机器的时钟都是一样的，否则 TTL 会不一致，可能有的机器会提前释放锁，有的机器会太晚释放锁，导致出现问题。</p>
+</li>
+</ul>
+<h3 id="常见的分布式锁实现方案"><a href="#常见的分布式锁实现方案" class="headerlink" title="常见的分布式锁实现方案"></a>常见的分布式锁实现方案</h3><ul>
+<li><a href="%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%EF%BC%88%E4%BA%8C%EF%BC%89.md">Redis</a> </li>
+<li>MySQL</li>
+<li>ZooKeeper</li>
+</ul>
+<p>具体解决方案后续依次介绍补充完善</p>
 
                 
               </div>
@@ -307,7 +320,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/" class="category-chain-item">二叉树</a>
+  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/" class="category-chain-item">分布式</a>
   
   
 
@@ -322,7 +335,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">#二叉树</a>
+        <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/">#分布式锁</a>
       
     </div>
   
@@ -334,8 +347,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>二叉树</div>
-      <div>http://oowatermelon.github.io/OoWaterMelonS/2022/11/17/二叉树/</div>
+      <div>分布式锁（一）</div>
+      <div>http://oowatermelon.github.io/OoWaterMelonS/2022/12/03/分布式锁（一）/</div>
     </div>
     <div class="license-meta">
       
@@ -347,7 +360,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年11月17日</div>
+          <div>2022年12月3日</div>
         </div>
       
       
@@ -379,9 +392,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/12/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%BC%82%E6%AD%A5%E5%92%8CMQ%E7%9A%84%E5%8C%BA%E5%88%AB/" title="多线程异步和MQ的区别">
+                      <a href="/2022/12/03/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%EF%BC%88%E4%BA%8C%EF%BC%89/" title="分布式锁（二）">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">多线程异步和MQ的区别</span>
+                        <span class="hidden-mobile">分布式锁（二）</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -389,8 +402,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/11/16/%E5%8D%95%E9%93%BE%E8%A1%A8/" title="单链表">
-                        <span class="hidden-mobile">单链表</span>
+                      <a href="/2022/12/03/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%88%B0%E6%9C%AC%E5%9C%B0-OSS/" title="SpringBoot上传文件到本地/OSS">
+                        <span class="hidden-mobile">SpringBoot上传文件到本地/OSS</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

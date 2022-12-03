@@ -4,6 +4,194 @@
   
   
   <entry>
+    <title>merge和rebase的区别</title>
+    <link href="/2022/12/03/merge%E5%92%8Crebase%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <url>/2022/12/03/merge%E5%92%8Crebase%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.bilibili.com/video/BV1VG411F7rB/?spm_id_from=333.999.0.0&vd_source=8eadec89e5e4e2ee8628b6b653608d3f">git rebase和 git merge的区别</a><br>感觉浅显好入门，一看图简单明白了其中的区别<br><img src="/../img/video/merge-and-rebase.jpg" alt="**merge**"></p><p><img src="/../img/video/merge-and-rebase2.jpg" alt="**rebase**"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>github</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>merge Vs rebase</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>学习视频</title>
+    <link href="/2022/12/03/%E5%AD%A6%E4%B9%A0%E8%A7%86%E9%A2%91/"/>
+    <url>/2022/12/03/%E5%AD%A6%E4%B9%A0%E8%A7%86%E9%A2%91/</url>
+    
+    <content type="html"><![CDATA[<p>多看多学，保持思考。</p><h2 id="体系阅读"><a href="#体系阅读" class="headerlink" title="体系阅读"></a>体系阅读</h2><p><strong>2022&#x2F;12&#x2F;3</strong><br>大厂分享☞☞<a href="https://www.bilibili.com/video/BV1ND4y1Y792/?spm_id_from=333.788&vd_source=8eadec89e5e4e2ee8628b6b653608d3f">大厂文章速读</a></p><h2 id="数据库阅读"><a href="#数据库阅读" class="headerlink" title="数据库阅读"></a>数据库阅读</h2><p><strong>2022&#x2F;12&#x2F;3</strong><br><a href="https://www.bilibili.com/video/BV1QG411j7ZZ/?spm_id_from=333.999.0.0&vd_source=8eadec89e5e4e2ee8628b6b653608d3f">冷门又重要的6个技巧，高并发数据库优化</a></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">1.打破范式设计，冗余少量字段方便查询，需要注意源表和冗余表保证同一事务写。<br>2.关联关系在业务层面约束，不依赖数据库外键<br>3.字段拓展性，如模板信息这种结构不清晰的字段使用json类型，json检索的问题我的想法是少量key使用虚拟列并建立索引，多条件检索直接异构es<br>4.冷热分离，源表拆分成多张表，可以把频繁变更的字段放在主表，使用率较低的放在副表，判断依据可以是创建时间、业务域<br>5.服务拆分在分片字段选择上尽量考虑使用本地事务，让同业务的不同sql命中同一个分表，以避免使用分布式事务<br>6.尽量使用单表维度sql，原因：join性能差，后期分库分表更方便，前瞻性设计要考虑使用哪种ID主键策略<br></code></pre></td></tr></table></figure><p><a href="https://www.bilibili.com/video/BV1584y1v7hc/?spm_id_from=333.999.0.0&vd_source=8eadec89e5e4e2ee8628b6b653608d3f">书写高质量SQL的30条建议</a><br>需要在实践中使用，但看完挺难受的，特别这AI配音~~~😫😫</p><h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><p><a href="https://www.bilibili.com/video/BV1VG411F7rB/?spm_id_from=333.999.0.0&vd_source=8eadec89e5e4e2ee8628b6b653608d3f">git rebase和 git merge的区别</a><br>感觉浅显好入门，一看图简单明白了其中的区别</p><p><a href="https://www.bilibili.com/video/BV1C64y1z7Hn/?spm_id_from=333.788&vd_source=8eadec89e5e4e2ee8628b6b653608d3f">Git 工作流</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习视频</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>视频</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>分布式锁（二）</title>
+    <link href="/2022/12/03/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <url>/2022/12/03/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>分布式锁（一）</title>
+    <link href="/2022/12/03/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <url>/2022/12/03/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h3 id="为什么我们需要一把分布式锁？"><a href="#为什么我们需要一把分布式锁？" class="headerlink" title="为什么我们需要一把分布式锁？"></a>为什么我们需要一把分布式锁？</h3><ul><li>为了效率(efficiency)，协调各个客户端避免做重复的工作。即使锁偶尔失效了，只是可能把某些操作多做一遍而已，不会产生其它的不良后果。比如重复发送了一封同样的 email（当然这取决于业务应用的容忍度）。</li><li>为了正确性(correctness)。在任何情况下都不允许锁失效的情况发生，因为一旦发生，就可能意味着数据不一致(inconsistency)，数据丢失，文件损坏，订单重复，超卖或者其它严重的问题。</li></ul><p>###分布式锁的三个属性</p><ul><li><p>互斥（Mutual Exclusion），这是锁最基本的功能，同一时刻只能有一个客户端持有锁；</p></li><li><p>避免死锁（Dead lock free），如果某个客户端获得锁之后花了太长时间处理，或者客户端发生了故障，锁无法释放会导致整个处理流程无法进行下去，所以要避免死锁。最常见的是通过设置一个 TTL(Time To Live，存活时间) 来避免死锁。</p></li><li><p>容错（Fault tolerance），为避免单点故障，锁服务需要具有一定容错性。<br>  大体有两种容错方式，一种是<strong>锁服务本身是一个集群</strong>，能够自动故障切换(ZooKeeper、etcd)；</p><p>  <strong>另一种是客户端向多个独立的锁服务发起请求，其中某个锁服务故障时仍然可以从其他锁服务读取到锁信息(Redlock)，代价是一个客户端要获取多把锁</strong>，并且要求每台机器的时钟都是一样的，否则 TTL 会不一致，可能有的机器会提前释放锁，有的机器会太晚释放锁，导致出现问题。</p></li></ul><h3 id="常见的分布式锁实现方案"><a href="#常见的分布式锁实现方案" class="headerlink" title="常见的分布式锁实现方案"></a>常见的分布式锁实现方案</h3><ul><li><a href="%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%EF%BC%88%E4%BA%8C%EF%BC%89.md">Redis</a> </li><li>MySQL</li><li>ZooKeeper</li></ul><p>具体解决方案后续依次介绍补充完善</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>分布式</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>分布式锁</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>SpringBoot上传文件到本地/OSS</title>
+    <link href="/2022/12/03/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%88%B0%E6%9C%AC%E5%9C%B0-OSS/"/>
+    <url>/2022/12/03/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%88%B0%E6%9C%AC%E5%9C%B0-OSS/</url>
+    
+    <content type="html"><![CDATA[<p>可供参照链接</p><p><a href="https://www.bilibili.com/video/BV1TK411Z7ad/?is_story_h5=false&p=1&share_from=ugc&share_medium=android&share_plat=android&share_session_id=1f2b6efd-8fb7-4166-a4bb-e493aeea3c68&share_source=GENERIC&share_tag=s_i&timestamp=1669737113&unique_k=VUhyMor&vd_source=8eadec89e5e4e2ee8628b6b653608d3f">SpringBoot上传文件到本地&#x2F;OSS视频</a></p><p><a href="https://github.com/OoWaterMelonS/SpringCloudAndVue">文件上传模块</a></p><p><img src="/../img/SpringBoot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%88%B0%E6%9C%AC%E5%9C%B0OSS/SpringBoot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6.jpg" alt="文件上传"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>SpringBoot</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>文件上传</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>过滤器和拦截器的区别</title>
+    <link href="/2022/12/03/%E8%BF%87%E6%BB%A4%E5%99%A8%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <url>/2022/12/03/%E8%BF%87%E6%BB%A4%E5%99%A8%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    
+    <content type="html"><![CDATA[<h3 id="过滤器（Filter）和拦截器（Interceptor）的区别"><a href="#过滤器（Filter）和拦截器（Interceptor）的区别" class="headerlink" title="过滤器（Filter）和拦截器（Interceptor）的区别"></a>过滤器（Filter）和拦截器（Interceptor）的区别</h3><ol><li><p>实现原理不同</p><p> 过滤器基于函数回调，一般自定义过滤器都会实现一个DoFilter()方法，这个方法包含一个FilterChain参数，此参数实际为一个回调接口。</p><p> 拦截器基于Java反射机制（动态代理）实现。</p></li><li><p>适用范围不同</p><p> 过滤器Filter实现基于javax.servlet.Filter接口，此接口在Servlet规范中定义，因此过滤器Filter的使用依赖于Tomcat等容器，导致它只能在Web程序中使用。</p><p> 拦截器Interceptor是Spring的一个组件，由Spring容器管理，可以单独使用。因此拦截器不仅能应用于web程序，也可以应用于Application、Swing等程序中。</p></li><li><p>使用场景不同</p><p> 过滤器Filter通常用来实现通用功能过滤，例如：敏感词过滤、<strong>响应数据</strong>压缩等功能。</p><p> 拦截器Interceptor更接近业务系统，主要用来实现项目中的业务判断，例如：日志记录、权限判断等业务。</p></li><li><p>触发时机不同</p><p> Filter是在请求进入Tomcat等容器后，在<strong>进入Servlet之前进行预处理，当Servlet完成处理后请求结束</strong>。</p><p> Inteceptor 是在请求<strong>进入Servlet后，在进入controller之前进行预处理，controller中渲染对应的视图后请求结束</strong>。</p></li><li><p>拦截的请求范围不同</p><p> 请求的执行顺序是：<strong>进入Tomcat等容器-&gt; 进入Filter-&gt;进入Servlet-&gt; 进入Inteceptor-&gt; 进入控制器Controller</strong>。</p><p> Filter和Interceptor的执行时间点不同，先执行Filter后再执行Interceptor,再是Controller，即真正要调用的方法。</p></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>待归类</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>小记</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>接口数据脱敏</title>
+    <link href="/2022/12/03/%E6%8E%A5%E5%8F%A3%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F/"/>
+    <url>/2022/12/03/%E6%8E%A5%E5%8F%A3%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F/</url>
+    
+    <content type="html"><![CDATA[<h3 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h3><p>项目业务(银行、医院、购物平台等)经常涉及到个人手机号、身份证号等敏感信息，针对这些信息设计对应接口时，通常接口返回值中的敏感数据需要进行脱敏操作，记录三种实现接口数据脱敏方法</p><h3 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h3><h4 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h4><p>整合MyBatis插件，在查询的时候针对特定的字段进行脱敏</p><ol><li><a href="https://blog.csdn.net/as13762443639/article/details/122294344#:~:text=mybatis-plus%E7%9A%84%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%BD%BF%E7%94%A8%201%20%EF%BC%881%EF%BC%89%E5%AD%97%E6%AE%B5%E8%84%B1%E6%95%8F%20%E6%B3%A8%E8%A7%A3%20%40FieldSensitive%20%E5%8D%B3%E5%8F%AF%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%EF%BC%8C%E5%86%85%E7%BD%AE%20%E6%89%8B%E6%9C%BA%E5%8F%B7%20%E3%80%81,-%3E%20%7B%20...%205%20%EF%BC%885%EF%BC%89%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%EF%BC%88%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB%EF%BC%89%20%E6%B3%A8%E8%A7%A3%20%40Sharding%20">mybatis-plus的数据脱敏使用</a></li><li><a href="https://blog.csdn.net/relosy/article/details/123494036">Mybatis插件+注解实现数据脱敏</a></li></ol><h4 id="Jackson"><a href="#Jackson" class="headerlink" title="Jackson"></a>Jackson</h4><p>在序列化阶段对特定字段进行脱敏</p><ol><li><p>自定义一个Jackson注解<br>一旦属性被标注，则进行对应的脱敏</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Retention(RetentionPolicy.RUNTIME)</span><br><span class="hljs-meta">@Target(ElementType.FIELD)</span><br><span class="hljs-meta">@JacksonAnnotationsInside</span><br><span class="hljs-meta">@JsonSerialize(using=SensitiveJsonSerializer.class)</span><br><span class="hljs-keyword">public</span> <span class="hljs-meta">@interface</span> Sensitive&#123;<br>    <span class="hljs-comment">// 脱敏策略</span><br>    SensitiveStrategy <span class="hljs-title function_">strategy</span><span class="hljs-params">()</span>;<br>&#125;<br></code></pre></td></tr></table></figure></li><li><p>定制脱敏策略</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> <span class="hljs-title class_">SensitiveStrategy</span>&#123;<br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">     * 用户名</span><br><span class="hljs-comment">     */</span><br>    USERNAME(s-&gt;s.replaceAll(<span class="hljs-string">&quot;(\\S)\\S(\\S)&quot;</span>,<span class="hljs-string">&quot;($1*$2)&quot;</span>)),<br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">     * 身份证</span><br><span class="hljs-comment">     */</span><br>    ID_CARD(s-&gt;s.replaceAll(<span class="hljs-string">&quot;(\\d&#123;4&#125;\\d&#123;10&#125;(\\w&#123;4&#125;)&quot;</span>,<span class="hljs-string">&quot;$1****$2&quot;</span>)),<br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">     *手机号</span><br><span class="hljs-comment">     */</span><br>    PHONE(s-&gt;s.replaceAll(<span class="hljs-string">&quot;(\\d&#123;3&#125;)\\d&#123;4&#125;(\\d&#123;4&#125;)&quot;</span>,<span class="hljs-string">&quot;$1****$2&quot;</span>)),<br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">     *地址</span><br><span class="hljs-comment">     */</span><br>    ADDRESS(s-&gt;s.replaceA1l(<span class="hljs-string">&quot;(\\S&#123;3&#125;)\\S&#123;2&#125;(\\S*)\\S&#123;2&#125;&quot;</span>,<span class="hljs-string">&quot;$1****$2****&quot;</span>));<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Function&lt;String,String&gt; desensitizer;<br><br>    SensitiveStrategy(Function&lt;String,String&gt; desensitizer)&#123;<br>        <span class="hljs-built_in">this</span>.desensitizer = desensitizer;<br>    &#125;<br>    <span class="hljs-keyword">public</span> Function&lt;String,String&gt; desensitizer&#123;<br>        <span class="hljs-keyword">return</span> desensitizer;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li><li><p>定制JSON序列化实现</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 序列化注解自定义实现</span><br><span class="hljs-comment"> * JsonSerializer&lt;String&gt;：指定String 类型，serialize()方法用于将修改后的数据载入</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SensitiveJsonSerializer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">JsonSerializer</span>&lt;String&gt; <span class="hljs-keyword">implements</span> <span class="hljs-title class_">ContextualSerializer</span> &#123;<br>    <span class="hljs-keyword">private</span> SensitiveStrategy strategy;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">serialize</span><span class="hljs-params">(String value, JsonGenerator gen, SerializerProvider serializers)</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        gen.writeString(strategy.desensitizer().apply(value));<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 获取属性上的注解属性</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> JsonSerializer&lt;?&gt; createContextual(SerializerProvider prov, BeanProperty property) <span class="hljs-keyword">throws</span> JsonMappingException &#123;<br><br>        <span class="hljs-type">Sensitive</span> <span class="hljs-variable">annotation</span> <span class="hljs-operator">=</span> property.getAnnotation(Sensitive.class);<br>        <span class="hljs-keyword">if</span> (Objects.nonNull(annotation)&amp;&amp;Objects.equals(String.class, property.getType().getRawClass())) &#123;<br>            <span class="hljs-built_in">this</span>.strategy = annotation.strategy();<br>            <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> prov.findValueSerializer(property.getType(), property);<br><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li><li><p>定制需要脱敏对象类</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Data</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">person</span>&#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     *真实姓名</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Sensitive(strategy Sensitivestrategy.USERNAME)</span><br>    <span class="hljs-keyword">private</span> string realName;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     *地址</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Sensitive(strategy Sensitivestrategy.ADDRESS)</span><br>    <span class="hljs-keyword">private</span> string address;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     *电话号码</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Sensitive(strategy Sensitivestrategy.PHONE)</span><br>    <span class="hljs-keyword">private</span> string phoneNumber;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     *身份证号码</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Sensitive(strategy Sensitivestrategy.ID_CARD)</span><br>    <span class="hljs-keyword">private</span> string idCard;<br>&#125;<br><br></code></pre></td></tr></table></figure></li><li><p>接口测试</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RestController</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestController</span>&#123;<br>    <span class="hljs-meta">@GetMapping(&quot;/test&quot;)</span><br>    <span class="hljs-keyword">public</span> Person <span class="hljs-title function_">test</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-type">Person</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>();<br>        user.setRealName(<span class="hljs-string">&quot;李小明&quot;</span>);<br>        user.setPhoneNumber(<span class="hljs-string">&quot;12345678901&quot;</span>);<br>        user.setAddress(<span class="hljs-string">&quot;北京市&quot;</span>);<br>        user.setIdCard(<span class="hljs-string">&quot;4333333333334334333&quot;</span>);<br>        <span class="hljs-keyword">return</span> user;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure></li></ol><h4 id="Sharding-Sphere"><a href="#Sharding-Sphere" class="headerlink" title="Sharding Sphere"></a>Sharding Sphere</h4><p><a href="https://blog.csdn.net/u014553029/article/details/109277618">ShardingSphere-ShardingJdbc 数据脱敏</a></p><p><a href="https://shardingsphere.apache.org/document/legacy/4.x/document/cn/features/orchestration/encrypt/">shardingsphere官方文档</a></p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>目前仅作小记，未来开发涉及到后，做更进一步的分析理解</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>待归类</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>小记</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>多线程异步和MQ的区别</title>
+    <link href="/2022/12/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%BC%82%E6%AD%A5%E5%92%8CMQ%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <url>/2022/12/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%BC%82%E6%AD%A5%E5%92%8CMQ%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    
+    <content type="html"><![CDATA[<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ol><li>CPU消耗<br> 多线程异步可能存在CPU竞争，而MQ不会消耗本机的CPU</li><li>MQ方式实现异步是完全解耦的，适合于大型互联网项目</li><li>削锋或者消息堆积能力<br> 当业务系统处于靠并发，MQ可以将消息堆积在Broker实例中，而多线程会创建大量线程，但过量的线程可能会触发拒绝策略。</li><li>使用MQ引入了中间件，增加了项目复杂度和运维难度</li></ol><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>规模较小的项目可以使用多线程异步，大项目建议使用MQ实现异步</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>待归类</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>小记</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>二叉树</title>
     <link href="/2022/11/17/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     <url>/2022/11/17/%E4%BA%8C%E5%8F%89%E6%A0%91/</url>

@@ -16,23 +16,34 @@
   <meta name="author" content="OoWaterMelonS Shao">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/archives/page/2/index.html">
+    <meta name="description" content="区别 CPU消耗 多线程异步可能存在CPU竞争，而MQ不会消耗本机的CPU MQ方式实现异步是完全解耦的，适合于大型互联网项目 削锋或者消息堆积能力 当业务系统处于靠并发，MQ可以将消息堆积在Broker实例中，而多线程会创建大量线程，但过量的线程可能会触发拒绝策略。 使用MQ引入了中间件，增加了项目复杂度和运维难度  总结规模较小的项目可以使用多线程异步，大项目建议使用MQ实现异步">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多线程异步和MQ的区别">
+<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2022/12/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%BC%82%E6%AD%A5%E5%92%8CMQ%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="OoWaterMelon">
+<meta property="og:description" content="区别 CPU消耗 多线程异步可能存在CPU竞争，而MQ不会消耗本机的CPU MQ方式实现异步是完全解耦的，适合于大型互联网项目 削锋或者消息堆积能力 当业务系统处于靠并发，MQ可以将消息堆积在Broker实例中，而多线程会创建大量线程，但过量的线程可能会触发拒绝策略。 使用MQ引入了中间件，增加了项目复杂度和运维难度  总结规模较小的项目可以使用多线程异步，大项目建议使用MQ实现异步">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-12-03T06:40:12.000Z">
+<meta property="article:modified_time" content="2022-12-03T08:11:35.818Z">
 <meta property="article:author" content="OoWaterMelonS Shao">
+<meta property="article:tag" content="小记">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>归档 - OoWaterMelon</title>
+  <title>多线程异步和MQ的区别 - OoWaterMelon</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
 
@@ -192,9 +203,49 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">归档</span>
+            <span id="subtitle">多线程异步和MQ的区别</span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-12-03 14:40" pubdate>
+          2022年12月3日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          185 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          2 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
 
         
       </div>
@@ -212,100 +263,200 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 28 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2022</p>
-    
-    <a href="/2022/11/16/%E5%8A%A8%E6%80%81%E9%A1%BA%E5%BA%8F%E8%A1%A8/" class="list-group-item list-group-item-action">
-      <time>11-16</time>
-      <div class="list-group-item-title">动态顺序表</div>
-    </a>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">多线程异步和MQ的区别</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ol>
+<li>CPU消耗<br> 多线程异步可能存在CPU竞争，而MQ不会消耗本机的CPU</li>
+<li>MQ方式实现异步是完全解耦的，适合于大型互联网项目</li>
+<li>削锋或者消息堆积能力<br> 当业务系统处于靠并发，MQ可以将消息堆积在Broker实例中，而多线程会创建大量线程，但过量的线程可能会触发拒绝策略。</li>
+<li>使用MQ引入了中间件，增加了项目复杂度和运维难度</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>规模较小的项目可以使用多线程异步，大项目建议使用MQ实现异步</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
   
     
-    <a href="/2022/11/16/%E9%9D%99%E6%80%81%E9%A1%BA%E5%BA%8F%E8%A1%A8/" class="list-group-item list-group-item-action">
-      <time>11-16</time>
-      <div class="list-group-item-title">静态顺序表</div>
-    </a>
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%BE%85%E5%BD%92%E7%B1%BB/" class="category-chain-item">待归类</a>
   
-    
-    <a href="/2022/11/08/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" class="list-group-item list-group-item-action">
-      <time>11-08</time>
-      <div class="list-group-item-title">归并排序</div>
-    </a>
   
+
+      </span>
     
-    <a href="/2022/10/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="list-group-item list-group-item-action">
-      <time>10-29</time>
-      <div class="list-group-item-title">快速排序</div>
-    </a>
   
-    
-    <a href="/2022/10/26/%E7%AE%80%E5%8D%95%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" class="list-group-item list-group-item-action">
-      <time>10-26</time>
-      <div class="list-group-item-title">简单选择排序</div>
-    </a>
+</span>
+
+    </div>
   
-    
-    <a href="/2022/10/17/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/" class="list-group-item list-group-item-action">
-      <time>10-17</time>
-      <div class="list-group-item-title">希尔排序</div>
-    </a>
   
-    
-    <a href="/2022/10/07/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" class="list-group-item list-group-item-action">
-      <time>10-07</time>
-      <div class="list-group-item-title">直接插入排序</div>
-    </a>
-  
-    
-    <a href="/2022/10/07/%E5%A0%86%E6%8E%92%E5%BA%8F/" class="list-group-item list-group-item-action">
-      <time>10-07</time>
-      <div class="list-group-item-title">堆排序</div>
-    </a>
-  
-    
-    <a href="/2022/10/06/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" class="list-group-item list-group-item-action">
-      <time>10-06</time>
-      <div class="list-group-item-title">冒泡排序</div>
-    </a>
-  
-    
-    <a href="/2022/10/06/Java%E4%BB%A3%E7%A0%81%E5%9D%97%E8%BF%90%E8%A1%8C%E9%A1%BA%E5%BA%8F/" class="list-group-item list-group-item-action">
-      <time>10-06</time>
-      <div class="list-group-item-title">Java代码块运行顺序</div>
-    </a>
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%B0%8F%E8%AE%B0/">#小记</a>
+      
+    </div>
   
 </div>
 
 
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/archives/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/#board">3</a><a class="extend next" rel="next" href="/archives/page/3/#board"><i class="iconfont icon-arrowright"></i></a>
-    </span>
-  </nav>
+              
+  
 
-
-
-
-              </div>
-            </div>
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>多线程异步和MQ的区别</div>
+      <div>http://oowatermelon.github.io/OoWaterMelonS/2022/12/03/多线程异步和MQ的区别/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>OoWaterMelonS Shao</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年12月3日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
           </div>
         </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/12/03/%E6%8E%A5%E5%8F%A3%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F/" title="接口数据脱敏">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">接口数据脱敏</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/11/17/%E4%BA%8C%E5%8F%89%E6%A0%91/" title="二叉树">
+                        <span class="hidden-mobile">二叉树</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
       </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
     
 
     
@@ -404,6 +555,142 @@
 
 
 
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

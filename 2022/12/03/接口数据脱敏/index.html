@@ -16,26 +16,24 @@
   <meta name="author" content="OoWaterMelonS Shao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="二叉树二叉树的简单操作函数主要包括二叉树初始化 二叉排序树插入  前中后序遍历 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848">
+    <meta name="description" content="背景介绍项目业务(银行、医院、购物平台等)经常涉及到个人手机号、身份证号等敏感信息，针对这些信息设计对应接口时，通常接口返回值中的敏感数据需要进行脱敏操作，记录三种实现接口数据脱敏方法 方案MyBatis整合MyBatis插件，在查询的时候针对特定的字段进行脱敏  mybatis-plus的数据脱敏使用 Mybatis插件+注解实现数据脱敏  Jackson在序列化阶段对特定字段进行脱敏  自定义">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二叉树">
-<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2022/11/17/%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
+<meta property="og:title" content="接口数据脱敏">
+<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2022/12/03/%E6%8E%A5%E5%8F%A3%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F/index.html">
 <meta property="og:site_name" content="OoWaterMelon">
-<meta property="og:description" content="二叉树二叉树的简单操作函数主要包括二叉树初始化 二叉排序树插入  前中后序遍历 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848">
+<meta property="og:description" content="背景介绍项目业务(银行、医院、购物平台等)经常涉及到个人手机号、身份证号等敏感信息，针对这些信息设计对应接口时，通常接口返回值中的敏感数据需要进行脱敏操作，记录三种实现接口数据脱敏方法 方案MyBatis整合MyBatis插件，在查询的时候针对特定的字段进行脱敏  mybatis-plus的数据脱敏使用 Mybatis插件+注解实现数据脱敏  Jackson在序列化阶段对特定字段进行脱敏  自定义">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://oowatermelon.github.io/img/tree/BiTree.jpg">
-<meta property="article:published_time" content="2022-11-17T03:54:10.000Z">
-<meta property="article:modified_time" content="2022-11-30T02:49:59.237Z">
+<meta property="article:published_time" content="2022-12-03T07:00:28.000Z">
+<meta property="article:modified_time" content="2022-12-03T08:06:48.801Z">
 <meta property="article:author" content="OoWaterMelonS Shao">
-<meta property="article:tag" content="二叉树">
+<meta property="article:tag" content="小记">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://oowatermelon.github.io/img/tree/BiTree.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>二叉树 - OoWaterMelon</title>
+  <title>接口数据脱敏 - OoWaterMelon</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -205,7 +203,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">二叉树</span>
+            <span id="subtitle">接口数据脱敏</span>
           
         </div>
 
@@ -216,8 +214,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-11-17 11:54" pubdate>
-          2022年11月17日 中午
+        <time datetime="2022-12-03 15:00" pubdate>
+          2022年12月3日 下午
         </time>
       </span>
     
@@ -228,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          2.9k 字
         
       </span>
     
@@ -239,7 +237,7 @@
         
         
         
-          15 分钟
+          25 分钟
         
       </span>
     
@@ -279,16 +277,37 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">二叉树</h1>
+            <h1 style="display: none">接口数据脱敏</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>二叉树的简单操作函数<br>主要包括二叉树初始化 二叉排序树插入  前中后序遍历</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;malloc.h&gt;</span></span><br><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BTNode</span> &#123;</span><br>    <span class="hljs-type">int</span> data;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BTNode</span>* <span class="hljs-title">left</span>;</span><br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BTNode</span>* <span class="hljs-title">right</span>;</span><br>&#125;BTNode;<br><br><br><br>BTNode* <span class="hljs-title function_">init</span><span class="hljs-params">()</span> &#123;<br>    BTNode* root = (BTNode*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(BTNode));<br>    root-&gt;data = <span class="hljs-number">5</span>;<br>    root-&gt;left = <span class="hljs-literal">NULL</span>;<br>    root-&gt;right = <span class="hljs-literal">NULL</span>;<br>    <span class="hljs-keyword">return</span> root;<br>&#125;<br><br><br><span class="hljs-comment">// 按照二叉排序树 插入树</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">insert</span><span class="hljs-params">(BTNode* root, <span class="hljs-type">int</span> value)</span> &#123;<br>    <span class="hljs-keyword">if</span> (value &lt; root-&gt;data) &#123;<br>        <span class="hljs-keyword">if</span> (root-&gt;left == <span class="hljs-literal">NULL</span>) &#123;<br>            BTNode* node;<br>            node = (BTNode*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(BTNode));<br>            node-&gt;data = value;<br>            node-&gt;left = <span class="hljs-literal">NULL</span>;<br>            node-&gt;right = <span class="hljs-literal">NULL</span>;<br>            root-&gt;left = node;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        insert(root-&gt;left, value);<br>    &#125;<br>    <span class="hljs-keyword">else</span><br>    &#123;<br>        <span class="hljs-keyword">if</span> (root-&gt;right == <span class="hljs-literal">NULL</span>) &#123;<br><br>            BTNode* node;<br>            node = (BTNode*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(BTNode));<br>            node-&gt;data = value;<br>            node-&gt;left = <span class="hljs-literal">NULL</span>;<br>            node-&gt;right = <span class="hljs-literal">NULL</span>;<br>            root-&gt;right = node;<br>            <span class="hljs-keyword">return</span>;<br><br>        &#125;<br>        insert(root-&gt;right, value);<br>    &#125;<br>&#125;;<br><br><br><span class="hljs-comment">// 中序打印 </span><br><span class="hljs-type">void</span> <span class="hljs-title function_">midPrint</span><span class="hljs-params">(BTNode* root)</span> &#123;<br>    <span class="hljs-keyword">if</span> (root != <span class="hljs-literal">NULL</span>) &#123;<br>        midPrint(root-&gt;left);<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, root-&gt;data);<br>        midPrint(root-&gt;right);<br>    &#125;<br>&#125;<br><br><br><span class="hljs-comment">// 先序打印 </span><br><span class="hljs-type">void</span> <span class="hljs-title function_">prePrint</span><span class="hljs-params">(BTNode* root)</span> &#123;<br>    <span class="hljs-keyword">if</span> (root != <span class="hljs-literal">NULL</span>) &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, root-&gt;data);<br>        prePrint(root-&gt;left);<br>        prePrint(root-&gt;right);<br>    &#125;<br>&#125;<br><span class="hljs-comment">// 后序打印 </span><br><span class="hljs-type">void</span> <span class="hljs-title function_">postPrint</span><span class="hljs-params">(BTNode* root)</span> &#123;<br>    <span class="hljs-keyword">if</span> (root != <span class="hljs-literal">NULL</span>) &#123;<br>        postPrint(root-&gt;left);<br>        postPrint(root-&gt;right);<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, root-&gt;data);<br>    &#125;<br>&#125;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-type">int</span> a = <span class="hljs-number">1</span>;<br>    BTNode* root = init();<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>,root-&gt;data);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">8</span>; i++)<br>    &#123;<br>         insert(root, i);<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;中序遍历\n&quot;</span>);<br>    midPrint(root);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n先序遍历\n&quot;</span>);<br>    prePrint(root);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n后序遍历\n&quot;</span>);<br>    prePrint(root);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><br></code></pre></td></tr></table></figure>
-
-<h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><p><img src="/../img/tree/BiTree.jpg" srcset="/img/loading.gif" lazyload alt="插入和遍历效果图"></p>
-<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>以上代码能解决增改查，后续补上关于层次遍历和删除函数</p>
+                <h3 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h3><p>项目业务(银行、医院、购物平台等)经常涉及到个人手机号、身份证号等敏感信息，针对这些信息设计对应接口时，通常接口返回值中的敏感数据需要进行脱敏操作，记录三种实现接口数据脱敏方法</p>
+<h3 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h3><h4 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h4><p>整合MyBatis插件，在查询的时候针对特定的字段进行脱敏</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/as13762443639/article/details/122294344#:~:text=mybatis-plus%E7%9A%84%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%E4%BD%BF%E7%94%A8%201%20%EF%BC%881%EF%BC%89%E5%AD%97%E6%AE%B5%E8%84%B1%E6%95%8F%20%E6%B3%A8%E8%A7%A3%20%40FieldSensitive%20%E5%8D%B3%E5%8F%AF%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F%EF%BC%8C%E5%86%85%E7%BD%AE%20%E6%89%8B%E6%9C%BA%E5%8F%B7%20%E3%80%81,-%3E%20%7B%20...%205%20%EF%BC%885%EF%BC%89%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%EF%BC%88%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB%EF%BC%89%20%E6%B3%A8%E8%A7%A3%20%40Sharding%20">mybatis-plus的数据脱敏使用</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/relosy/article/details/123494036">Mybatis插件+注解实现数据脱敏</a></li>
+</ol>
+<h4 id="Jackson"><a href="#Jackson" class="headerlink" title="Jackson"></a>Jackson</h4><p>在序列化阶段对特定字段进行脱敏</p>
+<ol>
+<li><p>自定义一个Jackson注解<br>一旦属性被标注，则进行对应的脱敏</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Retention(RetentionPolicy.RUNTIME)</span><br><span class="hljs-meta">@Target(ElementType.FIELD)</span><br><span class="hljs-meta">@JacksonAnnotationsInside</span><br><span class="hljs-meta">@JsonSerialize(using=SensitiveJsonSerializer.class)</span><br><span class="hljs-keyword">public</span> <span class="hljs-meta">@interface</span> Sensitive&#123;<br>    <span class="hljs-comment">// 脱敏策略</span><br>    SensitiveStrategy <span class="hljs-title function_">strategy</span><span class="hljs-params">()</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>定制脱敏策略</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> <span class="hljs-title class_">SensitiveStrategy</span>&#123;<br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">     * 用户名</span><br><span class="hljs-comment">     */</span><br>    USERNAME(s-&gt;s.replaceAll(<span class="hljs-string">&quot;(\\S)\\S(\\S)&quot;</span>,<span class="hljs-string">&quot;($1*$2)&quot;</span>)),<br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">     * 身份证</span><br><span class="hljs-comment">     */</span><br>    ID_CARD(s-&gt;s.replaceAll(<span class="hljs-string">&quot;(\\d&#123;4&#125;\\d&#123;10&#125;(\\w&#123;4&#125;)&quot;</span>,<span class="hljs-string">&quot;$1****$2&quot;</span>)),<br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">     *手机号</span><br><span class="hljs-comment">     */</span><br>    PHONE(s-&gt;s.replaceAll(<span class="hljs-string">&quot;(\\d&#123;3&#125;)\\d&#123;4&#125;(\\d&#123;4&#125;)&quot;</span>,<span class="hljs-string">&quot;$1****$2&quot;</span>)),<br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">     *地址</span><br><span class="hljs-comment">     */</span><br>    ADDRESS(s-&gt;s.replaceA1l(<span class="hljs-string">&quot;(\\S&#123;3&#125;)\\S&#123;2&#125;(\\S*)\\S&#123;2&#125;&quot;</span>,<span class="hljs-string">&quot;$1****$2****&quot;</span>));<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Function&lt;String,String&gt; desensitizer;<br><br>    SensitiveStrategy(Function&lt;String,String&gt; desensitizer)&#123;<br>        <span class="hljs-built_in">this</span>.desensitizer = desensitizer;<br>    &#125;<br>    <span class="hljs-keyword">public</span> Function&lt;String,String&gt; desensitizer&#123;<br>        <span class="hljs-keyword">return</span> desensitizer;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>定制JSON序列化实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 序列化注解自定义实现</span><br><span class="hljs-comment"> * JsonSerializer&lt;String&gt;：指定String 类型，serialize()方法用于将修改后的数据载入</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SensitiveJsonSerializer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">JsonSerializer</span>&lt;String&gt; <span class="hljs-keyword">implements</span> <span class="hljs-title class_">ContextualSerializer</span> &#123;<br>    <span class="hljs-keyword">private</span> SensitiveStrategy strategy;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">serialize</span><span class="hljs-params">(String value, JsonGenerator gen, SerializerProvider serializers)</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        gen.writeString(strategy.desensitizer().apply(value));<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 获取属性上的注解属性</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> JsonSerializer&lt;?&gt; createContextual(SerializerProvider prov, BeanProperty property) <span class="hljs-keyword">throws</span> JsonMappingException &#123;<br><br>        <span class="hljs-type">Sensitive</span> <span class="hljs-variable">annotation</span> <span class="hljs-operator">=</span> property.getAnnotation(Sensitive.class);<br>        <span class="hljs-keyword">if</span> (Objects.nonNull(annotation)&amp;&amp;Objects.equals(String.class, property.getType().getRawClass())) &#123;<br>            <span class="hljs-built_in">this</span>.strategy = annotation.strategy();<br>            <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> prov.findValueSerializer(property.getType(), property);<br><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>定制需要脱敏对象类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Data</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">person</span>&#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     *真实姓名</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Sensitive(strategy Sensitivestrategy.USERNAME)</span><br>    <span class="hljs-keyword">private</span> string realName;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     *地址</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Sensitive(strategy Sensitivestrategy.ADDRESS)</span><br>    <span class="hljs-keyword">private</span> string address;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     *电话号码</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Sensitive(strategy Sensitivestrategy.PHONE)</span><br>    <span class="hljs-keyword">private</span> string phoneNumber;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     *身份证号码</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Sensitive(strategy Sensitivestrategy.ID_CARD)</span><br>    <span class="hljs-keyword">private</span> string idCard;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>接口测试</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RestController</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestController</span>&#123;<br>    <span class="hljs-meta">@GetMapping(&quot;/test&quot;)</span><br>    <span class="hljs-keyword">public</span> Person <span class="hljs-title function_">test</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-type">Person</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>();<br>        user.setRealName(<span class="hljs-string">&quot;李小明&quot;</span>);<br>        user.setPhoneNumber(<span class="hljs-string">&quot;12345678901&quot;</span>);<br>        user.setAddress(<span class="hljs-string">&quot;北京市&quot;</span>);<br>        user.setIdCard(<span class="hljs-string">&quot;4333333333334334333&quot;</span>);<br>        <span class="hljs-keyword">return</span> user;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="Sharding-Sphere"><a href="#Sharding-Sphere" class="headerlink" title="Sharding Sphere"></a>Sharding Sphere</h4><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014553029/article/details/109277618">ShardingSphere-ShardingJdbc 数据脱敏</a></p>
+<p><a target="_blank" rel="noopener" href="https://shardingsphere.apache.org/document/legacy/4.x/document/cn/features/orchestration/encrypt/">shardingsphere官方文档</a></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>目前仅作小记，未来开发涉及到后，做更进一步的分析理解</p>
 
                 
               </div>
@@ -307,7 +326,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/" class="category-chain-item">二叉树</a>
+  <a href="/categories/%E5%BE%85%E5%BD%92%E7%B1%BB/" class="category-chain-item">待归类</a>
   
   
 
@@ -322,7 +341,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">#二叉树</a>
+        <a href="/tags/%E5%B0%8F%E8%AE%B0/">#小记</a>
       
     </div>
   
@@ -334,8 +353,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>二叉树</div>
-      <div>http://oowatermelon.github.io/OoWaterMelonS/2022/11/17/二叉树/</div>
+      <div>接口数据脱敏</div>
+      <div>http://oowatermelon.github.io/OoWaterMelonS/2022/12/03/接口数据脱敏/</div>
     </div>
     <div class="license-meta">
       
@@ -347,7 +366,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年11月17日</div>
+          <div>2022年12月3日</div>
         </div>
       
       
@@ -379,9 +398,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/12/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%BC%82%E6%AD%A5%E5%92%8CMQ%E7%9A%84%E5%8C%BA%E5%88%AB/" title="多线程异步和MQ的区别">
+                      <a href="/2022/12/03/%E8%BF%87%E6%BB%A4%E5%99%A8%E5%92%8C%E6%8B%A6%E6%88%AA%E5%99%A8%E7%9A%84%E5%8C%BA%E5%88%AB/" title="过滤器和拦截器的区别">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">多线程异步和MQ的区别</span>
+                        <span class="hidden-mobile">过滤器和拦截器的区别</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -389,8 +408,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/11/16/%E5%8D%95%E9%93%BE%E8%A1%A8/" title="单链表">
-                        <span class="hidden-mobile">单链表</span>
+                      <a href="/2022/12/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%BC%82%E6%AD%A5%E5%92%8CMQ%E7%9A%84%E5%8C%BA%E5%88%AB/" title="多线程异步和MQ的区别">
+                        <span class="hidden-mobile">多线程异步和MQ的区别</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
