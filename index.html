@@ -228,6 +228,250 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2022/12/16/%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F-%E5%87%BB%E7%A9%BF-%E9%9B%AA%E5%B4%A9/" target="_self">
+          缓存穿透-击穿-雪崩
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/12/16/%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F-%E5%87%BB%E7%A9%BF-%E9%9B%AA%E5%B4%A9/" target="_self">
+        <div>
+          1. 背景添加缓存的目的一般都是为了减轻数据库的读写压力，同时提升服务性能。这涉及到项目中实际的开发经验，即数据库的读写速度往往会是项目瓶颈。 操作系统中：cpu运行速度&gt;缓存读写速度&gt;硬盘读写速度，增加缓存、读写分离等方法都是用来优化数据库读写耗时。 2. 缓存穿透2.1 需求用户需要查询数据库中某一项信息，优先去缓存中查询2.1.1 如果缓存中保存了信息，则在缓存中命中需要的信息，
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-12-16 16:16" pubdate>
+              2022-12-16
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/redis%EF%BC%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">redis，操作系统</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/redis/">#redis</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/12/16/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" target="_self">
+          消息中间件数据结构
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/12/16/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" target="_self">
+        <div>
+          总结接触到的中间件的相关数据结构更新时间 Thu Dec 15 11:43:58 CST 2022B树&#x2F;B+树关系型数据库核心存储结构(mysql mongodb etcd) 优势 有序存储 查询快 就地更新  概念B树&#x2F;B+树也叫做多路平衡搜索树，红黑树、acl树被称为平衡二叉搜索树，中序遍历得到有序数据。根据数据库常见存储场景，B树系列一般在磁盘中使用，映射着磁盘页，二叉搜
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-12-16 15:47" pubdate>
+              2022-12-16
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="category-chain-item">数据结构，消息中间件</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/">#消息中间件</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/12/16/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" target="_self">
+          消息队列概述
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/12/16/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" target="_self">
+        <div>
+          消息队列的理解概念分布式消息队列是一种应用之间异步通信的方式，主要由三部分组成生产端、代理、消费端生产端：将业务消息进行预处理实例化，产生消息发送给broker。 代理：是整个消息的服务端，核心部分，处理消息单元，负责消息的存储、投递以及队列的一切其他附加的功能 消费端：负责消息的消费，根据消息承载的逻辑进行相应的处理 应用场景异步处理在实时性要求不严格的场景，例如用户注册发送验证码、下单通知发送
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-12-16 15:47" pubdate>
+              2022-12-16
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" class="category-chain-item">消息队列</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">#消息队列</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/12/13/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%AF%BB%E5%86%99/" target="_self">
+          Java多线程读写（生产者消费者模型）
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/12/13/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%AF%BB%E5%86%99/" target="_self">
+        <div>
+          概述一个线程读取一个excel文件，储存到内存（此处为Queue）,另一个线程从队列中读取文件，并写入新的excel文件，即生产者消费者模型。 代码文件结构 pom导入依赖12345678910111213141516171819202122232425262728293031323334353637383940414243&lt;project xmlns=&quot;http://maven.
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-12-13 09:39" pubdate>
+              2022-12-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%EF%BC%8CJava/" class="category-chain-item">Java并发编程，Java</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Java/">#Java</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2022/12/03/merge%E5%92%8Crebase%E7%9A%84%E5%8C%BA%E5%88%AB/" target="_self">
           merge和rebase的区别
         </a>
@@ -297,7 +541,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2022/12/03/%E5%AD%A6%E4%B9%A0%E8%A7%86%E9%A2%91/" target="_self">
         <div>
-          多看多学，保持思考。 体系阅读2022&#x2F;12&#x2F;3大厂分享☞☞大厂文章速读 数据库阅读2022&#x2F;12&#x2F;3冷门又重要的6个技巧，高并发数据库优化 1234561.打破范式设计，冗余少量字段方便查询，需要注意源表和冗余表保证同一事务写。2.关联关系在业务层面约束，不依赖数据库外键3.字段拓展性，如模板信息这种结构不清晰的字段使用json类型，json检索的问题我的
+          多看多学，保持思考。 体系阅读2022&#x2F;12&#x2F;3大厂分享☞☞大厂文章速读 Java基础Spring数据库阅读2022&#x2F;12&#x2F;3冷门又重要的6个技巧，高并发数据库优化 1234561.打破范式设计，冗余少量字段方便查询，需要注意源表和冗余表保证同一事务写。2.关联关系在业务层面约束，不依赖数据库外键3.字段拓展性，如模板信息这种结构不清晰的字段使用json类型
         </div>
       </a>
 
@@ -560,255 +804,11 @@
     </article>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022/12/03/%E6%8E%A5%E5%8F%A3%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F/" target="_self">
-          接口数据脱敏
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2022/12/03/%E6%8E%A5%E5%8F%A3%E6%95%B0%E6%8D%AE%E8%84%B1%E6%95%8F/" target="_self">
-        <div>
-          背景介绍项目业务(银行、医院、购物平台等)经常涉及到个人手机号、身份证号等敏感信息，针对这些信息设计对应接口时，通常接口返回值中的敏感数据需要进行脱敏操作，记录三种实现接口数据脱敏方法 方案MyBatis整合MyBatis插件，在查询的时候针对特定的字段进行脱敏  mybatis-plus的数据脱敏使用 Mybatis插件+注解实现数据脱敏  Jackson在序列化阶段对特定字段进行脱敏  自定义
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-12-03 15:00" pubdate>
-              2022-12-03
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%BE%85%E5%BD%92%E7%B1%BB/" class="category-chain-item">待归类</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%B0%8F%E8%AE%B0/">#小记</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022/12/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%BC%82%E6%AD%A5%E5%92%8CMQ%E7%9A%84%E5%8C%BA%E5%88%AB/" target="_self">
-          多线程异步和MQ的区别
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2022/12/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%BC%82%E6%AD%A5%E5%92%8CMQ%E7%9A%84%E5%8C%BA%E5%88%AB/" target="_self">
-        <div>
-          区别 CPU消耗 多线程异步可能存在CPU竞争，而MQ不会消耗本机的CPU MQ方式实现异步是完全解耦的，适合于大型互联网项目 削锋或者消息堆积能力 当业务系统处于靠并发，MQ可以将消息堆积在Broker实例中，而多线程会创建大量线程，但过量的线程可能会触发拒绝策略。 使用MQ引入了中间件，增加了项目复杂度和运维难度  总结规模较小的项目可以使用多线程异步，大项目建议使用MQ实现异步
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-12-03 14:40" pubdate>
-              2022-12-03
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%BE%85%E5%BD%92%E7%B1%BB/" class="category-chain-item">待归类</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%B0%8F%E8%AE%B0/">#小记</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022/11/17/%E4%BA%8C%E5%8F%89%E6%A0%91/" target="_self">
-          二叉树
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2022/11/17/%E4%BA%8C%E5%8F%89%E6%A0%91/" target="_self">
-        <div>
-          二叉树二叉树的简单操作函数主要包括二叉树初始化 二叉排序树插入  前中后序遍历 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-11-17 11:54" pubdate>
-              2022-11-17
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/" class="category-chain-item">二叉树</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">#二叉树</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022/11/16/%E5%8D%95%E9%93%BE%E8%A1%A8/" target="_self">
-          单链表
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2022/11/16/%E5%8D%95%E9%93%BE%E8%A1%A8/" target="_self">
-        <div>
-          单链表每次插入一个节点都实时malloc分配空间，再使用next进行链接 代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-11-16 21:54" pubdate>
-              2022-11-16
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E7%BA%BF%E6%80%A7%E8%A1%A8/" class="category-chain-item">线性表</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E9%93%BE%E8%A1%A8/">#链表</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 
