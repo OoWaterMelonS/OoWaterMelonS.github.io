@@ -280,9 +280,9 @@
     
     <categories>
       
-      <category>消息队列</category>
-      
       <category>Java并发编程</category>
+      
+      <category>消息队列</category>
       
     </categories>
     
