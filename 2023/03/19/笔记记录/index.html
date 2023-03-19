@@ -16,24 +16,24 @@
   <meta name="author" content="OoWaterMelonS Shao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1. 背景添加缓存的目的一般都是为了减轻数据库的读写压力，同时提升服务性能。这涉及到项目中实际的开发经验，即数据库的读写速度往往会是项目瓶颈。 操作系统中：cpu运行速度&gt;缓存读写速度&gt;硬盘读写速度，增加缓存、读写分离等方法都是用来优化数据库读写耗时。 2. 缓存穿透2.1 需求用户需要查询数据库中某一项信息，优先去缓存中查询2.1.1 如果缓存中保存了信息，则在缓存中命中需要的信息，">
+    <meta name="description" content="感叹一句：忙着赶大论文，觉得好难。但看了看博士师兄做的成就，就不觉得太难了，厉害厉害呀，向他看齐，努力提高自己，少打游戏，多看书多接触新知识。 真正要分享的：FlowUs（notion、wolai）和Obsidian都是目前比较流行的笔记软件，各有优势和劣势，以下是我根据个人使用和了解总结的一些观点 FlowUSFlowUs的优势：  多平台支持：FlowUs支持Windows、macOS、iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="缓存穿透-击穿-雪崩">
-<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2022/12/16/%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F-%E5%87%BB%E7%A9%BF-%E9%9B%AA%E5%B4%A9/index.html">
+<meta property="og:title" content="笔记记录">
+<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2023/03/19/%E7%AC%94%E8%AE%B0%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="OoWaterMelon">
-<meta property="og:description" content="1. 背景添加缓存的目的一般都是为了减轻数据库的读写压力，同时提升服务性能。这涉及到项目中实际的开发经验，即数据库的读写速度往往会是项目瓶颈。 操作系统中：cpu运行速度&gt;缓存读写速度&gt;硬盘读写速度，增加缓存、读写分离等方法都是用来优化数据库读写耗时。 2. 缓存穿透2.1 需求用户需要查询数据库中某一项信息，优先去缓存中查询2.1.1 如果缓存中保存了信息，则在缓存中命中需要的信息，">
+<meta property="og:description" content="感叹一句：忙着赶大论文，觉得好难。但看了看博士师兄做的成就，就不觉得太难了，厉害厉害呀，向他看齐，努力提高自己，少打游戏，多看书多接触新知识。 真正要分享的：FlowUs（notion、wolai）和Obsidian都是目前比较流行的笔记软件，各有优势和劣势，以下是我根据个人使用和了解总结的一些观点 FlowUSFlowUs的优势：  多平台支持：FlowUs支持Windows、macOS、iOS">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-12-16T08:16:11.000Z">
-<meta property="article:modified_time" content="2022-12-16T08:43:49.029Z">
+<meta property="article:published_time" content="2023-03-19T12:33:33.000Z">
+<meta property="article:modified_time" content="2023-03-19T12:37:59.017Z">
 <meta property="article:author" content="OoWaterMelonS Shao">
-<meta property="article:tag" content="redis">
+<meta property="article:tag" content="小记">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>缓存穿透-击穿-雪崩 - OoWaterMelon</title>
+  <title>笔记记录 - OoWaterMelon</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -203,7 +203,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">缓存穿透-击穿-雪崩</span>
+            <span id="subtitle">笔记记录</span>
           
         </div>
 
@@ -214,8 +214,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-16 16:16" pubdate>
-          2022年12月16日 下午
+        <time datetime="2023-03-19 20:33" pubdate>
+          2023年3月19日 晚上
         </time>
       </span>
     
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          1.1k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          13 分钟
+          10 分钟
         
       </span>
     
@@ -277,31 +277,60 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">缓存穿透-击穿-雪崩</h1>
+            <h1 style="display: none">笔记记录</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="1-背景"><a href="#1-背景" class="headerlink" title="1. 背景"></a>1. 背景</h1><p>添加缓存的目的一般都是为了减轻数据库的读写压力，同时提升服务性能。这涉及到项目中实际的开发经验，即数据库的读写速度往往会是项目瓶颈。</p>
-<p>操作系统中：cpu运行速度&gt;缓存读写速度&gt;硬盘读写速度，增加缓存、读写分离等方法都是用来优化数据库读写耗时。</p>
-<h1 id="2-缓存穿透"><a href="#2-缓存穿透" class="headerlink" title="2. 缓存穿透"></a>2. 缓存穿透</h1><h2 id="2-1-需求"><a href="#2-1-需求" class="headerlink" title="2.1 需求"></a>2.1 需求</h2><p>用户需要查询数据库中某一项信息，优先去缓存中查询<br>2.1.1 如果缓存中保存了信息，则在缓存中命中需要的信息，直接返回，不进行后续的查询数据库操作。</p>
-<p>2.1.2 如果缓存中查询信息失败，则从数据库中查询数据，如果查询到了，则将数据放入缓存（会涉及设置失效时间，查询频率等操作），并返回信息。</p>
-<p>2.1.3 如果数据库也查询失败，则直接返回查询失败提醒。</p>
-<p>分析流程2.1.1、2.1.2、2.1.3，假设存在如下场景，有人恶意伪造大量数据库中不存在的id请求，大量涌入服务器，则此时流程2.1.1因为缓存没有数据会被跳过，流程2.1.2也因为没有缓存没有数据会被跳过，流程2.1.3会对每次请求都检索一遍数据库表。可以把这个时候缓存都被跳过的现象成为缓存穿透，因为能加速服务器性能的缓存都被跳过，每次都是在硬盘上读写遍历，这必然造成系统性能下降。</p>
-<h2 id="2-2-解决办法"><a href="#2-2-解决办法" class="headerlink" title="2.2 解决办法"></a>2.2 解决办法</h2><h2 id="2-2-1-参数校验"><a href="#2-2-1-参数校验" class="headerlink" title="2.2.1 参数校验"></a>2.2.1 参数校验</h2><p>参数校验，拦截掉不必要发出请求的某些恶意id，例如被北京ip发送的id范围是在01XXX和03XXX之间，则拦截其他数字开头的id.</p>
-<h2 id="2-2-2-布隆过滤器"><a href="#2-2-2-布隆过滤器" class="headerlink" title="2.2.2 布隆过滤器"></a>2.2.2 布隆过滤器</h2><p>数据库数据量不是过大时，可将所有数据提前存储到内存，在这种场景下，使用布隆过滤器减少数据加载到缓存时候，内存使用量。布隆过滤器特点<strong>缓存查询得到的数据库不一定存在；但缓存查询不到数据库一定不存在</strong>。</p>
-<p>同时由于缓存中的数据需要及时和数据库进行同步更新。否则数据库新添加的信息，因为缓存中不存在，布隆过滤器会拦截掉这些新增的正常请求。这在一些业务场景是无法接受的，但在对这种情况可以接受的业务场景前提下，布隆过滤器虽然会有少量缓存不存在的请求发送给数据库，但更多的是会避免掉很多数据不存在的数据库访问。</p>
-<h2 id="2-2-3-缓存空值"><a href="#2-2-3-缓存空值" class="headerlink" title="2.2.3 缓存空值"></a>2.2.3 缓存空值</h2><p>受限于应用场景，布隆过滤器使用并不多，而是采用缓存空值方案。核心思想为，无论数据库中是否查询得到数据，都将数据放入缓存，数据存在时，请求id对应值为该真实数据；数据不存在时，请求id对应值为空值。</p>
-<h1 id="3-缓存击穿"><a href="#3-缓存击穿" class="headerlink" title="3. 缓存击穿"></a>3. 缓存击穿</h1><h2 id="3-1-需求"><a href="#3-1-需求" class="headerlink" title="3.1 需求"></a>3.1 需求</h2><p>假设在每年轰轰烈烈的春节火车票抢票中，某一列车次在春节一个月内对应的那个key在缓存中过期失效了，涉及一百万人，每个人都疯狂点抢票，这个时候缓存失效，数据库接受大量请求，可能造成死机或者物理机温度过高直接宕机。</p>
-<h2 id="3-2-调整key有效时间"><a href="#3-2-调整key有效时间" class="headerlink" title="3.2 调整key有效时间"></a>3.2 调整key有效时间</h2><ul>
-<li>直接延长缓存时间，</li>
-<li>有接收到了对于key的查询，就重置key有效期</li>
-<li>某些长期热点展示数据设置永久有效，由运维人员根据时间业务等情况，手动调整数据从数据库上载或卸载到缓存。</li>
-</ul>
-<h2 id="3-3-请求加锁"><a href="#3-3-请求加锁" class="headerlink" title="3.3 请求加锁"></a>3.3 请求加锁</h2><p>同一时刻，只有一个请求拥有访问数据库的锁，即加锁实现限流。基于lock接口或sychronized关键字</p>
-<h1 id="4-缓存雪崩"><a href="#4-缓存雪崩" class="headerlink" title="4. 缓存雪崩"></a>4. 缓存雪崩</h1><h2 id="4-1-需求"><a href="#4-1-需求" class="headerlink" title="4.1 需求"></a>4.1 需求</h2><p>缓存中的多个key同时失效（恰好过期时间都是在一个时刻）或者缓存服务器物理机宕机失效，都会造成缓存雪崩，同一时刻大量请求涌入数据库。</p>
-<h2 id="4-2-过期时间避免统一"><a href="#4-2-过期时间避免统一" class="headerlink" title="4.2 过期时间避免统一"></a>4.2 过期时间避免统一</h2><p>多个key都在某一时刻同时过期，因此可以在设定的过期时间基础上，添加一定范围（例如3600秒）随机数时间，避免高并发时，出现key同时失效。</p>
-<h2 id="4-3-架构设计"><a href="#4-3-架构设计" class="headerlink" title="4.3 架构设计"></a>4.3 架构设计</h2><p>物理机宕机，可在设计阶段设计主从缓存服务器，slaves缓存服务器及时同步master缓存服务器中的信息，一旦master挂了，salves们竞争上岗，其中某一个slave将承担master的缓存任务。（redis哨兵模式）</p>
+                <p>感叹一句：忙着赶大论文，觉得好难。但看了看博士师兄做的成就，就不觉得太难了，厉害厉害呀，向他看齐，努力提高自己，少打游戏，多看书多接触新知识。</p>
+<p>真正要分享的：<br>FlowUs（notion、wolai）和Obsidian都是目前比较流行的笔记软件，各有优势和劣势，以下是我根据个人使用和了解总结的一些观点</p>
+<h1 id="FlowUS"><a href="#FlowUS" class="headerlink" title="FlowUS"></a>FlowUS</h1><p>FlowUs的优势：</p>
+<ol>
+<li><p>多平台支持：FlowUs支持Windows、macOS、iOS、Android等多个平台，用户可以在不同设备上方便地同步和使用笔记内容。</p>
+</li>
+<li><p>界面简洁：FlowUs的界面设计简洁，易于使用和操作，同时支持自定义主题和颜色。</p>
+</li>
+<li><p>丰富的标签和过滤功能：FlowUs支持标签和过滤功能，方便用户对笔记内容进行分类和检索。</p>
+</li>
+<li><p>集成了画图工具：FlowUs内置了画图工具，用户可以方便地在笔记中添加手写或绘图内容。</p>
+</li>
+</ol>
+<p>FlowUs的劣势：</p>
+<ol start="5">
+<li><p>功能相对简单：与其他笔记软件相比，FlowUs的功能相对简单，缺少一些高级功能如插入LaTeX公式、内嵌网页等。</p>
+</li>
+<li><p>客户端存在稳定性问题：有一些用户反映在使用FlowUs时，客户端存在崩溃、卡顿等稳定性问题。</p>
+</li>
+</ol>
+<p>Obsidian的优势：</p>
+<ol start="7">
+<li><p>基于Markdown语言：Obsidian基于Markdown语言，使得用户可以使用简单的语法快速编辑和格式化笔记。</p>
+</li>
+<li><p>插件丰富：Obsidian支持插件系统，用户可以自由安装各种插件来满足不同的需求。</p>
+</li>
+<li><p>强大的链接和索引功能：Obsidian支持基于链接的笔记系统，用户可以方便地创建笔记之间的链接和索引。</p>
+</li>
+<li><p>界面高度自定义：Obsidian的界面高度自定义，用户可以根据自己的习惯设置不同的主题和布局。</p>
+</li>
+</ol>
+<p>Obsidian的劣势：</p>
+<ol start="11">
+<li><p>学习成本相对高：由于基于Markdown语言和链接的笔记系统比较特殊，因此新用户需要一定的时间来适应和学习。</p>
+</li>
+<li><p>缺少同步功能：Obsidian目前缺少自带的同步功能，需要通过第三方工具来同步笔记内容。</p>
+</li>
+<li><p>没有官方移动客户端：目前Obsidian缺少官方移动客户端，用户需要使用第三方客户端或者使用Web版来在移动设备上访问笔记内容。</p>
+</li>
+</ol>
+<p>总的来说，FlowUs和Obsidian各有优势和劣势，对于notion存储和网速的限制，并不能太接受。对于OneNote，因为处理编写markdown的不方便，未长期使用，</p>
+<p>个人目前方案为：提示任务采用Microsoft Todo，平时笔记采用obsidian对于自己形成知识关联，分享笔记则采用FlowUs和Hexo（<a target="_blank" rel="noopener" href="https://oowatermelons.github.io/">https://oowatermelons.github.io/</a>）。 </p>
+<p>注意！！！ 注意！！！</p>
+<ol start="14">
+<li><p><strong>工具为次要，避免文具多。</strong></p>
+</li>
+<li><p><strong>无论研究还是技术，先学思想，再谈设备。</strong></p>
+</li>
+</ol>
 
                 
               </div>
@@ -320,15 +349,8 @@
     
       <span class="category-chain">
         
-  <a href="/categories/redis/" class="category-chain-item">redis</a>
+  <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/" class="category-chain-item">软件分享</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/redis/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
-  
-  
-
   
 
       </span>
@@ -342,7 +364,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/redis/">#redis</a>
+        <a href="/tags/%E5%B0%8F%E8%AE%B0/">#小记</a>
       
     </div>
   
@@ -354,8 +376,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>缓存穿透-击穿-雪崩</div>
-      <div>http://oowatermelon.github.io/OoWaterMelonS/2022/12/16/缓存穿透-击穿-雪崩/</div>
+      <div>笔记记录</div>
+      <div>http://oowatermelon.github.io/OoWaterMelonS/2023/03/19/笔记记录/</div>
     </div>
     <div class="license-meta">
       
@@ -367,7 +389,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年12月16日</div>
+          <div>2023年3月19日</div>
         </div>
       
       
@@ -399,18 +421,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/03/04/hungarian-java/" title="hungarian_java">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">hungarian_java</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/12/16/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="消息中间件数据结构">
-                        <span class="hidden-mobile">消息中间件数据结构</span>
+                      <a href="/2023/03/04/hungarian-java/" title="hungarian_java">
+                        <span class="hidden-mobile">hungarian_java</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

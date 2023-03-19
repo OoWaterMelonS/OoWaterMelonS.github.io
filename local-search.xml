@@ -4,6 +4,44 @@
   
   
   <entry>
+    <title>笔记记录</title>
+    <link href="/2023/03/19/%E7%AC%94%E8%AE%B0%E8%AE%B0%E5%BD%95/"/>
+    <url>/2023/03/19/%E7%AC%94%E8%AE%B0%E8%AE%B0%E5%BD%95/</url>
+    
+    <content type="html"><![CDATA[<p>感叹一句：忙着赶大论文，觉得好难。但看了看博士师兄做的成就，就不觉得太难了，厉害厉害呀，向他看齐，努力提高自己，少打游戏，多看书多接触新知识。</p><p>真正要分享的：<br>FlowUs（notion、wolai）和Obsidian都是目前比较流行的笔记软件，各有优势和劣势，以下是我根据个人使用和了解总结的一些观点</p><h1 id="FlowUS"><a href="#FlowUS" class="headerlink" title="FlowUS"></a>FlowUS</h1><p>FlowUs的优势：</p><ol><li><p>多平台支持：FlowUs支持Windows、macOS、iOS、Android等多个平台，用户可以在不同设备上方便地同步和使用笔记内容。</p></li><li><p>界面简洁：FlowUs的界面设计简洁，易于使用和操作，同时支持自定义主题和颜色。</p></li><li><p>丰富的标签和过滤功能：FlowUs支持标签和过滤功能，方便用户对笔记内容进行分类和检索。</p></li><li><p>集成了画图工具：FlowUs内置了画图工具，用户可以方便地在笔记中添加手写或绘图内容。</p></li></ol><p>FlowUs的劣势：</p><ol start="5"><li><p>功能相对简单：与其他笔记软件相比，FlowUs的功能相对简单，缺少一些高级功能如插入LaTeX公式、内嵌网页等。</p></li><li><p>客户端存在稳定性问题：有一些用户反映在使用FlowUs时，客户端存在崩溃、卡顿等稳定性问题。</p></li></ol><p>Obsidian的优势：</p><ol start="7"><li><p>基于Markdown语言：Obsidian基于Markdown语言，使得用户可以使用简单的语法快速编辑和格式化笔记。</p></li><li><p>插件丰富：Obsidian支持插件系统，用户可以自由安装各种插件来满足不同的需求。</p></li><li><p>强大的链接和索引功能：Obsidian支持基于链接的笔记系统，用户可以方便地创建笔记之间的链接和索引。</p></li><li><p>界面高度自定义：Obsidian的界面高度自定义，用户可以根据自己的习惯设置不同的主题和布局。</p></li></ol><p>Obsidian的劣势：</p><ol start="11"><li><p>学习成本相对高：由于基于Markdown语言和链接的笔记系统比较特殊，因此新用户需要一定的时间来适应和学习。</p></li><li><p>缺少同步功能：Obsidian目前缺少自带的同步功能，需要通过第三方工具来同步笔记内容。</p></li><li><p>没有官方移动客户端：目前Obsidian缺少官方移动客户端，用户需要使用第三方客户端或者使用Web版来在移动设备上访问笔记内容。</p></li></ol><p>总的来说，FlowUs和Obsidian各有优势和劣势，对于notion存储和网速的限制，并不能太接受。对于OneNote，因为处理编写markdown的不方便，未长期使用，</p><p>个人目前方案为：提示任务采用Microsoft Todo，平时笔记采用obsidian对于自己形成知识关联，分享笔记则采用FlowUs和Hexo（<a href="https://oowatermelons.github.io/">https://oowatermelons.github.io/</a>）。 </p><p>注意！！！ 注意！！！</p><ol start="14"><li><p><strong>工具为次要，避免文具多。</strong></p></li><li><p><strong>无论研究还是技术，先学思想，再谈设备。</strong></p></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>软件分享</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>小记</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>hungarian_java</title>
+    <link href="/2023/03/04/hungarian-java/"/>
+    <url>/2023/03/04/hungarian-java/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>缓存穿透-击穿-雪崩</title>
     <link href="/2022/12/16/%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F-%E5%87%BB%E7%A9%BF-%E9%9B%AA%E5%B4%A9/"/>
     <url>/2022/12/16/%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F-%E5%87%BB%E7%A9%BF-%E9%9B%AA%E5%B4%A9/</url>
