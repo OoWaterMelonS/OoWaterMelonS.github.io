@@ -8,7 +8,7 @@
     <link href="/2023/03/19/%E7%AC%94%E8%AE%B0%E8%AE%B0%E5%BD%95/"/>
     <url>/2023/03/19/%E7%AC%94%E8%AE%B0%E8%AE%B0%E5%BD%95/</url>
     
-    <content type="html"><![CDATA[<p>感叹一句：忙着赶大论文，觉得好难。但看了看博士师兄做的成就，就不觉得太难了，厉害厉害呀，向他看齐，努力提高自己，少打游戏，多看书多接触新知识。</p><p>真正要分享的：<br>FlowUs（notion、wolai）和Obsidian都是目前比较流行的笔记软件，各有优势和劣势，以下是我根据个人使用和了解总结的一些观点</p><h1 id="FlowUS"><a href="#FlowUS" class="headerlink" title="FlowUS"></a>FlowUS</h1><p>FlowUs的优势：</p><ol><li><p>多平台支持：FlowUs支持Windows、macOS、iOS、Android等多个平台，用户可以在不同设备上方便地同步和使用笔记内容。</p></li><li><p>界面简洁：FlowUs的界面设计简洁，易于使用和操作，同时支持自定义主题和颜色。</p></li><li><p>丰富的标签和过滤功能：FlowUs支持标签和过滤功能，方便用户对笔记内容进行分类和检索。</p></li><li><p>集成了画图工具：FlowUs内置了画图工具，用户可以方便地在笔记中添加手写或绘图内容。</p></li></ol><p>FlowUs的劣势：</p><ol start="5"><li><p>功能相对简单：与其他笔记软件相比，FlowUs的功能相对简单，缺少一些高级功能如插入LaTeX公式、内嵌网页等。</p></li><li><p>客户端存在稳定性问题：有一些用户反映在使用FlowUs时，客户端存在崩溃、卡顿等稳定性问题。</p></li></ol><p>Obsidian的优势：</p><ol start="7"><li><p>基于Markdown语言：Obsidian基于Markdown语言，使得用户可以使用简单的语法快速编辑和格式化笔记。</p></li><li><p>插件丰富：Obsidian支持插件系统，用户可以自由安装各种插件来满足不同的需求。</p></li><li><p>强大的链接和索引功能：Obsidian支持基于链接的笔记系统，用户可以方便地创建笔记之间的链接和索引。</p></li><li><p>界面高度自定义：Obsidian的界面高度自定义，用户可以根据自己的习惯设置不同的主题和布局。</p></li></ol><p>Obsidian的劣势：</p><ol start="11"><li><p>学习成本相对高：由于基于Markdown语言和链接的笔记系统比较特殊，因此新用户需要一定的时间来适应和学习。</p></li><li><p>缺少同步功能：Obsidian目前缺少自带的同步功能，需要通过第三方工具来同步笔记内容。</p></li><li><p>没有官方移动客户端：目前Obsidian缺少官方移动客户端，用户需要使用第三方客户端或者使用Web版来在移动设备上访问笔记内容。</p></li></ol><p>总的来说，FlowUs和Obsidian各有优势和劣势，对于notion存储和网速的限制，并不能太接受。对于OneNote，因为处理编写markdown的不方便，未长期使用，</p><p>个人目前方案为：提示任务采用Microsoft Todo，平时笔记采用obsidian对于自己形成知识关联，FlowUS则用于记录快速迭代的任务，常用常删，保持更新。分享笔记采用FlowUs和Hexo（<a href="https://oowatermelons.github.io/%EF%BC%89%E3%80%82">https://oowatermelons.github.io/）。</a></p><p>注意！！！ 注意！！！</p><ol start="14"><li><p><strong>工具为次要，避免文具多。</strong></p></li><li><p><strong>无论研究还是技术，先学思想，再谈设备。</strong></p></li></ol>]]></content>
+    <content type="html"><![CDATA[<p>感叹一句：忙着赶大论文，觉得好难。但看了看博士师兄做的成就，就不觉得太难了，厉害厉害呀，向他看齐，努力提高自己，少打游戏，多看书多接触新知识。</p><p>真正要分享的：<br>FlowUs（notion、wolai）和Obsidian都是目前比较流行的笔记软件，各有优势和劣势，以下是我根据个人使用和了解总结的一些观点</p><h1 id="FlowUS"><a href="#FlowUS" class="headerlink" title="FlowUS"></a>FlowUS</h1><p>FlowUs的优势：</p><ol><li><p>多平台支持：FlowUs支持Windows、macOS、iOS、Android等多个平台，用户可以在不同设备上方便地同步和使用笔记内容。</p></li><li><p>界面简洁：FlowUs的界面设计简洁，易于使用和操作，同时支持自定义主题和颜色。</p></li><li><p>丰富的标签和过滤功能：FlowUs支持标签和过滤功能，方便用户对笔记内容进行分类和检索。</p></li><li><p>集成了画图工具：FlowUs内置了画图工具，用户可以方便地在笔记中添加手写或绘图内容。</p></li></ol><p>FlowUs的劣势：</p><ol start="5"><li><p>功能相对简单：与其他笔记软件相比，FlowUs的功能相对简单，缺少一些高级功能如插入LaTeX公式、内嵌网页等。</p></li><li><p>客户端存在稳定性问题：有一些用户反映在使用FlowUs时，客户端存在崩溃、卡顿等稳定性问题。</p></li></ol><p>Obsidian的优势：</p><ol start="7"><li><p>基于Markdown语言：Obsidian基于Markdown语言，使得用户可以使用简单的语法快速编辑和格式化笔记。</p></li><li><p>插件丰富：Obsidian支持插件系统，用户可以自由安装各种插件来满足不同的需求。</p></li><li><p>强大的链接和索引功能：Obsidian支持基于链接的笔记系统，用户可以方便地创建笔记之间的链接和索引。</p></li><li><p>界面高度自定义：Obsidian的界面高度自定义，用户可以根据自己的习惯设置不同的主题和布局。</p></li></ol><p>Obsidian的劣势：</p><ol start="11"><li><p>学习成本相对高：由于基于Markdown语言和链接的笔记系统比较特殊，因此新用户需要一定的时间来适应和学习。</p></li><li><p>缺少同步功能：Obsidian目前缺少自带的同步功能，需要通过第三方工具来同步笔记内容。</p></li><li><p>没有官方移动客户端：目前Obsidian缺少官方移动客户端，用户需要使用第三方客户端或者使用Web版来在移动设备上访问笔记内容。</p></li></ol><p>总的来说，FlowUs和Obsidian各有优势和劣势，对于notion存储和网速的限制，并不能太接受。对于OneNote，因为处理编写markdown的不方便，未长期使用，</p><p>个人目前方案为：提示任务采用Microsoft Todo，平时笔记采用obsidian对于自己形成知识关联，FlowUS则用于记录快速迭代的任务，常用常删，保持更新。分享笔记采用FlowUs(<a href="https://flowus.cn/eaaple/b6715432-3951-42f2-912f-f104a927547b)%E5%92%8CHexo%EF%BC%88https://oowatermelons.github.io/%EF%BC%89%E3%80%82">https://flowus.cn/eaaple/b6715432-3951-42f2-912f-f104a927547b)和Hexo（https://oowatermelons.github.io/）。</a></p><p>注意！！！ 注意！！！</p><ol start="14"><li><p><strong>工具为次要，避免文具多。</strong></p></li><li><p><strong>无论研究还是技术，先学思想，再谈设备。</strong></p></li></ol>]]></content>
     
     
     <categories>
@@ -81,31 +81,6 @@
   
   
   <entry>
-    <title>消息队列概述</title>
-    <link href="/2022/12/16/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
-    <url>/2022/12/16/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</url>
-    
-    <content type="html"><![CDATA[<h1 id="消息队列的理解"><a href="#消息队列的理解" class="headerlink" title="消息队列的理解"></a>消息队列的理解</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>分布式消息队列是一种应用之间<strong>异步</strong>通信的方式，主要由三部分组成生产端、代理、消费端<br><img src="/img/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/../../../img/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/MQ1.jpg" alt="MQ"><br>生产端：将业务消息进行预处理实例化，产生消息发送给broker。</p><p>代理：是整个消息的服务端，核心部分，处理消息单元，负责消息的存储、投递以及队列的一切其他附加的功能</p><p>消费端：负责消息的消费，根据消息承载的逻辑进行相应的处理</p><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="异步处理"><a href="#异步处理" class="headerlink" title="异步处理"></a>异步处理</h3><p>在实时性要求不严格的场景，例如用户注册发送验证码、下单通知发送优惠卷等。生产端发出消息给broker后，不用等待消费端给出反馈，可以处理其他业务。消费端处理broker中的信息，异步的给生产端回复结果。<br><img src="/img/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/../../../img/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/MQ2.jpg" alt="异步处理"></p><h3 id="应用解耦"><a href="#应用解耦" class="headerlink" title="应用解耦"></a>应用解耦</h3><p>将某些相关但耦合度不高的功能进行关联，例如订单系统与优惠卷积分系统。这两个系统有关系但不紧密，就可以利用MQ作为桥梁，利用MQ作为消息传递媒介。也就允许这两部分系统甚至可以采用不同的语言、框架实现。<br><img src="/img/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/../../../img/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/MQ3.jpg" alt="应用解耦"></p><h3 id="流量削峰"><a href="#流量削峰" class="headerlink" title="流量削峰"></a>流量削峰</h3><p>在类似秒杀场景中的大流量涌入，需求处理不完的一些服务，为了平衡高并发的请求，将大量请求发送给MQ,根据MQ的存储和分发功能平稳处理业务，起到一个大流量缓冲的作用。<br><img src="/img/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/../../../img/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/MQ4.jpg" alt="流量削锋"></p><h2 id="常用消息队列中间件"><a href="#常用消息队列中间件" class="headerlink" title="常用消息队列中间件"></a>常用消息队列中间件</h2><ul><li>ActiveMQ(中小型公司低吞吐量)</li><li>RabbitMQ</li><li>Kafka（数据量大，吞吐量要求高）</li><li>RocketMQ（数据量大，吞吐量要求高）</li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>消息队列</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>消息队列</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>消息中间件数据结构</title>
     <link href="/2022/12/16/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     <url>/2022/12/16/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
@@ -125,6 +100,31 @@
     <tags>
       
       <tag>消息中间件</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>消息队列概述</title>
+    <link href="/2022/12/16/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    <url>/2022/12/16/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</url>
+    
+    <content type="html"><![CDATA[<h1 id="消息队列的理解"><a href="#消息队列的理解" class="headerlink" title="消息队列的理解"></a>消息队列的理解</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>分布式消息队列是一种应用之间<strong>异步</strong>通信的方式，主要由三部分组成生产端、代理、消费端<br><img src="/img/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/../../../img/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/MQ1.jpg" alt="MQ"><br>生产端：将业务消息进行预处理实例化，产生消息发送给broker。</p><p>代理：是整个消息的服务端，核心部分，处理消息单元，负责消息的存储、投递以及队列的一切其他附加的功能</p><p>消费端：负责消息的消费，根据消息承载的逻辑进行相应的处理</p><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="异步处理"><a href="#异步处理" class="headerlink" title="异步处理"></a>异步处理</h3><p>在实时性要求不严格的场景，例如用户注册发送验证码、下单通知发送优惠卷等。生产端发出消息给broker后，不用等待消费端给出反馈，可以处理其他业务。消费端处理broker中的信息，异步的给生产端回复结果。<br><img src="/img/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/../../../img/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/MQ2.jpg" alt="异步处理"></p><h3 id="应用解耦"><a href="#应用解耦" class="headerlink" title="应用解耦"></a>应用解耦</h3><p>将某些相关但耦合度不高的功能进行关联，例如订单系统与优惠卷积分系统。这两个系统有关系但不紧密，就可以利用MQ作为桥梁，利用MQ作为消息传递媒介。也就允许这两部分系统甚至可以采用不同的语言、框架实现。<br><img src="/img/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/../../../img/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/MQ3.jpg" alt="应用解耦"></p><h3 id="流量削峰"><a href="#流量削峰" class="headerlink" title="流量削峰"></a>流量削峰</h3><p>在类似秒杀场景中的大流量涌入，需求处理不完的一些服务，为了平衡高并发的请求，将大量请求发送给MQ,根据MQ的存储和分发功能平稳处理业务，起到一个大流量缓冲的作用。<br><img src="/img/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/../../../img/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/MQ4.jpg" alt="流量削锋"></p><h2 id="常用消息队列中间件"><a href="#常用消息队列中间件" class="headerlink" title="常用消息队列中间件"></a>常用消息队列中间件</h2><ul><li>ActiveMQ(中小型公司低吞吐量)</li><li>RabbitMQ</li><li>Kafka（数据量大，吞吐量要求高）</li><li>RocketMQ（数据量大，吞吐量要求高）</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>消息队列</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>消息队列</tag>
       
     </tags>
     
