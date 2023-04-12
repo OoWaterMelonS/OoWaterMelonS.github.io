@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>obsidianToNotion</title>
+    <link href="/2023/04/12/obsidianToNotion/"/>
+    <url>/2023/04/12/obsidianToNotion/</url>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在之前的文章中，我曾分享过笔记软件的对比，详见<a href="https://oowatermelons.github.io/2023/03/19/%E7%AC%94%E8%AE%B0%E8%AE%B0%E5%BD%95/">笔记记录</a>。 文末提及主用FlowUs进行笔记分享，现在我来打自己脸。2023年的3、4月由chatGPT3.5和chatGPT4引发的AI潮，促进了很多软件发生了巨变，微软的copilot和Notion的NotionAI都很大提升工作效率。因此，在尝试了AI的好处后，我也萌发从FlowUs转回Notion的想法，加上后面了解到Notion接收到投资后，已解除免费用户的块数限制，因此果断转换回了Notion。😄😄😄因此目前自己主要的笔记方案为obsidian(插件很好且可利用OneDrive进行同步，所以依然还是主力)记录每日各种工作实验笔记，部分可分享的学习笔记则通过Notion和个人博客进行分享。</p><h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>为了避免类似之前obsidian+FlowUs需要复制笔记才能同步的弊端，我查阅了一些资料发现了obsidian中的<a href="https://github.com/EasyChris/obsidian-to-notion">obsidian to Notion</a>插件，可以一键实现obsidian导入notion，太方便了😁😁😁,感谢大佬的开源。倒腾了小半个小时，出了点岔子，不过也成功了，对此将操作步骤做一下分享。</p><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><h4 id="第一：obsidian安装插件"><a href="#第一：obsidian安装插件" class="headerlink" title="第一：obsidian安装插件"></a>第一：obsidian安装插件</h4><p>Obsidian插件市场搜索 obsidian to noiton下载插件，也可以采用该<a href="https://github.com/EasyChris/obsidian-to-notion/releases">下载链接</a>下载到本地安装（此处就默认各位看客已经了解如何在obsidian安装插件）。安装完成后，打开插件的设置可以发现，有两个关键token需要填写，后续操作步骤即为从Notion中获取的步骤。<br><img src="/../img/ObsidianToNotion/3.png" alt="obsidian to notion"></p><h4 id="第二：获取Notion-API-Token"><a href="#第二：获取Notion-API-Token" class="headerlink" title="第二：获取Notion API Token"></a>第二：获取Notion API Token</h4><p>API token需要在个人Notion官网，生成一个integration,这样notion可以允许与其他软件整合，有兴趣看作用的可见<a href="https://developers.notion.com/docs">开发链接</a>。生成intergration的操作为在<a href="https://www.notion.so/my-integrations">申请链接</a>中创建一个integration，假设命名为obsidian。<img src="/../img/ObsidianToNotion/4.jpg" alt="创建intergration界面"><br>完成提交后，即可查看到对应API Token<img src="/../img/ObsidianToNotion/5.jpg" alt="API Token">,这一串token即可填入obsidian to notion的第一个框中。</p><h4 id="第三：获取Database-ID"><a href="#第三：获取Database-ID" class="headerlink" title="第三：获取Database ID"></a>第三：获取Database ID</h4><p>首先在notion中新建一个page，在page中生成一个<strong>fullpage的table,并保证表格第一列列名为name</strong>,如下图所示<img src="/../img/ObsidianToNotion/6.png" alt="新建表格Page">,开启页面的访问为Full access,然后复制web link如下，并不是将整个链接直接复制到obsidian to notion插件的第二个框，而是只需要复制链接中的Database ID，如下所示。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c">https:<span class="hljs-comment">//www.notion.so/myworkspace/a8aec43384f447ed84390e8e42c2e089?v=...</span><br>                                  | --------- Database ID --------|<br><br></code></pre></td></tr></table></figure><h4 id="第四：关联整合"><a href="#第四：关联整合" class="headerlink" title="第四：关联整合"></a>第四：关联整合</h4><p>做完以上操作，并不代表obsidian和notion已经可以绑定，这时候需要利用到步骤二中创建intergration实现信息的流通。因为步骤二中obsidian已经绑定了创建的intergration的Notion API Token,所以这时候需要把步骤三新建的page也绑定到对应的intergration.具体操作如图所示,<strong>搜索你创建的intergration的名字</strong>,确认绑定后，obsidian-&gt;intergration-&gt;page-&gt;database的四阶段数据流即完成绑定。<img src="/../img/ObsidianToNotion/7.jpg" alt="page绑定intergration"></p><h3 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h3><p>首先在obsidian创建测试笔记,然后点击左侧notion图标，即可插件到右侧notion对应的database中出现测试一行数据<br><img src="/../img/ObsidianToNotion/1.jpg" alt="obsidian创建测试笔记"><br>打开测试页，查看内容匹配，调试完成。<br><img src="/../img/ObsidianToNotion/2.jpg" alt="notion测试页面"></p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>obsidian to notion插件的思路为，依托的是notion提供给开发者的intergration支持，核心的数据流为obsidian-&gt;intergration-&gt;page-&gt;database。</p><ul><li>利用intergration实现obsidian和page互相绑定。</li><li>利用database ID实现obsidian和database的绑定。</li></ul><p>码完收工，最近的AI潮太猛了，再去看看AI的提词网站收集，赶上时代的浪潮，别被排在沙滩上。😂😂😂😂</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>软件分享</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>小记</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>笔记记录</title>
     <link href="/2023/03/19/%E7%AC%94%E8%AE%B0%E8%AE%B0%E5%BD%95/"/>
     <url>/2023/03/19/%E7%AC%94%E8%AE%B0%E8%AE%B0%E5%BD%95/</url>
