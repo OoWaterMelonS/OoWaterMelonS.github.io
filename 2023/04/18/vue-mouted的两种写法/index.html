@@ -16,24 +16,24 @@
   <meta name="author" content="OoWaterMelonS Shao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1. 背景添加缓存的目的一般都是为了减轻数据库的读写压力，同时提升服务性能。这涉及到项目中实际的开发经验，即数据库的读写速度往往会是项目瓶颈。 操作系统中：cpu运行速度&gt;缓存读写速度&gt;硬盘读写速度，增加缓存、读写分离等方法都是用来优化数据库读写耗时。 2. 缓存穿透2.1 需求用户需要查询数据库中某一项信息，优先去缓存中查询2.1.1 如果缓存中保存了信息，则在缓存中命中需要的信息，">
+    <meta name="description" content="在Vue中,mounted生命周期钩子可以有两种写法:  方法写法:1234jsmounted() &amp;#123;  &#x2F;&#x2F; ...&amp;#125;  对象写法:1234jsmounted: function() &amp;#123;  &#x2F;&#x2F; ... &amp;#125; 这两种写法的区别是:方法写法:   简洁 适合较简单的逻辑 this指向当前Vue实例  对象写法:  可以访问arguments 可以命名(比如mo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="缓存穿透-击穿-雪崩">
-<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2022/12/16/%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F-%E5%87%BB%E7%A9%BF-%E9%9B%AA%E5%B4%A9/index.html">
+<meta property="og:title" content="vue.mouted的两种写法">
+<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2023/04/18/vue-mouted%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%86%99%E6%B3%95/index.html">
 <meta property="og:site_name" content="OoWaterMelon">
-<meta property="og:description" content="1. 背景添加缓存的目的一般都是为了减轻数据库的读写压力，同时提升服务性能。这涉及到项目中实际的开发经验，即数据库的读写速度往往会是项目瓶颈。 操作系统中：cpu运行速度&gt;缓存读写速度&gt;硬盘读写速度，增加缓存、读写分离等方法都是用来优化数据库读写耗时。 2. 缓存穿透2.1 需求用户需要查询数据库中某一项信息，优先去缓存中查询2.1.1 如果缓存中保存了信息，则在缓存中命中需要的信息，">
+<meta property="og:description" content="在Vue中,mounted生命周期钩子可以有两种写法:  方法写法:1234jsmounted() &amp;#123;  &#x2F;&#x2F; ...&amp;#125;  对象写法:1234jsmounted: function() &amp;#123;  &#x2F;&#x2F; ... &amp;#125; 这两种写法的区别是:方法写法:   简洁 适合较简单的逻辑 this指向当前Vue实例  对象写法:  可以访问arguments 可以命名(比如mo">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-12-16T08:16:11.000Z">
-<meta property="article:modified_time" content="2022-12-16T08:43:49.029Z">
+<meta property="article:published_time" content="2023-04-18T08:48:10.000Z">
+<meta property="article:modified_time" content="2023-04-18T08:52:06.556Z">
 <meta property="article:author" content="OoWaterMelonS Shao">
-<meta property="article:tag" content="redis">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>缓存穿透-击穿-雪崩 - OoWaterMelon</title>
+  <title>vue.mouted的两种写法 - OoWaterMelon</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -203,7 +203,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">缓存穿透-击穿-雪崩</span>
+            <span id="subtitle">vue.mouted的两种写法</span>
           
         </div>
 
@@ -214,8 +214,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-16 16:16" pubdate>
-          2022年12月16日 下午
+        <time datetime="2023-04-18 16:48" pubdate>
+          2023年4月18日 下午
         </time>
       </span>
     
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          521 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          13 分钟
+          5 分钟
         
       </span>
     
@@ -277,31 +277,31 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">缓存穿透-击穿-雪崩</h1>
+            <h1 style="display: none">vue.mouted的两种写法</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="1-背景"><a href="#1-背景" class="headerlink" title="1. 背景"></a>1. 背景</h1><p>添加缓存的目的一般都是为了减轻数据库的读写压力，同时提升服务性能。这涉及到项目中实际的开发经验，即数据库的读写速度往往会是项目瓶颈。</p>
-<p>操作系统中：cpu运行速度&gt;缓存读写速度&gt;硬盘读写速度，增加缓存、读写分离等方法都是用来优化数据库读写耗时。</p>
-<h1 id="2-缓存穿透"><a href="#2-缓存穿透" class="headerlink" title="2. 缓存穿透"></a>2. 缓存穿透</h1><h2 id="2-1-需求"><a href="#2-1-需求" class="headerlink" title="2.1 需求"></a>2.1 需求</h2><p>用户需要查询数据库中某一项信息，优先去缓存中查询<br>2.1.1 如果缓存中保存了信息，则在缓存中命中需要的信息，直接返回，不进行后续的查询数据库操作。</p>
-<p>2.1.2 如果缓存中查询信息失败，则从数据库中查询数据，如果查询到了，则将数据放入缓存（会涉及设置失效时间，查询频率等操作），并返回信息。</p>
-<p>2.1.3 如果数据库也查询失败，则直接返回查询失败提醒。</p>
-<p>分析流程2.1.1、2.1.2、2.1.3，假设存在如下场景，有人恶意伪造大量数据库中不存在的id请求，大量涌入服务器，则此时流程2.1.1因为缓存没有数据会被跳过，流程2.1.2也因为没有缓存没有数据会被跳过，流程2.1.3会对每次请求都检索一遍数据库表。可以把这个时候缓存都被跳过的现象成为缓存穿透，因为能加速服务器性能的缓存都被跳过，每次都是在硬盘上读写遍历，这必然造成系统性能下降。</p>
-<h2 id="2-2-解决办法"><a href="#2-2-解决办法" class="headerlink" title="2.2 解决办法"></a>2.2 解决办法</h2><h2 id="2-2-1-参数校验"><a href="#2-2-1-参数校验" class="headerlink" title="2.2.1 参数校验"></a>2.2.1 参数校验</h2><p>参数校验，拦截掉不必要发出请求的某些恶意id，例如被北京ip发送的id范围是在01XXX和03XXX之间，则拦截其他数字开头的id.</p>
-<h2 id="2-2-2-布隆过滤器"><a href="#2-2-2-布隆过滤器" class="headerlink" title="2.2.2 布隆过滤器"></a>2.2.2 布隆过滤器</h2><p>数据库数据量不是过大时，可将所有数据提前存储到内存，在这种场景下，使用布隆过滤器减少数据加载到缓存时候，内存使用量。布隆过滤器特点<strong>缓存查询得到的数据库不一定存在；但缓存查询不到数据库一定不存在</strong>。</p>
-<p>同时由于缓存中的数据需要及时和数据库进行同步更新。否则数据库新添加的信息，因为缓存中不存在，布隆过滤器会拦截掉这些新增的正常请求。这在一些业务场景是无法接受的，但在对这种情况可以接受的业务场景前提下，布隆过滤器虽然会有少量缓存不存在的请求发送给数据库，但更多的是会避免掉很多数据不存在的数据库访问。</p>
-<h2 id="2-2-3-缓存空值"><a href="#2-2-3-缓存空值" class="headerlink" title="2.2.3 缓存空值"></a>2.2.3 缓存空值</h2><p>受限于应用场景，布隆过滤器使用并不多，而是采用缓存空值方案。核心思想为，无论数据库中是否查询得到数据，都将数据放入缓存，数据存在时，请求id对应值为该真实数据；数据不存在时，请求id对应值为空值。</p>
-<h1 id="3-缓存击穿"><a href="#3-缓存击穿" class="headerlink" title="3. 缓存击穿"></a>3. 缓存击穿</h1><h2 id="3-1-需求"><a href="#3-1-需求" class="headerlink" title="3.1 需求"></a>3.1 需求</h2><p>假设在每年轰轰烈烈的春节火车票抢票中，某一列车次在春节一个月内对应的那个key在缓存中过期失效了，涉及一百万人，每个人都疯狂点抢票，这个时候缓存失效，数据库接受大量请求，可能造成死机或者物理机温度过高直接宕机。</p>
-<h2 id="3-2-调整key有效时间"><a href="#3-2-调整key有效时间" class="headerlink" title="3.2 调整key有效时间"></a>3.2 调整key有效时间</h2><ul>
-<li>直接延长缓存时间，</li>
-<li>有接收到了对于key的查询，就重置key有效期</li>
-<li>某些长期热点展示数据设置永久有效，由运维人员根据时间业务等情况，手动调整数据从数据库上载或卸载到缓存。</li>
+                <p>在Vue中,mounted生命周期钩子可以有两种写法:</p>
+<ol>
+<li>方法写法:<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript">js<br><span class="hljs-title function_">mounted</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// ...</span><br>&#125; <br></code></pre></td></tr></table></figure></li>
+<li>对象写法:<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript">js<br><span class="hljs-attr">mounted</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// ... </span><br>&#125;<br></code></pre></td></tr></table></figure>
+这两种写法的区别是:<br>方法写法:</li>
+</ol>
+<ul>
+<li>简洁</li>
+<li>适合较简单的逻辑</li>
+<li>this指向当前Vue实例</li>
 </ul>
-<h2 id="3-3-请求加锁"><a href="#3-3-请求加锁" class="headerlink" title="3.3 请求加锁"></a>3.3 请求加锁</h2><p>同一时刻，只有一个请求拥有访问数据库的锁，即加锁实现限流。基于lock接口或sychronized关键字</p>
-<h1 id="4-缓存雪崩"><a href="#4-缓存雪崩" class="headerlink" title="4. 缓存雪崩"></a>4. 缓存雪崩</h1><h2 id="4-1-需求"><a href="#4-1-需求" class="headerlink" title="4.1 需求"></a>4.1 需求</h2><p>缓存中的多个key同时失效（恰好过期时间都是在一个时刻）或者缓存服务器物理机宕机失效，都会造成缓存雪崩，同一时刻大量请求涌入数据库。</p>
-<h2 id="4-2-过期时间避免统一"><a href="#4-2-过期时间避免统一" class="headerlink" title="4.2 过期时间避免统一"></a>4.2 过期时间避免统一</h2><p>多个key都在某一时刻同时过期，因此可以在设定的过期时间基础上，添加一定范围（例如3600秒）随机数时间，避免高并发时，出现key同时失效。</p>
-<h2 id="4-3-架构设计"><a href="#4-3-架构设计" class="headerlink" title="4.3 架构设计"></a>4.3 架构设计</h2><p>物理机宕机，可在设计阶段设计主从缓存服务器，slaves缓存服务器及时同步master缓存服务器中的信息，一旦master挂了，salves们竞争上岗，其中某一个slave将承担master的缓存任务。（redis哨兵模式）</p>
+<p>对象写法:</p>
+<ul>
+<li>可以访问arguments</li>
+<li>可以命名(比如mounted: doSomething)</li>
+<li>可读性稍差</li>
+<li>需要手动绑定this(使用.bind(this)或箭头函数)</li>
+</ul>
+<p>除非需要访问arguments或做更复杂的逻辑,方法写法是更优雅的选择。<br>举个例子:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br><span class="hljs-comment">// 方法写法 </span><br><span class="hljs-title function_">mounted</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">$el</span>)  <span class="hljs-comment">// Vue实例</span><br>&#125;<br><br><span class="hljs-comment">// 对象写法 </span><br><span class="hljs-attr">mounted</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">$el</span>)  <span class="hljs-comment">// undefined, 需要绑定this</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">arguments</span>) <br>&#125;.<span class="hljs-title function_">bind</span>(<span class="hljs-variable language_">this</span>)<br><br><span class="hljs-comment">// 或使用箭头函数</span><br><span class="hljs-attr">mounted</span>: <span class="hljs-function">() =&gt;</span> &#123; <br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">$el</span>)  <span class="hljs-comment">// Vue实例</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -320,15 +320,18 @@
     
       <span class="category-chain">
         
-  <a href="/categories/redis/" class="category-chain-item">redis</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/redis/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
+  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
   
   
 
+      </span>
+    
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Vue/" class="category-chain-item">Vue</a>
+  
   
 
       </span>
@@ -342,7 +345,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/redis/">#redis</a>
+        <a href="/tags/Vue/">#Vue</a>
       
     </div>
   
@@ -354,8 +357,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>缓存穿透-击穿-雪崩</div>
-      <div>http://oowatermelon.github.io/OoWaterMelonS/2022/12/16/缓存穿透-击穿-雪崩/</div>
+      <div>vue.mouted的两种写法</div>
+      <div>http://oowatermelon.github.io/OoWaterMelonS/2023/04/18/vue-mouted的两种写法/</div>
     </div>
     <div class="license-meta">
       
@@ -367,7 +370,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年12月16日</div>
+          <div>2023年4月18日</div>
         </div>
       
       
@@ -399,18 +402,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/03/04/hungarian-java/" title="hungarian_java">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">hungarian_java</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/12/16/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" title="消息队列概述">
-                        <span class="hidden-mobile">消息队列概述</span>
+                      <a href="/2023/04/12/obsidian%E5%AF%BC%E5%85%A5notion%E6%93%8D%E4%BD%9C/" title="obsidianToNotion">
+                        <span class="hidden-mobile">obsidianToNotion</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

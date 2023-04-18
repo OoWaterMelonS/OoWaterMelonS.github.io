@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>vue.mouted的两种写法</title>
+    <link href="/2023/04/18/vue-mouted%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%86%99%E6%B3%95/"/>
+    <url>/2023/04/18/vue-mouted%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%86%99%E6%B3%95/</url>
+    
+    <content type="html"><![CDATA[<p>在Vue中,mounted生命周期钩子可以有两种写法:</p><ol><li>方法写法:<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript">js<br><span class="hljs-title function_">mounted</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// ...</span><br>&#125; <br></code></pre></td></tr></table></figure></li><li>对象写法:<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript">js<br><span class="hljs-attr">mounted</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// ... </span><br>&#125;<br></code></pre></td></tr></table></figure>这两种写法的区别是:<br>方法写法:</li></ol><ul><li>简洁</li><li>适合较简单的逻辑</li><li>this指向当前Vue实例</li></ul><p>对象写法:</p><ul><li>可以访问arguments</li><li>可以命名(比如mounted: doSomething)</li><li>可读性稍差</li><li>需要手动绑定this(使用.bind(this)或箭头函数)</li></ul><p>除非需要访问arguments或做更复杂的逻辑,方法写法是更优雅的选择。<br>举个例子:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br><span class="hljs-comment">// 方法写法 </span><br><span class="hljs-title function_">mounted</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">$el</span>)  <span class="hljs-comment">// Vue实例</span><br>&#125;<br><br><span class="hljs-comment">// 对象写法 </span><br><span class="hljs-attr">mounted</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">$el</span>)  <span class="hljs-comment">// undefined, 需要绑定this</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">arguments</span>) <br>&#125;.<span class="hljs-title function_">bind</span>(<span class="hljs-variable language_">this</span>)<br><br><span class="hljs-comment">// 或使用箭头函数</span><br><span class="hljs-attr">mounted</span>: <span class="hljs-function">() =&gt;</span> &#123; <br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">$el</span>)  <span class="hljs-comment">// Vue实例</span><br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>前端</category>
+      
+      <category>Vue</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Vue</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>obsidianToNotion</title>
     <link href="/2023/04/12/obsidian%E5%AF%BC%E5%85%A5notion%E6%93%8D%E4%BD%9C/"/>
     <url>/2023/04/12/obsidian%E5%AF%BC%E5%85%A5notion%E6%93%8D%E4%BD%9C/</url>
@@ -106,6 +133,31 @@
   
   
   <entry>
+    <title>消息队列概述</title>
+    <link href="/2022/12/16/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    <url>/2022/12/16/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</url>
+    
+    <content type="html"><![CDATA[<h1 id="消息队列的理解"><a href="#消息队列的理解" class="headerlink" title="消息队列的理解"></a>消息队列的理解</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>分布式消息队列是一种应用之间<strong>异步</strong>通信的方式，主要由三部分组成生产端、代理、消费端<br><img src="/img/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/../../../img/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/MQ1.jpg" alt="MQ"><br>生产端：将业务消息进行预处理实例化，产生消息发送给broker。</p><p>代理：是整个消息的服务端，核心部分，处理消息单元，负责消息的存储、投递以及队列的一切其他附加的功能</p><p>消费端：负责消息的消费，根据消息承载的逻辑进行相应的处理</p><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="异步处理"><a href="#异步处理" class="headerlink" title="异步处理"></a>异步处理</h3><p>在实时性要求不严格的场景，例如用户注册发送验证码、下单通知发送优惠卷等。生产端发出消息给broker后，不用等待消费端给出反馈，可以处理其他业务。消费端处理broker中的信息，异步的给生产端回复结果。<br><img src="/img/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/../../../img/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/MQ2.jpg" alt="异步处理"></p><h3 id="应用解耦"><a href="#应用解耦" class="headerlink" title="应用解耦"></a>应用解耦</h3><p>将某些相关但耦合度不高的功能进行关联，例如订单系统与优惠卷积分系统。这两个系统有关系但不紧密，就可以利用MQ作为桥梁，利用MQ作为消息传递媒介。也就允许这两部分系统甚至可以采用不同的语言、框架实现。<br><img src="/img/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/../../../img/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/MQ3.jpg" alt="应用解耦"></p><h3 id="流量削峰"><a href="#流量削峰" class="headerlink" title="流量削峰"></a>流量削峰</h3><p>在类似秒杀场景中的大流量涌入，需求处理不完的一些服务，为了平衡高并发的请求，将大量请求发送给MQ,根据MQ的存储和分发功能平稳处理业务，起到一个大流量缓冲的作用。<br><img src="/img/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/../../../img/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/MQ4.jpg" alt="流量削锋"></p><h2 id="常用消息队列中间件"><a href="#常用消息队列中间件" class="headerlink" title="常用消息队列中间件"></a>常用消息队列中间件</h2><ul><li>ActiveMQ(中小型公司低吞吐量)</li><li>RabbitMQ</li><li>Kafka（数据量大，吞吐量要求高）</li><li>RocketMQ（数据量大，吞吐量要求高）</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>消息队列</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>消息队列</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>消息中间件数据结构</title>
     <link href="/2022/12/16/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     <url>/2022/12/16/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
@@ -125,31 +177,6 @@
     <tags>
       
       <tag>消息中间件</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>消息队列概述</title>
-    <link href="/2022/12/16/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
-    <url>/2022/12/16/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</url>
-    
-    <content type="html"><![CDATA[<h1 id="消息队列的理解"><a href="#消息队列的理解" class="headerlink" title="消息队列的理解"></a>消息队列的理解</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>分布式消息队列是一种应用之间<strong>异步</strong>通信的方式，主要由三部分组成生产端、代理、消费端<br><img src="/img/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/../../../img/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/MQ1.jpg" alt="MQ"><br>生产端：将业务消息进行预处理实例化，产生消息发送给broker。</p><p>代理：是整个消息的服务端，核心部分，处理消息单元，负责消息的存储、投递以及队列的一切其他附加的功能</p><p>消费端：负责消息的消费，根据消息承载的逻辑进行相应的处理</p><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="异步处理"><a href="#异步处理" class="headerlink" title="异步处理"></a>异步处理</h3><p>在实时性要求不严格的场景，例如用户注册发送验证码、下单通知发送优惠卷等。生产端发出消息给broker后，不用等待消费端给出反馈，可以处理其他业务。消费端处理broker中的信息，异步的给生产端回复结果。<br><img src="/img/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/../../../img/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/MQ2.jpg" alt="异步处理"></p><h3 id="应用解耦"><a href="#应用解耦" class="headerlink" title="应用解耦"></a>应用解耦</h3><p>将某些相关但耦合度不高的功能进行关联，例如订单系统与优惠卷积分系统。这两个系统有关系但不紧密，就可以利用MQ作为桥梁，利用MQ作为消息传递媒介。也就允许这两部分系统甚至可以采用不同的语言、框架实现。<br><img src="/img/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/../../../img/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/MQ3.jpg" alt="应用解耦"></p><h3 id="流量削峰"><a href="#流量削峰" class="headerlink" title="流量削峰"></a>流量削峰</h3><p>在类似秒杀场景中的大流量涌入，需求处理不完的一些服务，为了平衡高并发的请求，将大量请求发送给MQ,根据MQ的存储和分发功能平稳处理业务，起到一个大流量缓冲的作用。<br><img src="/img/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/../../../img/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/MQ4.jpg" alt="流量削锋"></p><h2 id="常用消息队列中间件"><a href="#常用消息队列中间件" class="headerlink" title="常用消息队列中间件"></a>常用消息队列中间件</h2><ul><li>ActiveMQ(中小型公司低吞吐量)</li><li>RabbitMQ</li><li>Kafka（数据量大，吞吐量要求高）</li><li>RocketMQ（数据量大，吞吐量要求高）</li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>消息队列</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>消息队列</tag>
       
     </tags>
     
