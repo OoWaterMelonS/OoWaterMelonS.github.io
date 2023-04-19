@@ -16,24 +16,27 @@
   <meta name="author" content="OoWaterMelonS Shao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="在Vue中,mounted生命周期钩子可以有两种写法:  方法写法:1234jsmounted() &amp;#123;  &#x2F;&#x2F; ...&amp;#125;  对象写法:1234jsmounted: function() &amp;#123;  &#x2F;&#x2F; ... &amp;#125; 这两种写法的区别是:方法写法:   简洁 适合较简单的逻辑 this指向当前Vue实例  对象写法:  可以访问arguments 可以命名(比如mo">
+    <meta name="description" content="date: 2023-04-19 10:33基于mybatis完成持久层代码生成步骤，设定开发环境为：idea: springboot+mybatis+mysql 1.在springboot项目中导入mybatis依赖123456789&lt;dependency&gt;    &lt;groupId&gt;org.mybatis.spring.boot&lt;&#x2F;groupId&gt;    &amp;l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue.mouted的两种写法">
-<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2023/04/18/vue-mouted%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%86%99%E6%B3%95/index.html">
+<meta property="og:title" content="mybatis代码生成操作">
+<meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2023/04/19/mybatis%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="OoWaterMelon">
-<meta property="og:description" content="在Vue中,mounted生命周期钩子可以有两种写法:  方法写法:1234jsmounted() &amp;#123;  &#x2F;&#x2F; ...&amp;#125;  对象写法:1234jsmounted: function() &amp;#123;  &#x2F;&#x2F; ... &amp;#125; 这两种写法的区别是:方法写法:   简洁 适合较简单的逻辑 this指向当前Vue实例  对象写法:  可以访问arguments 可以命名(比如mo">
+<meta property="og:description" content="date: 2023-04-19 10:33基于mybatis完成持久层代码生成步骤，设定开发环境为：idea: springboot+mybatis+mysql 1.在springboot项目中导入mybatis依赖123456789&lt;dependency&gt;    &lt;groupId&gt;org.mybatis.spring.boot&lt;&#x2F;groupId&gt;    &amp;l">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-18T08:48:10.000Z">
-<meta property="article:modified_time" content="2023-04-18T08:52:06.556Z">
+<meta property="og:image" content="http://oowatermelon.github.io/img/mybatis%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E6%93%8D%E4%BD%9C/1.jpg">
+<meta property="og:image" content="http://oowatermelon.github.io/img/mybatis%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E6%93%8D%E4%BD%9C/2.png">
+<meta property="article:published_time" content="2023-04-19T02:33:27.000Z">
+<meta property="article:modified_time" content="2023-04-19T02:59:25.994Z">
 <meta property="article:author" content="OoWaterMelonS Shao">
-<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="mybatis">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://oowatermelon.github.io/img/mybatis%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E6%93%8D%E4%BD%9C/1.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>vue.mouted的两种写法 - OoWaterMelon</title>
+  <title>mybatis代码生成操作 - OoWaterMelon</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -203,7 +206,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">vue.mouted的两种写法</span>
+            <span id="subtitle">mybatis代码生成操作</span>
           
         </div>
 
@@ -214,8 +217,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-18 16:48" pubdate>
-          2023年4月18日 下午
+        <time datetime="2023-04-19 10:33" pubdate>
+          2023年4月19日 上午
         </time>
       </span>
     
@@ -226,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          521 字
+          3.2k 字
         
       </span>
     
@@ -237,7 +240,7 @@
         
         
         
-          5 分钟
+          28 分钟
         
       </span>
     
@@ -277,31 +280,23 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">vue.mouted的两种写法</h1>
+            <h1 style="display: none">mybatis代码生成操作</h1>
             
             
               <div class="markdown-body">
                 
-                <p>在Vue中,mounted生命周期钩子可以有两种写法:</p>
-<ol>
-<li>方法写法:<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript">js<br><span class="hljs-title function_">mounted</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// ...</span><br>&#125; <br></code></pre></td></tr></table></figure></li>
-<li>对象写法:<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript">js<br><span class="hljs-attr">mounted</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// ... </span><br>&#125;<br></code></pre></td></tr></table></figure>
-这两种写法的区别是:<br>方法写法:</li>
-</ol>
-<ul>
-<li>简洁</li>
-<li>适合较简单的逻辑</li>
-<li>this指向当前Vue实例</li>
-</ul>
-<p>对象写法:</p>
-<ul>
-<li>可以访问arguments</li>
-<li>可以命名(比如mounted: doSomething)</li>
-<li>可读性稍差</li>
-<li>需要手动绑定this(使用.bind(this)或箭头函数)</li>
-</ul>
-<p>除非需要访问arguments或做更复杂的逻辑,方法写法是更优雅的选择。<br>举个例子:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br><span class="hljs-comment">// 方法写法 </span><br><span class="hljs-title function_">mounted</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">$el</span>)  <span class="hljs-comment">// Vue实例</span><br>&#125;<br><br><span class="hljs-comment">// 对象写法 </span><br><span class="hljs-attr">mounted</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">$el</span>)  <span class="hljs-comment">// undefined, 需要绑定this</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">arguments</span>) <br>&#125;.<span class="hljs-title function_">bind</span>(<span class="hljs-variable language_">this</span>)<br><br><span class="hljs-comment">// 或使用箭头函数</span><br><span class="hljs-attr">mounted</span>: <span class="hljs-function">() =&gt;</span> &#123; <br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">$el</span>)  <span class="hljs-comment">// Vue实例</span><br>&#125;<br></code></pre></td></tr></table></figure>
+                <p>date: 2023-04-19 10:33<br>基于mybatis完成持久层代码生成步骤，设定开发环境为：idea: springboot+mybatis+mysql</p>
+<h3 id="1-在springboot项目中导入mybatis依赖"><a href="#1-在springboot项目中导入mybatis依赖" class="headerlink" title="1.在springboot项目中导入mybatis依赖"></a>1.在springboot项目中导入mybatis依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>mysql<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mysql-connector-java<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
+
+<h3 id="2-在springboot的resources包下添加generator-x2F-generatorConfig-xml文件，文件内容如下所示"><a href="#2-在springboot的resources包下添加generator-x2F-generatorConfig-xml文件，文件内容如下所示" class="headerlink" title="2.在springboot的resources包下添加generator&#x2F;generatorConfig.xml文件，文件内容如下所示"></a>2.在springboot的resources包下添加generator&#x2F;generatorConfig.xml文件，文件内容如下所示</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">generatorConfiguration</span></span><br><span class="hljs-meta">        <span class="hljs-keyword">PUBLIC</span> <span class="hljs-string">&quot;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&quot;</span></span><br><span class="hljs-meta">        <span class="hljs-string">&quot;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">generatorConfiguration</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">context</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;Mysql&quot;</span> <span class="hljs-attr">targetRuntime</span>=<span class="hljs-string">&quot;MyBatis3&quot;</span> <span class="hljs-attr">defaultModelType</span>=<span class="hljs-string">&quot;flat&quot;</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;autoDelimitKeywords&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;true&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;beginningDelimiter&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;`&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;endingDelimiter&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;`&quot;</span>/&gt;</span><br><br>        <span class="hljs-comment">&lt;!--覆盖生成XML文件--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">plugin</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin&quot;</span> /&gt;</span><br>        <span class="hljs-comment">&lt;!-- 生成的实体类添加toString()方法 --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">plugin</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;org.mybatis.generator.plugins.ToStringPlugin&quot;</span> /&gt;</span><br><br>        <span class="hljs-comment">&lt;!-- 不生成注释 --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">commentGenerator</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;suppressAllComments&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;true&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">commentGenerator</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">jdbcConnection</span> <span class="hljs-attr">driverClass</span>=<span class="hljs-string">&quot;com.mysql.cj.jdbc.Driver&quot;</span></span><br><span class="hljs-tag">                        <span class="hljs-attr">connectionURL</span>=<span class="hljs-string">&quot;jdbc:mysql://localhost:3306/courseimooc?useSSL=false<span class="hljs-symbol">&amp;amp;</span>serverTimezone=UTC<span class="hljs-symbol">&amp;amp;</span>characterEncoding=UTF-8&quot;</span></span><br><span class="hljs-tag">                        <span class="hljs-attr">userId</span>=<span class="hljs-string">&quot;courseimooc&quot;</span></span><br><span class="hljs-tag">                        <span class="hljs-attr">password</span>=<span class="hljs-string">&quot;courseimooc&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">jdbcConnection</span>&gt;</span><br><br>        <span class="hljs-comment">&lt;!-- domain类的位置 --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">javaModelGenerator</span> <span class="hljs-attr">targetProject</span>=<span class="hljs-string">&quot;src\main\java&quot;</span></span><br><span class="hljs-tag">                            <span class="hljs-attr">targetPackage</span>=<span class="hljs-string">&quot;com.example.demo.domain&quot;</span>/&gt;</span><br><br>        <span class="hljs-comment">&lt;!-- mapper.xml的位置 --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">sqlMapGenerator</span> <span class="hljs-attr">targetProject</span>=<span class="hljs-string">&quot;src\main\resources&quot;</span></span><br><span class="hljs-tag">                         <span class="hljs-attr">targetPackage</span>=<span class="hljs-string">&quot;mapper&quot;</span>/&gt;</span><br><br>        <span class="hljs-comment">&lt;!-- mapper类的位置 --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">javaClientGenerator</span> <span class="hljs-attr">targetProject</span>=<span class="hljs-string">&quot;src\main\java&quot;</span></span><br><span class="hljs-tag">                             <span class="hljs-attr">targetPackage</span>=<span class="hljs-string">&quot;com.example.demo.mapper&quot;</span></span><br><span class="hljs-tag">                             <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;XMLMAPPER&quot;</span> /&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">tableName</span>=<span class="hljs-string">&quot;user&quot;</span> <span class="hljs-attr">domainObjectName</span>=<span class="hljs-string">&quot;User&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">context</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">generatorConfiguration</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>注意上面末尾需要的三个位置，在对应的位置上对应生成好包。例如src\main\java下的com.example.demo.domain，src\main\java下的com.example.demo.mapper，src\main\resources下的mapper。</p>
+<h3 id="3-在idea中添加配置，如图所示，按步骤就行，不做赘述"><a href="#3-在idea中添加配置，如图所示，按步骤就行，不做赘述" class="headerlink" title="3. 在idea中添加配置，如图所示，按步骤就行，不做赘述"></a>3. 在idea中添加配置，如图所示，按步骤就行，不做赘述</h3><p><img src="/../img/mybatis%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E6%93%8D%E4%BD%9C/1.jpg" srcset="/img/loading.gif" lazyload alt="步骤1"><br><img src="/../img/mybatis%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E6%93%8D%E4%BD%9C/2.png" srcset="/img/loading.gif" lazyload alt="步骤2"></p>
+<h3 id="4-补充操作：注意需要在mysql中提前创建好表用于生成"><a href="#4-补充操作：注意需要在mysql中提前创建好表用于生成" class="headerlink" title="4. 补充操作：注意需要在mysql中提前创建好表用于生成"></a>4. 补充操作：注意需要在mysql中提前创建好表用于生成</h3><p>本文实例用户表，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs mysql">CREATE TABLE `user`  (<br>  `id` int NOT NULL,<br>  `name` varchar(255) NOT NULL,<br>  `phone` varchar(255) NOT NULL,<br>  PRIMARY KEY (`id`)<br>);<br></code></pre></td></tr></table></figure>
+<h3 id="5-springboot的application-yml中配置连接mysql"><a href="#5-springboot的application-yml中配置连接mysql" class="headerlink" title="5 springboot的application.yml中配置连接mysql"></a>5 springboot的application.yml中配置连接mysql</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">spring.datasource.url=jdbc:mysql://localhost:3306/databaseName?useSSL=false&amp;serverTimezone=UTC&amp;characterEncoding=UTF-8</span><br><span class="hljs-string">spring.datasource.username=userName</span><br><span class="hljs-string">spring.datasource.password=userPassword</span><br><span class="hljs-string">spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver</span><br><span class="hljs-string">mybatis.mapper-locations=classpath:/mapper/*.xml</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="最后运行配置好的mybatis-generator即可"><a href="#最后运行配置好的mybatis-generator即可" class="headerlink" title="最后运行配置好的mybatis-generator即可"></a>最后运行配置好的mybatis-generator即可</h3><p>生成器将自动完成依据mysql和domian中的user结构和目录信息，生成对应表的domain&#x2F;UserExample.java、mapper&#x2F;UserMapper.java、mapper&#x2F;userMapper.xml。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上步骤主要基于mybatis和maven完成单表持久层代码的生成，后续利用thymleaf搭配controller、service及前端的代码生成器，可以一键完成前后端单表代码生成。</p>
 
                 
               </div>
@@ -320,7 +315,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
+  <a href="/categories/mybatis/" class="category-chain-item">mybatis</a>
   
   
 
@@ -330,7 +325,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Vue/" class="category-chain-item">Vue</a>
+  <a href="/categories/%E5%90%8E%E7%AB%AF/" class="category-chain-item">后端</a>
   
   
 
@@ -345,7 +340,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Vue/">#Vue</a>
+        <a href="/tags/mybatis/">#mybatis</a>
       
     </div>
   
@@ -357,8 +352,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>vue.mouted的两种写法</div>
-      <div>http://oowatermelon.github.io/OoWaterMelonS/2023/04/18/vue-mouted的两种写法/</div>
+      <div>mybatis代码生成操作</div>
+      <div>http://oowatermelon.github.io/OoWaterMelonS/2023/04/19/mybatis代码生成操作/</div>
     </div>
     <div class="license-meta">
       
@@ -370,7 +365,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年4月18日</div>
+          <div>2023年4月19日</div>
         </div>
       
       
@@ -402,18 +397,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/04/19/mybatis%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E6%93%8D%E4%BD%9C/" title="mybatis代码生成操作">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">mybatis代码生成操作</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/04/12/obsidian%E5%AF%BC%E5%85%A5notion%E6%93%8D%E4%BD%9C/" title="obsidianToNotion">
-                        <span class="hidden-mobile">obsidianToNotion</span>
+                      <a href="/2023/04/18/vue-mouted%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%86%99%E6%B3%95/" title="vue.mouted的两种写法">
+                        <span class="hidden-mobile">vue.mouted的两种写法</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
