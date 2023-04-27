@@ -4,13 +4,27 @@
   
   
   <entry>
-    <title>this.$ref和this.$ref的区别</title>
+    <title>this.$refs和this.$ref的区别</title>
     <link href="/2023/04/20/this-refs%E5%92%8Cthis-ref%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <url>/2023/04/20/this-refs%E5%92%8Cthis-ref%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<p>this.$refs 和 this.$ref 有以下区别:<br>this.$refs:</p><ul><li>是一个对象,包含了当前组件的所有子组件(或DOM元素)的引用</li><li>需要在子组件(或DOM元素)上指定 ref 属性才能获取到引用</li><li>可以在模板或渲染函数中访问 this.$refs</li></ul><p>this.$ref:</p><ul><li>是一个单个引用,对应当前组件的父组件(或DOM元素)</li><li>不需要指定任何 ref 属性</li><li>只能在渲染函数中通过 this.$parent.$ref 访问</li></ul><p>例子:<br>父组件:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;child-component ref=<span class="hljs-string">&quot;child&quot;</span>&gt;&lt;/child-component&gt;<br></code></pre></td></tr></table></figure><p>子组件:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  <span class="hljs-title function_">mounted</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">$parent</span>.<span class="hljs-property">$ref</span> === <span class="hljs-string">&#x27;child&#x27;</span>) <span class="hljs-comment">// true</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>父组件:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;div ref=<span class="hljs-string">&quot;parent&quot;</span>&gt;&lt;/div&gt; <br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">child-component</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;child&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">child-component</span>&gt;</span></span><br></code></pre></td></tr></table></figure><p>子组件:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  <span class="hljs-title function_">mounted</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">$refs</span>.<span class="hljs-property">parent</span>) <span class="hljs-comment">// DOM element</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">$refs</span>.<span class="hljs-property">child</span>)  <span class="hljs-comment">// Child component instance</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>总结:</p><ul><li>this.$refs 用于获取子组件(或DOM元素)的引用,需要在子组件上指定 ref 属性</li><li>this.$ref 用于在子组件中获取父组件的引用,不需要指定任何 ref 属性</li><li>this.$ref 只能在子组件的渲染函数中访问,通过 this.$parent.$ref</li><li>区分 this.$refs 和 this.$ref 的用途和访问位置,可以更好地把握组件间的通信</li></ul>]]></content>
     
     
+    <categories>
+      
+      <category>Vue</category>
+      
+      <category>前端</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Vue</tag>
+      
+    </tags>
     
   </entry>
   
@@ -53,9 +67,9 @@
     
     <categories>
       
-      <category>前端</category>
-      
       <category>Vue</category>
+      
+      <category>前端</category>
       
     </categories>
     

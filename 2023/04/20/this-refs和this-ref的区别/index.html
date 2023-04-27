@@ -16,21 +16,24 @@
   <meta name="author" content="OoWaterMelonS Shao">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
-<meta property="og:title" content="this.$ref和this.$ref的区别">
+    <meta name="description" content="this.$refs 和 this.$ref 有以下区别:this.$refs:  是一个对象,包含了当前组件的所有子组件(或DOM元素)的引用 需要在子组件(或DOM元素)上指定 ref 属性才能获取到引用 可以在模板或渲染函数中访问 this.$refs  this.$ref:  是一个单个引用,对应当前组件的父组件(或DOM元素) 不需要指定任何 ref 属性 只能在渲染函数中通过 this">
+<meta property="og:type" content="article">
+<meta property="og:title" content="this.$refs和this.$ref的区别">
 <meta property="og:url" content="http://oowatermelon.github.io/OoWaterMelonS/2023/04/20/this-refs%E5%92%8Cthis-ref%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="OoWaterMelon">
+<meta property="og:description" content="this.$refs 和 this.$ref 有以下区别:this.$refs:  是一个对象,包含了当前组件的所有子组件(或DOM元素)的引用 需要在子组件(或DOM元素)上指定 ref 属性才能获取到引用 可以在模板或渲染函数中访问 this.$refs  this.$ref:  是一个单个引用,对应当前组件的父组件(或DOM元素) 不需要指定任何 ref 属性 只能在渲染函数中通过 this">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-04-20T07:08:22.000Z">
-<meta property="article:modified_time" content="2023-04-20T07:08:22.859Z">
+<meta property="article:modified_time" content="2023-04-20T07:14:37.700Z">
 <meta property="article:author" content="OoWaterMelonS Shao">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>this.$ref和this.$ref的区别 - OoWaterMelon</title>
+  <title>this.$refs和this.$ref的区别 - OoWaterMelon</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +203,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">this.$ref和this.$ref的区别</span>
+            <span id="subtitle">this.$refs和this.$ref的区别</span>
           
         </div>
 
@@ -223,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          823 字
         
       </span>
     
@@ -234,7 +237,7 @@
         
         
         
-          1 分钟
+          7 分钟
         
       </span>
     
@@ -274,12 +277,42 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">this.$ref和this.$ref的区别</h1>
+            <h1 style="display: none">this.$refs和this.$ref的区别</h1>
             
             
               <div class="markdown-body">
                 
-                
+                <p>this.$refs 和 this.$ref 有以下区别:<br>this.$refs:</p>
+<ul>
+<li>是一个对象,包含了当前组件的所有子组件(或DOM元素)的引用</li>
+<li>需要在子组件(或DOM元素)上指定 ref 属性才能获取到引用</li>
+<li>可以在模板或渲染函数中访问 this.$refs</li>
+</ul>
+<p>this.$ref:</p>
+<ul>
+<li>是一个单个引用,对应当前组件的父组件(或DOM元素)</li>
+<li>不需要指定任何 ref 属性</li>
+<li>只能在渲染函数中通过 this.$parent.$ref 访问</li>
+</ul>
+<p>例子:<br>父组件:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;child-component ref=<span class="hljs-string">&quot;child&quot;</span>&gt;&lt;/child-component&gt;<br></code></pre></td></tr></table></figure>
+<p>子组件:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  <span class="hljs-title function_">mounted</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">$parent</span>.<span class="hljs-property">$ref</span> === <span class="hljs-string">&#x27;child&#x27;</span>) <span class="hljs-comment">// true</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+<p>父组件:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;div ref=<span class="hljs-string">&quot;parent&quot;</span>&gt;&lt;/div&gt; <br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">child-component</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;child&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">child-component</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+<p>子组件:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  <span class="hljs-title function_">mounted</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">$refs</span>.<span class="hljs-property">parent</span>) <span class="hljs-comment">// DOM element</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">$refs</span>.<span class="hljs-property">child</span>)  <span class="hljs-comment">// Child component instance</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>总结:</p>
+<ul>
+<li>this.$refs 用于获取子组件(或DOM元素)的引用,需要在子组件上指定 ref 属性</li>
+<li>this.$ref 用于在子组件中获取父组件的引用,不需要指定任何 ref 属性</li>
+<li>this.$ref 只能在子组件的渲染函数中访问,通过 this.$parent.$ref</li>
+<li>区分 this.$refs 和 this.$ref 的用途和访问位置,可以更好地把握组件间的通信</li>
+</ul>
+
                 
               </div>
             
@@ -287,6 +320,44 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Vue/" class="category-chain-item">Vue</a>
+  
+  
+
+      </span>
+    
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Vue/">#Vue</a>
+      
+    </div>
   
 </div>
 
@@ -296,7 +367,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>this.$ref和this.$ref的区别</div>
+      <div>this.$refs和this.$ref的区别</div>
       <div>http://oowatermelon.github.io/OoWaterMelonS/2023/04/20/this-refs和this-ref的区别/</div>
     </div>
     <div class="license-meta">
